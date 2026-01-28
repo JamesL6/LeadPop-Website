@@ -203,7 +203,7 @@
         }
 
         .nav-links {
-            display: none;
+            display: flex;
         }
 
         .header-cta {
@@ -214,7 +214,7 @@
 
         /* Mobile Menu Button */
         .menu-btn {
-            display: none;
+            display: flex;
             flex-direction: column;
             gap: 6px;
             background: none;
@@ -224,7 +224,7 @@
             z-index: 1001;
         }
 
-        .mobile-menu-btn span {
+        .menu-btn span {
             width: 24px;
             height: 2px;
             background: var(--white);
@@ -311,13 +311,14 @@
             pointer-events: all;
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        @media (max-width: 480px) {
+            .header-cta {
+                font-size: 12px;
+                padding: 8px 16px;
             }
             
-            .menu-btn {
-                display: flex;
+            .logo-text {
+                font-size: 20px;
             }
         }
 
