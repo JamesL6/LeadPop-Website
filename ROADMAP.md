@@ -186,10 +186,41 @@ This document tracks future improvements and pages needed for the LeadPop busine
 - [x] **Pushed to GitHub** — All website files committed and pushed to https://github.com/JamesL6/LeadPop-Website
 - [x] **GitHub Pages enabled** — Live site at https://jamesl6.github.io/LeadPop-Website/
 
+### Mobile Navigation & UX Improvements (January 27, 2026)
+- [x] **Implemented mobile hamburger menu** — Added slide-in sidebar navigation with all links
+- [x] **Mobile sidebar with CTA** — "Get Your Lead Projection" button at bottom of mobile menu
+- [x] **Dark overlay for menu** — Click outside to close, prevents body scroll when open
+- [x] **Booking page mobile UX** — Removed scroll animations, reversed layout (calendar first, explanation below)
+- [x] **About page animations** — Added smooth fade-in animations matching How It Works page style
+
+### Header Redesign & Consistency
+- [x] **Centered logo header** — Redesigned header layout: [Menu Button] — [LeadPop (centered)] — [Get Started CTA]
+- [x] **Fixed menu button visibility** — Resolved CSS issues causing menu button to hide on some pages
+- [x] **Unified header across all pages** — Same header structure on index, about, how-it-works, book-call
+- [x] **Removed desktop navigation** — All navigation moved to sidebar menu for cleaner, mobile-first design
+
+### Homepage Updates
+- [x] **Set index-v2 as default homepage** — Renamed index-v2.html to index.html, backed up old version
+- [x] **Updated all navigation links** — Changed all references from index-v2.html to index.html
+- [x] **Hero badge update** — Changed from "$150M+ Ad Spend Managed in 5 Years" to "$30M+ Client Revenue Generated in 2024"
+- [x] **Video placeholder update** — Changed from play button to "Video Coming Soon" text
+
+### SEO & Technical Improvements
+- [x] **Added favicons** — Created multiple sizes (16x16, 32x32, 192x192, 512x512, ico, apple-touch-icon)
+- [x] **Created site.webmanifest** — PWA support for mobile devices
+- [x] **Added favicon links to all pages** — index, about, how-it-works, book-call, get-projection, about-v2
+- [x] **Added theme-color meta tags** — Mobile browser theme color matches brand (navy)
+- [x] **Restarted local server** — Fixed caching issues on localhost:8085
+
+### Deployment & Version Control
+- [x] **GitHub repository updates** — Multiple commits with descriptive messages
+- [x] **Pushed to main and master branches** — Kept both branches in sync for GitHub Pages
+- [x] **Live site updates** — All changes deployed to https://jamesl6.github.io/LeadPop-Website/
+
 ---
 
 ## Currently Working On
 - [ ] **Contact Page** — General contact form (distinct from booking flow)
 - [ ] **Select Final Booking Page** — Decide between v1, v2, and v3 designs
-- [ ] **Emphasize $30M lead revenue stat** — Make this more prominent across the website
+- [ ] **Emphasize $30M lead revenue stat further** — Consider adding to more prominent sections beyond hero badge
 
