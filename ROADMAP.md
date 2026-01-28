@@ -8,7 +8,7 @@ This document tracks future improvements and pages needed for the LeadPop busine
 ## Pages to Create
 
 ### High Priority
-- [ ] **Contact Page** — Contact form, phone number, email, business hours
+- [x] **Contact Page** — Contact form, phone number, email, business hours
 - [x] **About Us Page** — Team photos, company story, mission, why we started this
   - [x] **Add team photos** — James, Isaac, Paola, Dylan headshots added
   - [x] **Update team bios** — Updated bios for all team members
