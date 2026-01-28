@@ -365,6 +365,14 @@
             .booking-wrapper {
                 grid-template-columns: 1fr;
             }
+            
+            .booking-calendar {
+                order: 1;
+            }
+            
+            .booking-info {
+                order: 2;
+            }
         }
 
         /* Left Side - What to Expect */
@@ -771,16 +779,7 @@
         }
 
         /* ===== ANIMATIONS ===== */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* Removed fade-in animations for better mobile UX */
 
     </style>
 </head>
@@ -845,7 +844,7 @@
         <div class="container">
             <div class="booking-wrapper">
                 <!-- Left Side - What to Expect -->
-                <div class="booking-info fade-in">
+                <div class="booking-info">
                     <h2>What to Expect on This Call</h2>
                     <p>This isn't a sales pitch. It's a strategy session to see if we're a good fit for each other.</p>
                     
@@ -882,7 +881,7 @@
                 </div>
 
                 <!-- Right Side - Calendar Booking -->
-                <div class="booking-calendar fade-in">
+                <div class="booking-calendar">
                     <div class="calendar-header">
                         <h3>Schedule Your Call</h3>
                         <p>Pick a time that works for you</p>
@@ -901,19 +900,19 @@
     <section class="trust-section">
         <div class="container">
             <div class="trust-grid">
-                <div class="trust-item fade-in">
+                <div class="trust-item">
                     <div class="trust-icon">🔒</div>
                     <div class="trust-text">$0 Upfront Cost</div>
                 </div>
-                <div class="trust-item fade-in">
+                <div class="trust-item">
                     <div class="trust-icon">🎯</div>
                     <div class="trust-text">100% Exclusive Leads</div>
                 </div>
-                <div class="trust-item fade-in">
+                <div class="trust-item">
                     <div class="trust-icon">✅</div>
                     <div class="trust-text">OTP Verified Contacts</div>
                 </div>
-                <div class="trust-item fade-in">
+                <div class="trust-item">
                     <div class="trust-icon">🔄</div>
                     <div class="trust-text">Free Replacements</div>
                 </div>
@@ -929,7 +928,7 @@
             </div>
             
             <div class="faq-grid">
-                <div class="faq-item fade-in">
+                <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h4>Is this a sales call?</h4>
                         <span class="faq-icon">+</span>
@@ -941,7 +940,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item fade-in">
+                <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h4>How long is the call and how does it work?</h4>
                         <span class="faq-icon">+</span>
@@ -953,7 +952,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item fade-in">
+                <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h4>What should I prepare?</h4>
                         <span class="faq-icon">+</span>
@@ -965,7 +964,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item fade-in">
+                <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h4>What if I'm not ready to commit?</h4>
                         <span class="faq-icon">+</span>
@@ -977,7 +976,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item fade-in">
+                <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h4>Do you have minimum requirements?</h4>
                         <span class="faq-icon">+</span>
@@ -989,7 +988,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item fade-in">
+                <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h4>How soon can we start?</h4>
                         <span class="faq-icon">+</span>
@@ -1069,24 +1068,6 @@
             const faqItem = element.parentElement;
             faqItem.classList.toggle('active');
         }
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
