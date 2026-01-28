@@ -163,12 +163,112 @@
             font-size: 14px;
         }
 
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Sidebar */
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--navy-dark);
+            z-index: 1002;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+            border-left: 1px solid rgba(77, 168, 218, 0.1);
+        }
+
+        .mobile-sidebar.active {
+            right: 0;
+        }
+
+        .mobile-sidebar-content {
+            padding: 80px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-sidebar a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-sidebar a:hover,
+        .mobile-sidebar a.active {
+            color: var(--white);
+        }
+
+        .mobile-sidebar-cta {
+            margin-top: 24px;
+            padding: 16px 32px !important;
+            font-size: 16px !important;
+            text-align: center;
+            border-bottom: none !important;
+        }
+
+        /* Mobile Overlay */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
         @media (max-width: 768px) {
-            .nav-links a:not(.btn) {
+            .nav-links {
                 display: none;
             }
-            .nav-links {
-                gap: 0;
+            
+            .mobile-menu-btn {
+                display: flex;
             }
         }
 
@@ -692,9 +792,27 @@
                     <a href="how-it-works.html">How It Works</a>
                     <a href="book-call.html" class="btn btn-primary nav-cta active">Get Your Lead Projection</a>
                 </nav>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" onclick="closeMobileMenu()"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar">
+        <div class="mobile-sidebar-content">
+            <a href="index-v2.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="book-call.html" class="btn btn-primary mobile-sidebar-cta active">Get Your Lead Projection</a>
+        </div>
+    </div>
 
     <!-- HERO -->
     <section class="hero">
@@ -901,6 +1019,40 @@
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.mobile-sidebar');
+            const overlay = document.querySelector('.mobile-overlay');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            menuBtn.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (sidebar.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeMobileMenu() {
+            const sidebar = document.querySelector('.mobile-sidebar');
+            const overlay = document.querySelector('.mobile-overlay');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            menuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-sidebar a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
         // FAQ Toggle
         function toggleFaq(element) {
             const faqItem = element.parentElement;

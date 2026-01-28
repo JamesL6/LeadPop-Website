@@ -156,7 +156,40 @@ This document tracks future improvements and pages needed for the LeadPop busine
 
 ---
 
+---
+
+## Recent Updates (January 2026)
+
+### Content & Branding Updates
+- [x] **Updated ad spend messaging** — Changed from "$20M" to "$150M+ in 5 years" across all pages
+- [x] **Added quote attribution on About page** — "James LaRosa, Owner @ LeadPop" with custom styling
+- [x] **Refined About page quote styling** — Multiple iterations to match desired horizontal layout
+
+### Navigation & Page Management
+- [x] **Unified header navigation** — Standardized navigation across all pages (Home, About, How It Works, Get Your Lead Projection)
+- [x] **Removed book-call-v3.html** — Deleted older booking page version
+- [x] **Removed "Lead Projection v2" link** — Cleaned up navigation (get-projection.html remains but not in nav)
+- [x] **Fixed navigation active states** — Proper highlighting of current page across all pages
+
+### Booking Page Improvements (book-call.html)
+- [x] **Removed call details section** — Cleaned up redundant information (15-30 minutes, Video/phone, No obligation)
+- [x] **Updated FAQ** — Clarified call length to "Plan for 30 minutes" and specified Zoom as preferred method
+- [x] **GoHighLevel calendar customization** — Researched and provided custom CSS for vertical layout and branding
+
+### Assets & Images
+- [x] **Generated LeadPop logo (180x180)** — Created square version for GoHighLevel calendar
+- [x] **Generated headshot (180x180)** — Properly cropped and resized James's headshot without distortion
+- [x] **Generated LeadPop icon (180x180)** — Extracted icon from full logo for calendar use
+
+### Deployment
+- [x] **GitHub repository setup** — Initialized git, created repository, configured remote
+- [x] **Pushed to GitHub** — All website files committed and pushed to https://github.com/JamesL6/LeadPop-Website
+- [x] **GitHub Pages enabled** — Live site at https://jamesl6.github.io/LeadPop-Website/
+
+---
+
 ## Currently Working On
 - [ ] **Contact Page** — General contact form (distinct from booking flow)
 - [ ] **Select Final Booking Page** — Decide between v1, v2, and v3 designs
+- [ ] **Emphasize $30M lead revenue stat** — Make this more prominent across the website
 
