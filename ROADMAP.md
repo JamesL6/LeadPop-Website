@@ -12,8 +12,8 @@ This document tracks future improvements and pages needed for the LeadPop busine
 - [x] **About Us Page** — Team photos, company story, mission, why we started this
   - [x] **Add team photos** — James, Isaac, Paola, Dylan headshots added
   - [x] **Update team bios** — Updated bios for all team members
-- [ ] **Privacy Policy Page** — Legal requirements
-- [ ] **Terms of Service Page** — Legal requirements
+- [x] **Privacy Policy Page** — Legal requirements
+- [x] **Terms of Service Page** — Legal requirements
 - [ ] **Lead Magnet** — Capture leads who aren't ready to book a call yet (email gate)
   - Ideas:
     - "The Business Loan Lead Quality Checklist" (PDF)
