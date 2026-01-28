@@ -10,22 +10,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* Dark Colors */
             --navy-dark: #0a1628;
             --navy: #0d1b2a;
             --navy-light: #1b2838;
             --navy-lighter: #243447;
+            
+            /* Blue Accents */
             --blue-accent: #4da8da;
             --blue-bright: #5dade2;
             --blue-glow: #7ec8e3;
+            --blue-pale: #e8f4f8;
+            
+            /* Light Colors */
             --white: #ffffff;
+            --off-white: #f8fafc;
+            --light-gray: #f1f5f9;
             --gray-100: #f8f9fa;
             --gray-200: #e9ecef;
             --gray-300: #dee2e6;
             --gray-400: #ced4da;
             --gray-500: #94a3b8;
             --gray-600: #64748b;
+            --gray-700: #475569;
+            --gray-800: #334155;
+            --gray-900: #1e293b;
+            
+            /* Status Colors */
             --green: #10b981;
+            --green-light: #d1fae5;
             --red: #ef4444;
+            --red-light: #fee2e2;
+            
+            /* Gradients */
             --gradient-blue: linear-gradient(135deg, #4da8da 0%, #5dade2 50%, #7ec8e3 100%);
             --gradient-dark: linear-gradient(180deg, #0a1628 0%, #0d1b2a 100%);
         }
@@ -35,15 +52,15 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--navy-dark);
-            color: var(--white);
+            background-color: var(--white);
+            color: var(--gray-900);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -54,13 +71,30 @@
             margin: 0 auto;
             padding: 0 24px;
         }
-        
+
         .section {
             padding: 100px 0;
         }
 
-        .section-alt {
+        /* Section Themes */
+        .section-dark {
             background: var(--navy);
+            color: var(--white);
+        }
+
+        .section-light {
+            background: var(--white);
+            color: var(--gray-900);
+        }
+
+        .section-light-alt {
+            background: var(--off-white);
+            color: var(--gray-900);
+        }
+
+        .section-gradient {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
+            color: var(--white);
         }
 
         .text-blue {
@@ -68,6 +102,10 @@
         }
 
         .text-gray {
+            color: var(--gray-600);
+        }
+
+        .text-gray-light {
             color: var(--gray-500);
         }
 
@@ -100,10 +138,21 @@
         .btn-secondary {
             background: transparent;
             color: var(--white);
-            border: 2px solid var(--navy-lighter);
+            border: 2px solid rgba(255,255,255,0.3);
         }
 
         .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .btn-outline-dark {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy-lighter);
+        }
+
+        .btn-outline-dark:hover {
             border-color: var(--blue-accent);
             color: var(--blue-accent);
         }
@@ -127,7 +176,12 @@
             letter-spacing: 1px;
             margin-bottom: 20px;
         }
-        
+
+        .section-label-light {
+            background: var(--blue-pale);
+            border-color: rgba(77, 168, 218, 0.3);
+        }
+
         .section-title {
             font-size: clamp(32px, 5vw, 48px);
             font-weight: 800;
@@ -137,10 +191,18 @@
 
         .section-subtitle {
             font-size: 18px;
-            color: var(--gray-500);
             line-height: 1.7;
         }
-        
+
+        .section-dark .section-subtitle {
+            color: var(--gray-500);
+        }
+
+        .section-light .section-subtitle,
+        .section-light-alt .section-subtitle {
+            color: var(--gray-600);
+        }
+
         /* ===== HEADER / NAV ===== */
         header {
             position: fixed;
@@ -149,7 +211,7 @@
             right: 0;
             z-index: 1000;
             padding: 16px 0;
-            background: rgba(10, 22, 40, 0.9);
+            background: rgba(10, 22, 40, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(77, 168, 218, 0.1);
         }
@@ -178,9 +240,137 @@
             color: var(--white);
         }
 
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+        }
+
         .nav-cta {
             padding: 12px 24px;
             font-size: 14px;
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Sidebar */
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--navy-dark);
+            z-index: 1002;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+            border-left: 1px solid rgba(77, 168, 218, 0.1);
+        }
+
+        .mobile-sidebar.active {
+            right: 0;
+        }
+
+        .mobile-sidebar-content {
+            padding: 80px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-sidebar a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-sidebar a:hover,
+        .mobile-sidebar a.active {
+            color: var(--white);
+        }
+
+        .mobile-sidebar-cta {
+            margin-top: 24px;
+            padding: 16px 32px !important;
+            font-size: 16px !important;
+            text-align: center;
+            border-bottom: none !important;
+        }
+
+        /* Mobile Overlay */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
         }
 
         /* ===== HERO SECTION ===== */
@@ -188,9 +378,11 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 100px;
+            padding-top: 80px;
+            padding-bottom: 60px;
             position: relative;
             overflow: hidden;
+            background: var(--navy);
         }
 
         .hero::before {
@@ -205,47 +397,66 @@
             pointer-events: none;
         }
 
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
             position: relative;
             z-index: 1;
         }
 
-        .hero-badge {
+        .hero-content {
+            color: var(--white);
+        }
+
+        .hero-proof-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
+            gap: 10px;
+            padding: 10px 18px;
             background: rgba(77, 168, 218, 0.1);
             border: 1px solid rgba(77, 168, 218, 0.3);
             border-radius: 100px;
-            margin-bottom: 32px;
-            animation: fadeInDown 0.6s ease;
+            margin-bottom: 16px;
+            animation: fadeInDown 0.5s ease both;
         }
 
-        .hero-badge-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--green);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
+        @media (max-width: 900px) {
+            .hero-proof-badge {
+                margin-top: 16px;
+                margin-bottom: 20px;
+            }
         }
 
-        .hero-badge-text {
+        .hero-proof-icon {
+            font-size: 18px;
+        }
+
+        .hero-proof-text {
             font-size: 14px;
-            font-weight: 600;
-            color: var(--blue-accent);
+            font-weight: 500;
+            color: var(--gray-300);
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+        .hero-proof-text span {
+            color: var(--blue-accent);
+            font-weight: 700;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-title {
-            font-size: clamp(40px, 7vw, 72px);
+            font-size: clamp(36px, 5vw, 56px);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 24px;
@@ -260,10 +471,9 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(18px, 2.5vw, 22px);
+            font-size: 18px;
             color: var(--gray-500);
-            max-width: 700px;
-            margin: 0 auto 40px;
+            margin-bottom: 32px;
             line-height: 1.7;
             animation: fadeInUp 0.6s ease 0.2s both;
         }
@@ -271,17 +481,16 @@
         .hero-features {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 24px;
-            margin-bottom: 48px;
+            gap: 16px;
+            margin-bottom: 32px;
             animation: fadeInUp 0.6s ease 0.3s both;
         }
 
         .hero-feature {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 15px;
+            gap: 8px;
+            font-size: 14px;
             color: var(--gray-300);
         }
 
@@ -294,41 +503,87 @@
             background: rgba(16, 185, 129, 0.2);
             border-radius: 50%;
             color: var(--green);
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .hero-ctas {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
             gap: 16px;
-            margin-bottom: 48px;
             animation: fadeInUp 0.6s ease 0.4s both;
         }
 
-        .hero-trust {
+        /* Hero Video */
+        .hero-video {
+            animation: fadeInUp 0.6s ease 0.2s both;
+        }
+
+        .hero-video-container {
+            position: relative;
+            aspect-ratio: 16/10;
+            background: var(--navy-light);
+            border: 2px solid var(--navy-lighter);
+            border-radius: 20px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            padding: 16px 24px;
-            background: rgba(77, 168, 218, 0.1);
-            border: 1px solid rgba(77, 168, 218, 0.2);
-            border-radius: 12px;
-            animation: fadeInUp 0.6s ease 0.5s both;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
-        .hero-trust-icon {
-            font-size: 24px;
+        .hero-video-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(77, 168, 218, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
-        .hero-trust-text {
+        .video-placeholder {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .video-play-btn {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            font-size: 32px;
+            color: var(--navy-dark);
+            margin: 0 auto 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 40px rgba(77, 168, 218, 0.4);
+        }
+
+        .video-play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .video-text {
             font-size: 16px;
-            font-weight: 600;
+            color: var(--gray-500);
         }
 
-        .hero-trust-text span {
-            color: var(--blue-accent);
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-features {
+                justify-content: center;
+            }
+            .hero-ctas {
+                justify-content: center;
+            }
+            .hero-trust {
+                margin: 0 auto;
+            }
         }
 
         @keyframes fadeInUp {
@@ -353,24 +608,28 @@
             }
         }
 
-        /* ===== PROBLEM SECTION ===== */
+        /* ===== PROBLEM SECTION (LIGHT) ===== */
         .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
         }
 
-        .problem-card {
+        .section-light .problem-card,
+        .section-light-alt .problem-card {
             padding: 32px;
-            background: var(--navy-light);
-            border: 1px solid var(--navy-lighter);
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             border-radius: 16px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
         }
 
-        .problem-card:hover {
-            border-color: rgba(239, 68, 68, 0.3);
+        .section-light .problem-card:hover,
+        .section-light-alt .problem-card:hover {
+            border-color: var(--red);
             transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(239, 68, 68, 0.1);
         }
 
         .problem-icon {
@@ -379,7 +638,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(239, 68, 68, 0.1);
+            background: var(--red-light);
             border-radius: 12px;
             font-size: 28px;
             margin-bottom: 20px;
@@ -389,10 +648,11 @@
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 12px;
+            color: var(--gray-900);
         }
 
         .problem-text {
-            color: var(--gray-500);
+            color: var(--gray-600);
             font-size: 15px;
             line-height: 1.7;
         }
@@ -400,19 +660,63 @@
         .problem-transition {
             text-align: center;
             margin-top: 60px;
+        }
+
+        .problem-transition p {
             font-size: 24px;
             font-weight: 700;
             color: var(--blue-accent);
+            margin-bottom: 24px;
         }
 
-        /* ===== SOLUTION SECTION ===== */
+        .transition-arrow {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            color: var(--navy-dark);
+            animation: bounceDown 2s infinite;
+            box-shadow: 0 4px 24px rgba(77, 168, 218, 0.4);
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .transition-arrow:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 32px rgba(77, 168, 218, 0.6);
+            animation: none;
+        }
+
+        .transition-arrow svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        @keyframes bounceDown {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(8px);
+            }
+            60% {
+                transform: translateY(4px);
+            }
+        }
+
+        /* ===== SOLUTION SECTION (DARK) ===== */
         .solution-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 24px;
         }
 
-        .solution-card {
+        .section-dark .solution-card {
             padding: 36px;
             background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy) 100%);
             border: 1px solid var(--navy-lighter);
@@ -422,7 +726,7 @@
             overflow: hidden;
         }
 
-        .solution-card::before {
+        .section-dark .solution-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -434,12 +738,12 @@
             transition: opacity 0.3s ease;
         }
 
-        .solution-card:hover {
+        .section-dark .solution-card:hover {
             border-color: rgba(77, 168, 218, 0.3);
             transform: translateY(-4px);
         }
 
-        .solution-card:hover::before {
+        .section-dark .solution-card:hover::before {
             opacity: 1;
         }
 
@@ -461,14 +765,14 @@
             font-weight: 700;
             margin-bottom: 12px;
         }
-        
-        .solution-text {
+
+        .section-dark .solution-text {
             color: var(--gray-500);
             font-size: 15px;
             line-height: 1.7;
         }
-        
-        /* ===== LOAN TYPES SECTION ===== */
+
+        /* ===== LOAN TYPES SECTION (LIGHT) ===== */
         .loan-types-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -476,16 +780,19 @@
             margin-bottom: 40px;
         }
 
-        .loan-type-card {
+        .section-light .loan-type-card,
+        .section-light-alt .loan-type-card {
             padding: 28px 24px;
-            background: var(--navy-light);
-            border: 1px solid var(--navy-lighter);
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             border-radius: 16px;
             text-align: center;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
 
-        .loan-type-card:hover {
+        .section-light .loan-type-card:hover,
+        .section-light-alt .loan-type-card:hover {
             border-color: var(--blue-accent);
             transform: translateY(-4px);
             box-shadow: 0 8px 32px rgba(77, 168, 218, 0.15);
@@ -497,7 +804,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(77, 168, 218, 0.1);
+            background: var(--blue-pale);
             border-radius: 12px;
             font-size: 28px;
             margin: 0 auto 16px;
@@ -507,26 +814,27 @@
             font-size: 16px;
             font-weight: 700;
             line-height: 1.4;
+            color: var(--gray-900);
         }
 
         .loan-types-footer {
             text-align: center;
             font-size: 18px;
-            color: var(--gray-500);
+            color: var(--gray-600);
         }
 
         .loan-types-footer strong {
             color: var(--blue-accent);
         }
 
-        /* ===== HOW IT WORKS SECTION ===== */
+        /* ===== HOW IT WORKS SECTION (DARK) ===== */
         .steps-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             position: relative;
         }
-        
+
         .steps-container::before {
             content: '';
             position: absolute;
@@ -566,7 +874,7 @@
             margin-bottom: 16px;
         }
 
-        .step-text {
+        .section-dark .step-text {
             color: var(--gray-500);
             font-size: 15px;
             line-height: 1.7;
@@ -584,7 +892,7 @@
             }
         }
 
-        /* ===== FILTERS SECTION ===== */
+        /* ===== FILTERS SECTION (LIGHT) ===== */
         .filters-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -592,12 +900,14 @@
             align-items: center;
         }
 
-        .filters-visual {
-            background: var(--navy-light);
-            border: 1px solid var(--navy-lighter);
+        .section-light .filters-visual,
+        .section-light-alt .filters-visual {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             border-radius: 20px;
             padding: 32px;
             position: relative;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
         }
 
         .filters-visual::before {
@@ -605,11 +915,11 @@
             position: absolute;
             top: -12px;
             left: 32px;
-            background: var(--navy);
+            background: var(--blue-accent);
+            color: var(--white);
             padding: 4px 16px;
             font-size: 14px;
             font-weight: 600;
-            color: var(--blue-accent);
             border-radius: 100px;
         }
 
@@ -618,7 +928,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 16px 0;
-            border-bottom: 1px solid var(--navy-lighter);
+            border-bottom: 1px solid var(--gray-200);
         }
 
         .filter-item:last-child {
@@ -630,6 +940,7 @@
             align-items: center;
             gap: 12px;
             font-weight: 500;
+            color: var(--gray-800);
         }
 
         .filter-check {
@@ -638,7 +949,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(16, 185, 129, 0.2);
+            background: var(--green-light);
             border-radius: 6px;
             color: var(--green);
             font-size: 14px;
@@ -649,7 +960,7 @@
             font-weight: 600;
             font-size: 14px;
             padding: 6px 12px;
-            background: rgba(77, 168, 218, 0.1);
+            background: var(--blue-pale);
             border-radius: 6px;
         }
 
@@ -657,10 +968,12 @@
             font-size: 32px;
             font-weight: 800;
             margin-bottom: 20px;
+            color: var(--gray-900);
         }
 
-        .filters-content p {
-            color: var(--gray-500);
+        .section-light .filters-content p,
+        .section-light-alt .filters-content p {
+            color: var(--gray-600);
             font-size: 16px;
             line-height: 1.7;
             margin-bottom: 24px;
@@ -677,7 +990,7 @@
             gap: 12px;
             padding: 12px 0;
             font-size: 15px;
-            color: var(--gray-300);
+            color: var(--gray-700);
         }
 
         .filters-list-icon {
@@ -690,7 +1003,7 @@
             align-items: center;
             gap: 10px;
             padding: 16px 20px;
-            background: rgba(16, 185, 129, 0.1);
+            background: var(--green-light);
             border: 1px solid rgba(16, 185, 129, 0.3);
             border-radius: 12px;
         }
@@ -709,13 +1022,22 @@
             .filters-wrapper {
                 grid-template-columns: 1fr;
             }
+            
+            .filters-wrapper > .filters-visual {
+                order: 2;
+            }
+            
+            .filters-wrapper > .filters-content {
+                order: 1;
+            }
         }
 
-        /* ===== COMPARISON TABLE ===== */
+        /* ===== COMPARISON TABLE (LIGHT) ===== */
         .comparison-table-wrapper {
             overflow-x: auto;
             border-radius: 20px;
-            border: 1px solid var(--navy-lighter);
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
         }
 
         .comparison-table {
@@ -725,7 +1047,7 @@
         }
 
         .comparison-table thead {
-            background: var(--navy-light);
+            background: var(--off-white);
         }
 
         .comparison-table th {
@@ -735,7 +1057,8 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            border-bottom: 1px solid var(--navy-lighter);
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--gray-700);
         }
 
         .comparison-table th:first-child {
@@ -747,15 +1070,16 @@
         }
 
         .comparison-table th.highlight {
-            background: linear-gradient(135deg, rgba(77, 168, 218, 0.2) 0%, rgba(77, 168, 218, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(77, 168, 218, 0.15) 0%, rgba(77, 168, 218, 0.05) 100%);
             color: var(--blue-accent);
         }
 
         .comparison-table td {
             padding: 20px;
-            border-bottom: 1px solid var(--navy-lighter);
+            border-bottom: 1px solid var(--gray-200);
             font-size: 15px;
-            background: var(--navy);
+            background: var(--white);
+            color: var(--gray-700);
         }
 
         .comparison-table tr:last-child td {
@@ -764,7 +1088,7 @@
 
         .comparison-table td:first-child {
             font-weight: 600;
-            color: var(--gray-300);
+            color: var(--gray-800);
         }
 
         .comparison-table td.highlight {
@@ -784,8 +1108,70 @@
             color: var(--gray-500);
         }
 
-        /* ===== SOCIAL PROOF SECTION ===== */
-        .proof-container {
+        /* Mobile Comparison Cards (replaces table on small screens) */
+        .comparison-mobile {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table-wrapper {
+                display: none;
+            }
+            
+            .comparison-mobile {
+                display: block;
+            }
+            
+            .comparison-card {
+                background: var(--white);
+                border: 1px solid var(--gray-200);
+                border-radius: 16px;
+                margin-bottom: 16px;
+                overflow: hidden;
+            }
+            
+            .comparison-card-header {
+                padding: 16px 20px;
+                background: var(--off-white);
+                border-bottom: 1px solid var(--gray-200);
+                font-weight: 700;
+                font-size: 15px;
+                color: var(--gray-800);
+            }
+            
+            .comparison-card-header.leadpop {
+                background: linear-gradient(135deg, rgba(77, 168, 218, 0.15) 0%, rgba(77, 168, 218, 0.05) 100%);
+                color: var(--blue-accent);
+            }
+            
+            .comparison-card-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 14px 20px;
+                border-bottom: 1px solid var(--gray-100);
+                gap: 12px;
+            }
+            
+            .comparison-card-row:last-child {
+                border-bottom: none;
+            }
+            
+            .comparison-card-label {
+                font-size: 14px;
+                color: var(--gray-600);
+                flex-shrink: 0;
+            }
+            
+            .comparison-card-value {
+                font-size: 14px;
+                font-weight: 600;
+                text-align: right;
+            }
+        }
+
+        /* ===== SOCIAL PROOF SECTION (GRADIENT) ===== */
+        .section-gradient .proof-container {
             text-align: center;
         }
 
@@ -814,7 +1200,7 @@
             max-width: 600px;
             margin: 0 auto 48px;
             font-size: 18px;
-            color: var(--gray-500);
+            color: var(--gray-400);
             line-height: 1.7;
         }
 
@@ -830,8 +1216,8 @@
             align-items: center;
             gap: 12px;
             padding: 16px 24px;
-            background: var(--navy-light);
-            border: 1px solid var(--navy-lighter);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 12px;
         }
 
@@ -844,65 +1230,22 @@
             font-weight: 600;
         }
 
-        /* ===== VIDEO SECTION ===== */
-        .video-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .video-container {
-            position: relative;
-            aspect-ratio: 16/9;
-            background: var(--navy-light);
-            border: 1px solid var(--navy-lighter);
-            border-radius: 20px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .video-placeholder {
-            text-align: center;
-        }
-
-        .video-play-btn {
-            width: 100px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-blue);
-            border-radius: 50%;
-            font-size: 40px;
-            color: var(--navy-dark);
-            margin: 0 auto 24px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 60px rgba(77, 168, 218, 0.3);
-        }
-
-        .video-play-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .video-text {
-            font-size: 18px;
-            color: var(--gray-500);
-        }
-
-        /* ===== FAQ SECTION ===== */
+        /* ===== FAQ SECTION (LIGHT) ===== */
         .faq-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+            align-items: start;
         }
 
-        .faq-item {
-            background: var(--navy-light);
-            border: 1px solid var(--navy-lighter);
+        .section-light .faq-item,
+        .section-light-alt .faq-item {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             border-radius: 16px;
             overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            height: fit-content;
         }
 
         .faq-question {
@@ -914,25 +1257,28 @@
             transition: all 0.3s ease;
         }
 
-        .faq-question:hover {
-            background: rgba(77, 168, 218, 0.05);
+        .section-light .faq-question:hover,
+        .section-light-alt .faq-question:hover {
+            background: var(--off-white);
         }
 
         .faq-question h4 {
             font-size: 17px;
             font-weight: 600;
             padding-right: 20px;
+            color: var(--gray-900);
         }
 
-        .faq-icon {
-            width: 32px;
-            height: 32px;
+        .section-light .faq-icon,
+        .section-light-alt .faq-icon {
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--navy-lighter);
-            border-radius: 8px;
-            font-size: 18px;
+            background: var(--blue-pale);
+            border-radius: 10px;
+            font-size: 20px;
             color: var(--blue-accent);
             flex-shrink: 0;
             transition: transform 0.3s ease;
@@ -954,23 +1300,25 @@
 
         .faq-answer-inner {
             padding: 0 24px 24px;
-            color: var(--gray-500);
+            color: var(--gray-600);
             font-size: 15px;
             line-height: 1.7;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
             .faq-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        /* ===== FINAL CTA SECTION ===== */
+        /* ===== FINAL CTA SECTION (DARK) ===== */
         .final-cta {
             text-align: center;
             padding: 120px 0;
             position: relative;
             overflow: hidden;
+            background: var(--navy);
+            color: var(--white);
         }
 
         .final-cta::before {
@@ -1010,11 +1358,12 @@
             color: var(--gray-500);
         }
 
-        /* ===== FOOTER ===== */
+        /* ===== FOOTER (DARK) ===== */
         footer {
-            background: var(--navy);
+            background: var(--navy-dark);
             border-top: 1px solid var(--navy-lighter);
             padding: 48px 0;
+            color: var(--white);
         }
 
         .footer-inner {
@@ -1088,8 +1437,8 @@
     <!-- HEADER -->
     <header>
         <div class="container">
-        <div class="header-inner">
-            <a href="#" class="logo">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
                     <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
                         <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
@@ -1097,113 +1446,156 @@
                     </svg>
                     <span class="logo-text">LeadPop</span>
                 </a>
-                <a href="#book-call" class="btn btn-primary nav-cta">Book a Call</a>
+                <nav class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="book-call.html" class="btn btn-primary nav-cta">Get Your Lead Projection</a>
+                </nav>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
-    
-    <!-- HERO SECTION -->
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" onclick="closeMobileMenu()"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar">
+        <div class="mobile-sidebar-content">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="book-call.html" class="btn btn-primary mobile-sidebar-cta">Get Your Lead Projection</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION (DARK) - With Video -->
     <section class="hero">
         <div class="container">
+            <div class="hero-grid">
                 <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="hero-badge-dot"></span>
-                    <span class="hero-badge-text">Now Accepting Business Loan Partners</span>
+                    <div class="hero-proof-badge">
+                        <span class="hero-proof-icon">💰</span>
+                        <span class="hero-proof-text"><span>$150M+</span> Ad Spend Managed in 5 Years</span>
                     </div>
                     
-                <h1 class="hero-title">
-                    Exclusive Business Loan Leads.<br>
-                    <span class="hero-title-highlight">You Only Pay for Results.</span>
-                </h1>
-                
-                <p class="hero-subtitle">
-                    We absorb all ad spend risk. You get pre-qualified, OTP-verified leads delivered straight to your CRM — filtered to your exact lending criteria.
-                </p>
-                
-                <div class="hero-features">
-                    <div class="hero-feature">
-                        <span class="hero-feature-icon">✓</span>
-                        <span>100% Exclusive Leads</span>
+                    <h1 class="hero-title">
+                        Exclusive Business Loan Leads.<br>
+                        <span class="hero-title-highlight">You Only Pay for Results.</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        We absorb all ad spend risk. You get pre-qualified, OTP-verified leads delivered straight to your CRM — filtered to your exact lending criteria.
+                    </p>
+                    
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <span class="hero-feature-icon">✓</span>
+                            <span>100% Exclusive</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="hero-feature-icon">✓</span>
+                            <span>Zero Upfront Cost</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="hero-feature-icon">✓</span>
+                            <span>Custom Filters</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="hero-feature-icon">✓</span>
+                            <span>Free Replacements</span>
+                        </div>
                     </div>
-                    <div class="hero-feature">
-                        <span class="hero-feature-icon">✓</span>
-                        <span>Zero Upfront Cost</span>
-                    </div>
-                    <div class="hero-feature">
-                        <span class="hero-feature-icon">✓</span>
-                        <span>Custom Qualification Filters</span>
-                        </div>
-                    <div class="hero-feature">
-                        <span class="hero-feature-icon">✓</span>
-                        <span>Free Replacements</span>
-                        </div>
-                        </div>
-                
-                <div class="hero-ctas">
-                    <a href="#book-call" class="btn btn-primary">Book Your Strategy Call →</a>
-                    <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
-                        </div>
-                
-                <div class="hero-trust">
-                    <span class="hero-trust-icon">💰</span>
-                    <span class="hero-trust-text"><span>$150M+</span> Ad Spend Managed in 5 Years</span>
+                    
+                    <div class="hero-ctas">
+                        <a href="book-call.html" class="btn btn-primary">Get Your Lead Projection →</a>
+                        <a href="how-it-works.html" class="btn btn-secondary">Learn More</a>
                     </div>
                 </div>
+                
+                <div class="hero-video">
+                    <div class="hero-video-container">
+                        <div class="video-placeholder">
+                            <div class="video-play-btn">▶</div>
+                            <p class="video-text">Watch How It Works</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- PROBLEM SECTION -->
-    <section class="section section-alt">
+
+    <!-- PROBLEM SECTION (LIGHT) -->
+    <section class="section section-light">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">The Problem</span>
+                <span class="section-label section-label-light">The Problem</span>
                 <h2 class="section-title">Stop Burning Budget on Leads That Don't Close</h2>
                 <p class="section-subtitle">If you're funding business loans, you know the struggle. Most lead sources are broken.</p>
-                    </div>
-                    
+            </div>
+            
             <div class="problem-grid">
                 <div class="problem-card fade-in">
                     <div class="problem-icon">🔄</div>
                     <h3 class="problem-title">Shared Leads</h3>
                     <p class="problem-text">By the time you call, three other lenders already did. You're competing for attention instead of closing deals.</p>
-                        </div>
-                        
+                </div>
+                
                 <div class="problem-card fade-in">
                     <div class="problem-icon">💸</div>
                     <h3 class="problem-title">Retainer Agencies</h3>
                     <p class="problem-text">$5K-$10K/month with zero guaranteed results. You pay whether the campaigns work or not.</p>
-                        </div>
-                        
+                </div>
+                
                 <div class="problem-card fade-in">
                     <div class="problem-icon">📉</div>
                     <h3 class="problem-title">Aged Lead Lists</h3>
                     <p class="problem-text">Contacts who applied weeks ago and already moved on. You're chasing ghosts with dead phone numbers.</p>
-                        </div>
-                        
+                </div>
+                
                 <div class="problem-card fade-in">
                     <div class="problem-icon">❌</div>
                     <h3 class="problem-title">Unqualified Prospects</h3>
-                    <p class="problem-text">Sub-600 credit scores, $50K revenue, startups with no history — leads that will never fund.</p>
+                    <p class="problem-text">Sub-600 credit scores, $50K revenue, startups with no history — leads that will never fund and waste your closers' time.</p>
                 </div>
                 
                 <div class="problem-card fade-in">
                     <div class="problem-icon">🎲</div>
                     <h3 class="problem-title">All the Risk on You</h3>
                     <p class="problem-text">You pay for ads, you pay the agency, you pay per lead — regardless of whether any of it converts.</p>
-                        </div>
                 </div>
+                
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">⏱️</div>
+                    <h3 class="problem-title">Slow to Scale</h3>
+                    <p class="problem-text">Building lead gen capacity takes months of testing, optimization, and budget. Meanwhile, your sales team is waiting for pipeline.</p>
+                </div>
+            </div>
             
-            <p class="problem-transition fade-in">There's a smarter way to scale your pipeline →</p>
+            <div class="problem-transition fade-in">
+                <p>There's a smarter way to scale your pipeline</p>
+                <a href="#solution" class="transition-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12l7 7 7-7"/>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
-    
-    <!-- SOLUTION SECTION -->
-    <section class="section">
+
+    <!-- SOLUTION SECTION (DARK) -->
+    <section id="solution" class="section section-dark">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">The Solution</span>
-                <h2 class="section-title">Your Leads. Your Criteria. <span class="text-blue">Our Risk.</span></h2>
-                <p class="section-subtitle">We handle everything — ad spend, campaigns, verification. You only pay when qualified leads hit your CRM.</p>
+                <h2 class="section-title">Your Leads. Your Criteria.<br><span class="text-blue">Our Risk.</span></h2>
+                <p class="section-subtitle">We handle everything — ad spend, campaigns, verification. You only pay when we deliver qualified leads.</p>
             </div>
             
             <div class="solution-grid">
@@ -1211,25 +1603,25 @@
                     <div class="solution-icon">🎯</div>
                     <h3 class="solution-title">100% Exclusive</h3>
                     <p class="solution-text">Every lead is yours alone. We never sell the same prospect to multiple lenders. Your pipeline stays competitive.</p>
-                            </div>
+                </div>
                 
                 <div class="solution-card fade-in">
                     <div class="solution-icon">💰</div>
                     <h3 class="solution-title">We Cover Ad Spend</h3>
                     <p class="solution-text">We invest in the campaigns. You only pay when a qualified lead hits your CRM. Zero financial risk on your end.</p>
-                            </div>
+                </div>
                 
                 <div class="solution-card fade-in">
                     <div class="solution-icon">⚙️</div>
                     <h3 class="solution-title">Your Filters, Your Rules</h3>
                     <p class="solution-text">Set the criteria that matter: credit score minimums, revenue thresholds, years in business, loan amounts, geography — we deliver to spec.</p>
-                            </div>
+                </div>
                 
                 <div class="solution-card fade-in">
                     <div class="solution-icon">🤖</div>
                     <h3 class="solution-title">AI-Powered Optimization</h3>
                     <p class="solution-text">Our campaigns learn and improve continuously. The longer we run together, the better your lead quality gets.</p>
-                            </div>
+                </div>
                 
                 <div class="solution-card fade-in">
                     <div class="solution-icon">✅</div>
@@ -1245,15 +1637,15 @@
             </div>
         </div>
     </section>
-    
-    <!-- LOAN TYPES SECTION -->
-    <section class="section section-alt">
+
+    <!-- LOAN TYPES SECTION (LIGHT ALT) -->
+    <section class="section section-light-alt">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">What We Cover</span>
+                <span class="section-label section-label-light">What We Cover</span>
                 <h2 class="section-title">Leads for Every Loan Product You Fund</h2>
                 <p class="section-subtitle">Whether you're closing MCAs, SBA deals, or equipment financing — we generate leads tailored to your product mix.</p>
-                </div>
+            </div>
             
             <div class="loan-types-grid">
                 <div class="loan-type-card fade-in">
@@ -1274,22 +1666,22 @@
                 <div class="loan-type-card fade-in">
                     <div class="loan-type-icon">💳</div>
                     <h3 class="loan-type-title">Lines of Credit</h3>
-            </div>
+                </div>
                 
                 <div class="loan-type-card fade-in">
                     <div class="loan-type-icon">📄</div>
                     <h3 class="loan-type-title">Invoice Factoring</h3>
-        </div>
+                </div>
                 
                 <div class="loan-type-card fade-in">
                     <div class="loan-type-icon">📊</div>
                     <h3 class="loan-type-title">Term Loans</h3>
-            </div>
-            
+                </div>
+                
                 <div class="loan-type-card fade-in">
                     <div class="loan-type-icon">💵</div>
                     <h3 class="loan-type-title">Working Capital</h3>
-                    </div>
+                </div>
                 
                 <div class="loan-type-card fade-in">
                     <div class="loan-type-icon">🏢</div>
@@ -1304,46 +1696,15 @@
                 <div class="loan-type-card fade-in">
                     <div class="loan-type-icon">🚀</div>
                     <h3 class="loan-type-title">Startup & Microloans</h3>
-                    </div>
                 </div>
-                
+            </div>
+            
             <p class="loan-types-footer fade-in">...and more. <strong>Whatever you fund, we'll deliver leads that match your buy box.</strong></p>
         </div>
     </section>
-    
-    <!-- HOW IT WORKS SECTION -->
-    <section id="how-it-works" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">How It Works</span>
-                <h2 class="section-title">From Setup to Funded Deals in 3 Steps</h2>
-                <p class="section-subtitle">We've simplified the process so you can focus on what you do best — closing loans.</p>
-            </div>
-            
-            <div class="steps-container">
-                <div class="step fade-in">
-                    <div class="step-number">01</div>
-                    <h3 class="step-title">Define Your Buy Box</h3>
-                    <p class="step-text">Tell us exactly what you're looking for: credit score minimums, revenue requirements, loan size range, geographic targets, industry preferences. We build campaigns around your ideal borrower profile.</p>
-                </div>
-                
-                <div class="step fade-in">
-                    <div class="step-number">02</div>
-                    <h3 class="step-title">We Handle Everything</h3>
-                    <p class="step-text">Our team launches targeted campaigns, absorbs all ad spend, and filters every lead through OTP verification and your custom criteria. AI optimization improves quality over time.</p>
-                </div>
-                
-                <div class="step fade-in">
-                    <div class="step-number">03</div>
-                    <h3 class="step-title">Leads Flow to Your CRM</h3>
-                    <p class="step-text">Qualified leads are delivered in real-time to Salesforce, HubSpot, Velocify, Google Sheets — wherever your team works. You call, you close, you grow.</p>
-                    </div>
-                    </div>
-                </div>
-    </section>
 
-    <!-- FILTERS SECTION -->
-    <section class="section section-alt">
+    <!-- FILTERS SECTION (LIGHT) -->
+    <section class="section section-light">
         <div class="container">
             <div class="filters-wrapper">
                 <div class="filters-visual fade-in">
@@ -1367,7 +1728,7 @@
                             Years in Business
                         </span>
                         <span class="filter-value">2+ years</span>
-                </div>
+                    </div>
                     <div class="filter-item">
                         <span class="filter-label">
                             <span class="filter-check">✓</span>
@@ -1414,12 +1775,12 @@
             </div>
         </div>
     </section>
-    
-    <!-- COMPARISON TABLE SECTION -->
-    <section class="section">
+
+    <!-- COMPARISON TABLE SECTION (LIGHT ALT) -->
+    <section class="section section-light-alt">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Why LeadPop</span>
+                <span class="section-label section-label-light">Why LeadPop</span>
                 <h2 class="section-title">How We Stack Up</h2>
                 <p class="section-subtitle">See why lenders are switching from traditional agencies and shared lead providers.</p>
             </div>
@@ -1450,7 +1811,7 @@
                         <tr>
                             <td>Lead Exclusivity</td>
                             <td class="highlight"><span class="check-yes">✓ 100% exclusive</span></td>
-                            <td><span class="check-partial">⚠ Varies</span></td>
+                            <td><span class="check-partial">⚠ Varies by contract</span></td>
                             <td><span class="check-no">✗ Sold to 3-5+ buyers</span></td>
                         </tr>
                         <tr>
@@ -1466,16 +1827,16 @@
                             <td><span class="check-no">✗ No guarantee</span></td>
                         </tr>
                         <tr>
-                            <td>Delivery Speed</td>
-                            <td class="highlight"><span class="check-yes">✓ Real-time to your CRM</span></td>
+                            <td>Real-Time Delivery</td>
+                            <td class="highlight"><span class="check-yes">✓ Instant to your CRM</span></td>
                             <td><span class="check-partial">⚠ Weekly/monthly reports</span></td>
                             <td><span class="check-partial">⚠ Batch delivery</span></td>
                         </tr>
                         <tr>
-                            <td>AI Optimization</td>
-                            <td class="highlight"><span class="check-yes">✓ Continuous improvement</span></td>
-                            <td><span class="check-no">✗ Manual optimization</span></td>
-                            <td><span class="check-no">✗ Static campaigns</span></td>
+                            <td>Contact Verification</td>
+                            <td class="highlight"><span class="check-yes">✓ SMS OTP verified</span></td>
+                            <td><span class="check-partial">⚠ Varies</span></td>
+                            <td><span class="check-no">✗ Often unverified</span></td>
                         </tr>
                         <tr>
                             <td>Upfront Costs</td>
@@ -1486,18 +1847,129 @@
                     </tbody>
                 </table>
             </div>
+            
+            <!-- Mobile Comparison Cards -->
+            <div class="comparison-mobile fade-in">
+                <div class="comparison-card">
+                    <div class="comparison-card-header leadpop">LeadPop</div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Pricing</span>
+                        <span class="comparison-card-value check-yes">✓ Pay per qualified lead</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Who Pays for Ads</span>
+                        <span class="comparison-card-value check-yes">✓ We do</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Lead Exclusivity</span>
+                        <span class="comparison-card-value check-yes">✓ 100% exclusive</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Custom Filters</span>
+                        <span class="comparison-card-value check-yes">✓ Full control</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Quality Guarantee</span>
+                        <span class="comparison-card-value check-yes">✓ Free replacement</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Delivery</span>
+                        <span class="comparison-card-value check-yes">✓ Real-time to CRM</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Verification</span>
+                        <span class="comparison-card-value check-yes">✓ SMS OTP verified</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Upfront Costs</span>
+                        <span class="comparison-card-value check-yes">✓ $0</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-card">
+                    <div class="comparison-card-header">Marketing Retainer Agency</div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Pricing</span>
+                        <span class="comparison-card-value check-no">✗ $3K-$10K+/month</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Who Pays for Ads</span>
+                        <span class="comparison-card-value check-no">✗ You do</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Lead Exclusivity</span>
+                        <span class="comparison-card-value check-partial">⚠ Varies</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Custom Filters</span>
+                        <span class="comparison-card-value check-partial">⚠ Limited</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Quality Guarantee</span>
+                        <span class="comparison-card-value check-no">✗ No guarantee</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Delivery</span>
+                        <span class="comparison-card-value check-partial">⚠ Weekly reports</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Verification</span>
+                        <span class="comparison-card-value check-partial">⚠ Varies</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Upfront Costs</span>
+                        <span class="comparison-card-value check-no">✗ Setup + retainer</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-card">
+                    <div class="comparison-card-header">Shared Lead Providers</div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Pricing</span>
+                        <span class="comparison-card-value check-partial">⚠ Per lead (shared)</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Who Pays for Ads</span>
+                        <span class="comparison-card-value check-yes">✓ They do</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Lead Exclusivity</span>
+                        <span class="comparison-card-value check-no">✗ Sold 3-5+ times</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Custom Filters</span>
+                        <span class="comparison-card-value check-partial">⚠ Basic only</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Quality Guarantee</span>
+                        <span class="comparison-card-value check-no">✗ No guarantee</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Delivery</span>
+                        <span class="comparison-card-value check-partial">⚠ Batch delivery</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Verification</span>
+                        <span class="comparison-card-value check-no">✗ Often unverified</span>
+                    </div>
+                    <div class="comparison-card-row">
+                        <span class="comparison-card-label">Upfront Costs</span>
+                        <span class="comparison-card-value check-partial">⚠ Varies</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    
-    <!-- SOCIAL PROOF SECTION -->
-    <section class="section section-alt">
+
+    <!-- SOCIAL PROOF SECTION (GRADIENT) -->
+    <section class="section section-gradient">
         <div class="container">
             <div class="proof-container">
                 <div class="proof-stat fade-in">
                     <div class="proof-number">$150M+</div>
                     <div class="proof-label">Ad Spend Managed in 5 Years</div>
-            </div>
-            
+                </div>
+                
                 <p class="proof-text fade-in">
                     Our team has scaled lead generation campaigns across multiple industries — generating millions in closed revenue for our clients. Now we're bringing that same performance-driven approach to business lending.
                 </p>
@@ -1510,7 +1982,7 @@
                     <div class="proof-badge">
                         <span class="proof-badge-icon">🔌</span>
                         <span class="proof-badge-text">All Major CRMs</span>
-                        </div>
+                    </div>
                     <div class="proof-badge">
                         <span class="proof-badge-icon">🤖</span>
                         <span class="proof-badge-text">AI-Powered</span>
@@ -1518,37 +1990,17 @@
                     <div class="proof-badge">
                         <span class="proof-badge-icon">✅</span>
                         <span class="proof-badge-text">OTP Verified</span>
-                </div>
-                    </div>
-                        </div>
-                    </div>
-    </section>
-
-    <!-- VIDEO SECTION -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">See It In Action</span>
-                <h2 class="section-title">How LeadPop Works</h2>
-                <p class="section-subtitle">Watch our quick overview to see how we deliver exclusive, qualified business loan leads to your pipeline.</p>
-                </div>
-                
-            <div class="video-wrapper fade-in">
-                <div class="video-container">
-                    <div class="video-placeholder">
-                        <div class="video-play-btn">▶</div>
-                        <p class="video-text">Video Coming Soon</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- FAQ SECTION -->
-    <section class="section section-alt">
+
+    <!-- FAQ SECTION (LIGHT) -->
+    <section class="section section-light">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">FAQ</span>
+                <span class="section-label section-label-light">FAQ</span>
                 <h2 class="section-title">Questions? We've Got Answers.</h2>
             </div>
             
@@ -1621,38 +2073,98 @@
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
                             Once campaigns are live, leads are delivered in real-time directly to your CRM. No waiting, no batching — leads flow as they're generated.
+                        </div>
                     </div>
                 </div>
-            </div>
                 
                 <div class="faq-item fade-in">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h4>Do you cover the entire US?</h4>
                         <span class="faq-icon">+</span>
-            </div>
+                    </div>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
                             Yes — we can target any state, region, or go nationwide based on your preferences. You tell us where you lend, we deliver leads there.
+                        </div>
                     </div>
                 </div>
-                    </div>
-                    
+                
                 <div class="faq-item fade-in">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h4>How is pricing structured?</h4>
                         <span class="faq-icon">+</span>
-                </div>
+                    </div>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
                             Pricing varies based on loan type, qualification criteria, and volume. Book a call and we'll build a custom quote based on your specific needs and goals.
-            </div>
-        </div>
+                        </div>
                     </div>
                 </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How does SMS OTP verification work?</h4>
+                        <span class="faq-icon">+</span>
                     </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            When a prospect fills out our form, we send a one-time passcode via SMS to their phone number. They must enter this code to complete the submission. This confirms the phone number is real, active, and belongs to the person filling out the form — eliminating fake numbers and bot submissions.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>What qualifies for a lead replacement?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            If a lead clearly doesn't meet your agreed-upon criteria — wrong contact info, doesn't match your credit score minimum, revenue threshold, or other filters — just flag it and we'll replace it at no charge. We review flagged leads quickly and don't make you jump through hoops.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>Can you target specific industries or business types?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Yes. If you specialize in certain verticals — restaurants, trucking, medical practices, construction, etc. — we can target those industries specifically. We can also exclude industries you don't fund.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>What data fields do you capture on each lead?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Standard fields include: business name, owner name, phone, email, estimated credit score range, annual revenue, years in business, loan amount requested, and use of funds. We can customize the form to capture additional fields you need for your underwriting process.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How do you generate the leads?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            We run targeted paid advertising campaigns across multiple platforms to reach business owners actively seeking financing. Our campaigns are optimized specifically for business loan intent, not recycled from other industries. We handle all creative, targeting, and optimization in-house.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- FINAL CTA SECTION -->
+    <!-- FINAL CTA SECTION (DARK) -->
     <section id="book-call" class="final-cta">
         <div class="container">
             <div class="final-cta-content">
@@ -1660,15 +2172,15 @@
                     Ready to Fill Your Pipeline with<br><span class="text-blue">Exclusive, Qualified Leads?</span>
                 </h2>
                 <p class="final-cta-subtitle fade-in">
-                    Book a strategy call and we'll show you exactly how LeadPop can deliver the business loan leads your team needs to hit quota.
+                    Get your custom lead projection and see exactly how many qualified leads we can deliver for your business.
                 </p>
-                <a href="#" class="btn btn-primary fade-in" style="font-size: 18px; padding: 20px 40px;">Schedule Your Call Now →</a>
-                <p class="final-cta-trust fade-in">No retainers. No upfront fees. You only pay for leads that meet your criteria.</p>
+                <a href="book-call.html" class="btn btn-primary fade-in" style="font-size: 18px; padding: 20px 40px;">Get Your Lead Projection →</a>
+                <p class="final-cta-trust fade-in">No retainers. No upfront costs. You only pay for leads that meet your criteria.</p>
             </div>
         </div>
     </section>
-    
-    <!-- FOOTER -->
+
+    <!-- FOOTER (DARK) -->
     <footer>
         <div class="container">
             <div class="footer-inner">
@@ -1682,16 +2194,53 @@
                 </a>
                 
                 <div class="footer-links">
+                    <a href="about-v2.html">About Us</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="book-call.html">Book a Call</a>
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
                 </div>
                 
                 <p class="footer-copyright">© 2026 LeadPop. All rights reserved.</p>
-                </div>
             </div>
+        </div>
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.mobile-sidebar');
+            const overlay = document.querySelector('.mobile-overlay');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            menuBtn.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (sidebar.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeMobileMenu() {
+            const sidebar = document.querySelector('.mobile-sidebar');
+            const overlay = document.querySelector('.mobile-overlay');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            menuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-sidebar a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
         // FAQ Toggle
         function toggleFaq(element) {
             const faqItem = element.parentElement;
