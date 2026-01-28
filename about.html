@@ -1021,7 +1021,16 @@
         }
 
         /* ===== ANIMATIONS ===== */
-        /* Removed animations for better UX */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -1084,7 +1093,7 @@
     <!-- MISSION SECTION -->
     <section class="mission-section">
         <div class="container">
-            <div class="mission-wrapper">
+            <div class="mission-wrapper fade-in">
                 <div class="mission-content">
                     <h2>Our Mission</h2>
                     <p class="mission-statement">"We only get paid when you get results."</p>
@@ -1115,14 +1124,14 @@
     <!-- STORY SECTION -->
     <section class="story-section">
         <div class="container">
-            <div class="story-header">
+            <div class="story-header fade-in">
                 <span class="story-label">Our Story</span>
                 <h2>From Pressure Washing to Pay-Per-Lead</h2>
                 <p>LeadPop didn't start in a boardroom. It started with real experience running businesses and generating leads that actually convert.</p>
             </div>
             
             <div class="story-timeline">
-                <div class="timeline-item">
+                <div class="timeline-item fade-in">
                     <div class="timeline-dot">🧹</div>
                     <div class="timeline-content">
                         <h3>Started a Pressure Washing Company</h3>
@@ -1130,7 +1139,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item">
+                <div class="timeline-item fade-in">
                     <div class="timeline-dot">🏠</div>
                     <div class="timeline-content">
                         <h3>Founded Restoration Growth Partners</h3>
@@ -1138,7 +1147,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item">
+                <div class="timeline-item fade-in">
                     <div class="timeline-dot">💡</div>
                     <div class="timeline-content">
                         <h3>Chose a Better Model</h3>
@@ -1146,7 +1155,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item">
+                <div class="timeline-item fade-in">
                     <div class="timeline-dot">🚀</div>
                     <div class="timeline-content">
                         <h3>LeadPop is Born</h3>
@@ -1161,7 +1170,7 @@
     <section class="why-section">
         <div class="container">
             <div class="why-wrapper">
-                <div class="why-content">
+                <div class="why-content fade-in">
                     <h2>Why This Model Exists</h2>
                     <p>
                         Here's the truth about most marketing agencies: <strong>they get paid whether you succeed or not.</strong>
@@ -1189,7 +1198,7 @@
                     </p>
                 </div>
                 
-                <div class="why-cards">
+                <div class="why-cards fade-in">
                     <div class="why-card">
                         <div class="why-card-icon">💸</div>
                         <h4>We Cover Ad Spend</h4>
@@ -1218,14 +1227,14 @@
     <!-- TEAM SECTION -->
     <section class="team-section">
         <div class="container">
-            <div class="team-header">
+            <div class="team-header fade-in">
                 <span class="team-label">Our Team</span>
                 <h2>The People Behind the Leads</h2>
                 <p>A dedicated team of client success managers, paid ads specialists, and campaign strategists — all focused on one thing: delivering leads that convert.</p>
             </div>
             
             <div class="team-grid">
-                <div class="team-card featured">
+                <div class="team-card fade-in featured">
                     <div class="team-photo">
                         <img src="Photos/likes1.png" alt="James LaRosa - Founder & CEO">
                     </div>
@@ -1234,7 +1243,7 @@
                     <p class="team-bio">From running a service business to building a 60+ client agency, James saw both sides of lead gen. LeadPop exists because he believed clients shouldn't carry all the risk — so we cover ad spend upfront and only charge for leads that deliver. When your leads convert, you buy more. That's how we grow — by actually being good at this.</p>
                 </div>
                 
-                <div class="team-card">
+                <div class="team-card fade-in">
                     <div class="team-photo">
                         <img src="Photos/isaac-.jpeg" alt="Isaac Luce - Paid Ads Director">
                     </div>
@@ -1243,7 +1252,7 @@
                     <p class="team-bio">Leading campaign strategy and optimization across Meta, Google/YouTube, and TikTok. Isaac's managed over $150M+ in ad spend and knows what converts. He's always testing, always optimizing — because better campaigns mean better leads for you and more growth for us both.</p>
                 </div>
                 
-                <div class="team-card">
+                <div class="team-card fade-in">
                     <div class="team-photo">
                         <img src="Photos/paola .jpeg" alt="Paola Vega - Client Success Manager">
                     </div>
@@ -1252,7 +1261,7 @@
                     <p class="team-bio">Your dedicated point of contact for everything LeadPop. Paola knows your business, your criteria, and your goals — and makes sure we deliver.</p>
                 </div>
                 
-                <div class="team-card">
+                <div class="team-card fade-in">
                     <div class="team-photo">
                         <img src="Photos/dylan-purcell.png" alt="Dylan Purcell - Sales Director">
                     </div>
@@ -1267,44 +1276,44 @@
     <!-- VALUES SECTION -->
     <section class="values-section">
         <div class="container">
-            <div class="values-header">
+            <div class="values-header fade-in">
                 <span class="values-label">Our Values</span>
                 <h2>What We Stand For</h2>
                 <p>These aren't corporate buzzwords — they're the principles we actually run the business on.</p>
             </div>
             
             <div class="values-grid">
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <div class="value-icon">💰</div>
                     <h3>Skin in the Game</h3>
                     <p>We invest our own money in campaigns before you pay a dime. If we don't deliver, we don't get paid. Simple as that.</p>
                 </div>
                 
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <div class="value-icon">📊</div>
                     <h3>Results Over Promises</h3>
                     <p>No retainers, no fluff, no vanity metrics. You pay for leads that meet your criteria — that's the only metric that matters.</p>
                 </div>
                 
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <div class="value-icon">🔍</div>
                     <h3>Radical Transparency</h3>
                     <p>Clear pricing, real metrics, no hidden fees. You always know exactly what you're getting and what you're paying for.</p>
                 </div>
                 
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <div class="value-icon">✅</div>
                     <h3>Quality Over Quantity</h3>
                     <p>Every lead is exclusive and OTP-verified. We'd rather send fewer leads that close than flood you with junk.</p>
                 </div>
                 
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <div class="value-icon">🤝</div>
                     <h3>Partnership, Not Vendor</h3>
                     <p>We work alongside your team to hit your goals. Your success is our success — that's not a tagline, it's our business model.</p>
                 </div>
                 
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <div class="value-icon">🚀</div>
                     <h3>Continuous Improvement</h3>
                     <p>Our AI-powered campaigns learn and optimize constantly. The longer we work together, the better your results get.</p>
@@ -1386,6 +1395,24 @@
         // Close mobile menu when clicking a link
         document.querySelectorAll('.mobile-sidebar a').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
         });
 
         // Smooth scroll for anchor links
