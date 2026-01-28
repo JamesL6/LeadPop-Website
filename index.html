@@ -1399,6 +1399,94 @@
             }
         }
 
+        /* ===== FOUNDER MESSAGE SECTION ===== */
+        .founder-message-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .founder-message-content {
+            max-width: 600px;
+        }
+
+        .founder-message-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 28px;
+            color: var(--gray-900);
+        }
+
+        .founder-message-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: 20px;
+        }
+
+        .founder-signature {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 40px 0 32px;
+            padding-top: 32px;
+            border-top: 2px solid var(--gray-200);
+        }
+
+        .founder-signature-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--blue-accent);
+        }
+
+        .founder-signature-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .founder-signature-title {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        .founder-photo-wrapper {
+            position: relative;
+        }
+
+        .founder-photo {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border: 1px solid var(--gray-200);
+        }
+
+        @media (max-width: 900px) {
+            .founder-message-wrapper {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                text-align: center;
+            }
+
+            .founder-message-content {
+                max-width: 100%;
+            }
+
+            .founder-signature {
+                justify-content: center;
+            }
+
+            .founder-photo {
+                margin: 0 auto;
+            }
+        }
+
         /* ===== FINAL CTA SECTION (DARK) ===== */
         .final-cta {
             text-align: center;
@@ -2316,6 +2404,40 @@
                             We run targeted paid advertising campaigns across multiple platforms to reach business owners actively seeking financing. Our campaigns are optimized specifically for business loan intent, not recycled from other industries. We handle all creative, targeting, and optimization in-house.
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER MESSAGE SECTION (LIGHT ALT) -->
+    <section class="section section-light-alt">
+        <div class="container">
+            <div class="founder-message-wrapper">
+                <div class="founder-message-content fade-in">
+                    <span class="section-label section-label-light">A Message From Our Founder</span>
+                    <h2 class="founder-message-title">Most Lead Providers Don't Understand Your Business. <span class="text-blue">We Do.</span></h2>
+                    
+                    <p>I've spent years working with lenders and brokers who were frustrated with bad leads, shared prospects, and agencies that didn't deliver. The pay-per-lead model exists — but nobody was doing it right.</p>
+                    
+                    <p>So we built LeadPop differently. We don't get paid unless you get qualified leads. We don't resell your prospects to competitors. And we don't make you absorb the ad spend risk while we collect a retainer.</p>
+                    
+                    <p>Our entire business model is built around one simple idea: <strong>your success is our success</strong>. If the leads don't convert, we don't make money. That alignment changes everything.</p>
+                    
+                    <p>We're not here to sell you traffic or vanity metrics. We're here to help you close more deals. That's it.</p>
+                    
+                    <div class="founder-signature">
+                        <img src="Photos/james-headshot-square.png" alt="James LaRosa" class="founder-signature-photo">
+                        <div class="founder-signature-text">
+                            <div class="founder-signature-name">James LaRosa</div>
+                            <div class="founder-signature-title">Owner, LeadPop</div>
+                        </div>
+                    </div>
+                    
+                    <a href="book-call.html" class="btn btn-primary">Get Your Lead Projection →</a>
+                </div>
+                
+                <div class="founder-photo-wrapper fade-in">
+                    <img src="Photos/james-headshot-square.png" alt="James LaRosa - Founder of LeadPop" class="founder-photo">
                 </div>
             </div>
         </div>
