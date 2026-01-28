@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 09 - Transparency / How We Calculate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --bg-warm-gray: #f5f3f0;
+            --primary: #2d5a4e;
+            --accent-gold-dark: #a68519;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --border-light: #e8e6e3;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --radius-lg: 20px;
+            --radius-sm: 8px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-white);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        
+        h2, h4 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            color: var(--text-dark);
+        }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h4 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1.1rem; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-primary { color: var(--primary); }
+
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-alt {
+            background: var(--bg-white);
+        }
+
+        /* TRANSPARENCY */
+        .transparency-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .transparency-content h2 { margin-bottom: 14px; }
+        
+        .transparency-content > p {
+            color: var(--text-body);
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+        
+        .formula-steps {
+            list-style: none;
+        }
+        
+        .formula-steps li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+        
+        .step-bullet {
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #fff;
+            font-size: 0.65rem;
+        }
+        
+        .step-bullet.result {
+            background: var(--accent-gold-dark);
+        }
+        
+        .cash-box {
+            background: var(--bg-warm-gray);
+            border-left: 4px solid var(--primary);
+            padding: 18px;
+            margin-top: 24px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        
+        .cash-box h4 {
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+        
+        .cash-box p {
+            color: var(--text-body);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .formula-visual {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .formula-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .formula-row:last-child {
+            border-bottom: none;
+            background: linear-gradient(135deg, rgba(45, 90, 78, 0.08), rgba(45, 90, 78, 0.03));
+        }
+        
+        .formula-row span:first-child {
+            color: var(--text-body);
+            font-size: 0.95rem;
+        }
+        
+        .formula-row span:last-child {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        
+        .formula-row:last-child span {
+            color: var(--primary);
+            font-size: 1.15rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- TRANSPARENCY -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="transparency-grid">
+                <div class="transparency-content">
+                    <h2>How We <span class="text-primary">Calculate Your Offer</span></h2>
+                    <p>We believe in complete transparency. Here's exactly how we determine your cash offer:</p>
+                    
+                    <ul class="formula-steps">
+                        <li>
+                            <span class="step-bullet"><i class="fas fa-minus"></i></span>
+                            <div><strong>After Repair Value (ARV)</strong> – What your home would sell for fully renovated</div>
+                        </li>
+                        <li>
+                            <span class="step-bullet"><i class="fas fa-minus"></i></span>
+                            <div><strong>Minus Repair Costs</strong> – Estimated cost to bring it to market condition</div>
+                        </li>
+                        <li>
+                            <span class="step-bullet"><i class="fas fa-minus"></i></span>
+                            <div><strong>Minus Our Margin</strong> – We're a business, but we're fair</div>
+                        </li>
+                        <li>
+                            <span class="step-bullet result"><i class="fas fa-equals"></i></span>
+                            <div><strong>= Your Cash Offer</strong> – Typically 70-85% of ARV</div>
+                        </li>
+                    </ul>
+                    
+                    <div class="cash-box">
+                        <h4><i class="fas fa-dollar-sign"></i> Need Cash Before Closing?</h4>
+                        <p>In urgent situations, we may be able to provide a cash advance before the official closing date. Just ask!</p>
+                    </div>
+                </div>
+                
+                <div class="formula-visual">
+                    <div class="formula-row">
+                        <span>After Repair Value (ARV)</span>
+                        <span>$300,000</span>
+                    </div>
+                    <div class="formula-row">
+                        <span>Estimated Repairs</span>
+                        <span>- $35,000</span>
+                    </div>
+                    <div class="formula-row">
+                        <span>Holding & Selling Costs</span>
+                        <span>- $25,000</span>
+                    </div>
+                    <div class="formula-row">
+                        <span>Our Profit Margin</span>
+                        <span>- $20,000</span>
+                    </div>
+                    <div class="formula-row">
+                        <span>Your Cash Offer</span>
+                        <span>$220,000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

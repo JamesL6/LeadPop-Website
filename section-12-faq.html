@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 12 - FAQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --primary: #2d5a4e;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --border-light: #e8e6e3;
+            --radius-md: 12px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            color: var(--text-dark);
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-primary { color: var(--primary); }
+
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 50px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(45, 90, 78, 0.1), rgba(45, 90, 78, 0.05));
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        /* FAQ */
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary);
+        }
+        
+        .faq-question {
+            padding: 20px 24px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            color: var(--text-dark);
+        }
+        
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        
+        .faq-question i {
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 24px 20px;
+            color: var(--text-body);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">FAQ</span>
+                <h2>Frequently Asked <span class="text-primary">Questions</span></h2>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I know this isn't a scam?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Great question! We're a BBB A+ rated business with over 200 Google reviews. We close at a licensed local title company, and you can verify our business registration with the state. We're happy to provide references from past sellers.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will I get a lowball offer?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        We base our offers on actual market data and recent comparable sales. While our offers are typically 70-85% of ARV (to account for repairs we'll make), you're saving 6-10% in agent commissions, closing costs, and repair costs you'd pay in a traditional sale.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the catch? Why no fees?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No catch. We make our profit by renovating and reselling houses — not by charging you fees. When we buy your house below market value, we're taking on the risk and cost of repairs. It's a win-win!
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How fast can you really close?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        We can close in as fast as 7 days — but YOU choose the timeline. Some sellers need to move fast; others need 30-60 days. We work around your schedule.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I really not have to clean or remove my stuff?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Correct! Take what you want and leave the rest. We handle ALL cleanout and junk removal. We've bought homes filled floor-to-ceiling. Zero judgment, zero extra cost to you.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

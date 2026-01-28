@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 07 - Category Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --bg-warm-gray: #f5f3f0;
+            --primary: #2d5a4e;
+            --primary-light: #3d7a6a;
+            --accent-gold: #c9a227;
+            --accent-gold-dark: #a68519;
+            --cta-orange: #d35400;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --text-muted: #6b6b6b;
+            --border-light: #e8e6e3;
+            --shadow-medium: 0 8px 30px rgba(0,0,0,0.12);
+            --radius-lg: 20px;
+            --radius-sm: 8px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        
+        h3 { 
+            font-family: 'DM Sans', sans-serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            color: var(--text-dark);
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--cta-orange);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(211, 84, 0, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        /* Category Cards */
+        .category-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .category-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:nth-child(1)::before {
+            background: linear-gradient(90deg, #ef4444, #f97316);
+        }
+        
+        .category-card:nth-child(2)::before {
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+        
+        .category-card:nth-child(3)::before {
+            background: linear-gradient(90deg, var(--accent-gold-dark), var(--accent-gold));
+        }
+        
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .category-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .category-icon {
+            margin-bottom: 18px;
+        }
+        
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 1.75rem;
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .icon-circle.reason {
+            background: linear-gradient(135deg, #ef4444, #f97316);
+        }
+        
+        .icon-circle.condition {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        }
+        
+        .icon-circle.challenge {
+            background: linear-gradient(135deg, var(--accent-gold-dark), var(--accent-gold));
+        }
+        
+        .category-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+        }
+        
+        .category-card > p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .category-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            text-align: left;
+        }
+        
+        .category-items .item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 10px;
+            background: var(--bg-warm-gray);
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: default;
+        }
+        
+        .category-items .item:hover {
+            background: rgba(45, 90, 78, 0.1);
+            transform: translateX(4px);
+        }
+        
+        .category-items .item span {
+            font-size: 0.95rem;
+        }
+        
+        /* Situations CTA */
+        .situations-cta {
+            text-align: center;
+            padding: 32px;
+            background: var(--bg-warm-gray);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+        }
+        
+        .situations-cta p {
+            font-size: 1rem;
+            margin-bottom: 18px;
+            color: var(--text-body);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 4px 15px rgba(211, 84, 0, 0.3); }
+            50% { box-shadow: 0 4px 25px rgba(211, 84, 0, 0.5), 0 0 40px rgba(211, 84, 0, 0.2); }
+        }
+        
+        .btn-pulse { animation: pulse-glow 2s ease-in-out infinite; }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <!-- Category Cards -->
+            <div class="category-cards">
+                <!-- Any Reason -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <div class="icon-circle reason">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <h3>Any Reason</h3>
+                    <p>Life happens. We're here to help, not judge.</p>
+                    <div class="category-items">
+                        <div class="item"><span>🏠</span> Inherited</div>
+                        <div class="item"><span>✈️</span> Relocating</div>
+                        <div class="item"><span>⬆️</span> Upgrading</div>
+                        <div class="item"><span>⬇️</span> Downsizing</div>
+                        <div class="item"><span>⚠️</span> Foreclosure</div>
+                        <div class="item"><span>💔</span> Divorce</div>
+                        <div class="item"><span>📉</span> Bankruptcy</div>
+                        <div class="item"><span>🏥</span> Health Issues</div>
+                        <div class="item"><span>👨‍👩‍👧</span> Family Matters</div>
+                        <div class="item"><span>💳</span> Late Payments</div>
+                    </div>
+                </div>
+                
+                <!-- Any Condition -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <div class="icon-circle condition">
+                            <i class="fas fa-home"></i>
+                        </div>
+                    </div>
+                    <h3>Any Condition</h3>
+                    <p>We truly buy houses 100% as-is.</p>
+                    <div class="category-items">
+                        <div class="item"><span>🏚️</span> Old Houses</div>
+                        <div class="item"><span>🏠</span> New Houses</div>
+                        <div class="item"><span>🌪️</span> Storm Damage</div>
+                        <div class="item"><span>🔥</span> Fire Damage</div>
+                        <div class="item"><span>🐜</span> Termite Damage</div>
+                        <div class="item"><span>📦</span> Full of Stuff</div>
+                        <div class="item"><span>🔧</span> Major Repairs</div>
+                        <div class="item"><span>👥</span> Problem Tenants</div>
+                        <div class="item"><span>🚧</span> Unfinished</div>
+                        <div class="item"><span>🧹</span> Needs Cleanout</div>
+                    </div>
+                </div>
+                
+                <!-- Any Challenge -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <div class="icon-circle challenge">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                    </div>
+                    <h3>Any Challenge</h3>
+                    <p>Complex situations are our specialty.</p>
+                    <div class="category-items">
+                        <div class="item"><span>💰</span> Financial Issues</div>
+                        <div class="item"><span>📑</span> Title Issues</div>
+                        <div class="item"><span>📋</span> Code Violations</div>
+                        <div class="item"><span>📦</span> Hoarder Home</div>
+                        <div class="item"><span>📉</span> Low Equity</div>
+                        <div class="item"><span>⚖️</span> Large Liens</div>
+                        <div class="item"><span>📍</span> Out of Area</div>
+                        <div class="item"><span>👨‍👩‍👧</span> Family Matters</div>
+                        <div class="item"><span>⏰</span> Probate</div>
+                        <div class="item"><span>📄</span> Tax Issues</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="situations-cta">
+                <p><strong>Don't see your situation listed?</strong> That's okay — we've likely handled it before. Give us a call to discuss your unique circumstances.</p>
+                <a href="tel:+12145552274" class="btn btn-primary btn-pulse" style="font-size: 1.05rem; padding: 16px 36px;">
+                    <i class="fas fa-phone"></i> Call Us: (214) 555-CASH
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

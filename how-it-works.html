@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | LeadPop - Your Path to Qualified Leads</title>
+    <meta name="description" content="See exactly how LeadPop delivers exclusive, qualified business loan leads. From your first call to scaling your pipeline — here's the full process.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-dark: #0a1628;
+            --navy: #0d1b2a;
+            --navy-light: #1b2838;
+            --navy-lighter: #243447;
+            --blue-accent: #4da8da;
+            --blue-bright: #5dade2;
+            --blue-glow: #7ec8e3;
+            --blue-pale: #e8f4f8;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #94a3b8;
+            --gray-600: #64748b;
+            --gray-700: #475569;
+            --gray-800: #334155;
+            --gray-900: #1e293b;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --gradient-blue: linear-gradient(135deg, #4da8da 0%, #5dade2 50%, #7ec8e3 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-dark {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .section-light {
+            background: var(--white);
+            color: var(--gray-900);
+        }
+
+        .section-light-alt {
+            background: var(--off-white);
+            color: var(--gray-900);
+        }
+
+        .text-blue {
+            color: var(--blue-accent);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            color: var(--navy-dark);
+            box-shadow: 0 4px 24px rgba(77, 168, 218, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(77, 168, 218, 0.4);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(77, 168, 218, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            padding: 12px 24px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a:not(.btn) {
+                display: none;
+            }
+            .nav-links {
+                gap: 0;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            padding: 160px 0 100px;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center top, rgba(77, 168, 218, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        .hero-title-highlight {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Journey Section */
+        .journey-section {
+            padding: 100px 0;
+        }
+
+        .journey-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--blue-pale);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .journey-header h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--gray-900);
+        }
+
+        .journey-header p {
+            font-size: 18px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-left: 100px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            transform: translateX(-50%);
+            top: 30px;
+            bottom: 30px;
+            width: 4px;
+            background: linear-gradient(180deg, var(--blue-accent) 0%, var(--blue-pale) 100%);
+            border-radius: 4px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-content {
+            flex: 1;
+            text-align: left;
+            padding-left: 24px;
+        }
+
+        .timeline-number {
+            position: absolute;
+            left: -80px;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border: 4px solid var(--blue-accent);
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--blue-accent);
+            z-index: 1;
+            box-shadow: 0 4px 20px rgba(77, 168, 218, 0.3);
+        }
+
+        .timeline-icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .timeline-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--gray-900);
+        }
+
+        .timeline-content p {
+            font-size: 16px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .timeline-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: flex-start;
+        }
+
+        .timeline-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--blue-pale);
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--blue-accent);
+        }
+
+        @media (max-width: 768px) {
+            .timeline {
+                padding-left: 70px;
+            }
+
+            .timeline::before {
+                left: 35px;
+                top: 25px;
+                bottom: 25px;
+            }
+
+            .timeline-number {
+                left: -55px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .timeline-content {
+                padding-left: 16px;
+            }
+        }
+
+        /* What You Get Section */
+        .benefits-section {
+            padding: 100px 0;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .benefits-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .benefits-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .benefits-header h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .benefits-header p {
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy) 100%);
+            border: 1px solid var(--navy-lighter);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            border-color: rgba(77, 168, 218, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.2);
+            border-radius: 12px;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* CRM Section */
+        .crm-section {
+            padding: 100px 0;
+            background: var(--off-white);
+        }
+
+        .crm-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .crm-content h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--gray-900);
+        }
+
+        .crm-content p {
+            font-size: 17px;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .crm-list {
+            list-style: none;
+        }
+
+        .crm-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 16px;
+            color: var(--gray-700);
+        }
+
+        .crm-list-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--green-light);
+            border-radius: 50%;
+            color: var(--green);
+            font-size: 12px;
+        }
+
+        .crm-visual {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .crm-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .crm-card:hover {
+            border-color: var(--blue-accent);
+            box-shadow: 0 8px 24px rgba(77, 168, 218, 0.15);
+        }
+
+        .crm-card-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .crm-card-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .crm-card-icon.crm-logo svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .crm-card-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        @media (max-width: 900px) {
+            .crm-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center bottom, rgba(77, 168, 218, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .cta-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .cta-trust {
+            margin-top: 24px;
+            font-size: 15px;
+            color: var(--gray-500);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-dark);
+            border-top: 1px solid var(--navy-lighter);
+            padding: 48px 0;
+            color: var(--white);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .footer-logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .footer-logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue-accent);
+        }
+
+        .footer-copyright {
+            color: var(--gray-600);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="index-v2.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="logo-text">LeadPop</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="index-v2.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="how-it-works.html" class="active">How It Works</a>
+                    <a href="book-call.html" class="btn btn-primary nav-cta">Get Your Lead Projection</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-label">How It Works</span>
+                <h1 class="hero-title">
+                    From First Call to<br><span class="hero-title-highlight">Funded Deals</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Here's exactly what happens when you partner with LeadPop — no mystery, no surprises, just a clear path to qualified leads.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNEY TIMELINE -->
+    <section class="journey-section section-light">
+        <div class="container">
+            <div class="journey-header fade-in">
+                <span class="section-label">Your Journey</span>
+                <h2>From Setup to Scale in 5 Steps</h2>
+                <p>We've streamlined the process so you can go from first conversation to receiving qualified leads as quickly as possible.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">📞</div>
+                        <h3>Get Your Lead Projection</h3>
+                        <p>We start with a strategy call to understand your business and set your buy box — the exact criteria for your ideal leads. Tell us what loan products you fund, your qualification filters (credit score, revenue, years in business, loan amounts), and geographic focus. Based on your buy box, we'll give you a custom projection of lead volume, quality, and pricing.</p>
+                        <div class="timeline-details">
+                            <span class="timeline-tag">15-30 min call</span>
+                            <span class="timeline-tag">No commitment</span>
+                            <span class="timeline-tag">Custom pricing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">🔌</div>
+                        <h3>CRM Integration Setup</h3>
+                        <p>We connect directly to your CRM so leads flow in automatically. Salesforce, HubSpot, Velocify, Zoho, Google Sheets — whatever you use. Your team gets leads in real-time, ready to work.</p>
+                        <div class="timeline-details">
+                            <span class="timeline-tag">Same-day setup</span>
+                            <span class="timeline-tag">Real-time delivery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">🚀</div>
+                        <h3>Campaigns Go Live</h3>
+                        <p>Our team launches targeted ad campaigns across Meta, Google, YouTube, and TikTok. We cover all ad spend — you don't pay anything until qualified leads start flowing. Every lead is OTP-verified before it reaches you.</p>
+                        <div class="timeline-details">
+                            <span class="timeline-tag">We pay for ads</span>
+                            <span class="timeline-tag">OTP verified</span>
+                            <span class="timeline-tag">100% exclusive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">✅</div>
+                        <h3>Review & Replace</h3>
+                        <p>As leads come in, you work them like normal. If any lead doesn't meet your agreed criteria — wrong info, doesn't qualify, bad contact — just flag it. We replace it free, no questions asked.</p>
+                        <div class="timeline-details">
+                            <span class="timeline-tag">Free replacements</span>
+                            <span class="timeline-tag">Quality guarantee</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">5</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">📈</div>
+                        <h3>Scale What Works</h3>
+                        <p>As you close deals and see ROI, we scale together. Need more volume? We increase capacity. Want to target new loan products or markets? We adjust campaigns. The better we perform, the more we both grow.</p>
+                        <div class="timeline-details">
+                            <span class="timeline-tag">Flexible volume</span>
+                            <span class="timeline-tag">Ongoing optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-header fade-in">
+                <span class="benefits-label">What You Get</span>
+                <h2>Everything Included — No Hidden Costs</h2>
+                <p>When you partner with LeadPop, here's exactly what's included in every lead.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>100% Exclusive Leads</h3>
+                    <p>Every lead is yours alone. We never sell the same prospect to multiple lenders. Zero competition from day one.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">📱</div>
+                    <h3>OTP-Verified Contacts</h3>
+                    <p>Real phone numbers confirmed via SMS verification. No bots, no fake numbers, no wasted calls.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">⚙️</div>
+                    <h3>Custom Filtering</h3>
+                    <p>Leads pre-qualified to your exact criteria: credit score, revenue, years in business, loan amount, geography.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Real-Time Delivery</h3>
+                    <p>Leads delivered instantly to your CRM the moment they're verified. No delays, no batching.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Free Replacements</h3>
+                    <p>Lead doesn't meet your criteria? Flag it and we replace it — no cost, no hassle, no disputes.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Dedicated Support</h3>
+                    <p>A real account manager who knows your business and goals. Not a support ticket — a partner.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRM INTEGRATIONS -->
+    <section class="crm-section">
+        <div class="container">
+            <div class="crm-wrapper">
+                <div class="crm-content fade-in">
+                    <h2>Leads Delivered Where<br><span class="text-blue">Your Team Works</span></h2>
+                    <p>We integrate directly with your existing CRM and tools. No manual imports, no copy-paste, no friction. Leads show up automatically, ready for your team to work.</p>
+                    
+                    <ul class="crm-list">
+                        <li>
+                            <span class="crm-list-icon">✓</span>
+                            Real-time lead delivery
+                        </li>
+                        <li>
+                            <span class="crm-list-icon">✓</span>
+                            Native CRM integrations
+                        </li>
+                        <li>
+                            <span class="crm-list-icon">✓</span>
+                            Get notified instantly
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="crm-visual fade-in">
+                    <div class="crm-card">
+                        <div class="crm-card-icon crm-logo">
+                            <!-- Salesforce Cloud Logo -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" style="width: 40px; height: 40px; object-fit: contain;">
+                        </div>
+                        <div class="crm-card-name">Salesforce</div>
+                    </div>
+                    <div class="crm-card">
+                        <div class="crm-card-icon crm-logo">
+                            <!-- HubSpot Sprocket Logo -->
+                            <img src="https://www.vectorlogo.zone/logos/hubspot/hubspot-icon.svg" alt="HubSpot" style="width: 40px; height: 40px; object-fit: contain;">
+                        </div>
+                        <div class="crm-card-name">HubSpot</div>
+                    </div>
+                    <div class="crm-card">
+                        <div class="crm-card-icon crm-logo">
+                            <!-- Velocify Logo -->
+                            <img src="https://logo.clearbit.com/velocify.com" alt="Velocify" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22%3E%3Cpath d=%22M6 10h10l8 14 8-14h10l-18 28-18-28z%22 fill=%22%230052CC%22/%3E%3C/svg%3E';">
+                        </div>
+                        <div class="crm-card-name">Velocify</div>
+                    </div>
+                    <div class="crm-card">
+                        <div class="crm-card-icon crm-logo">
+                            <!-- Zoho Logo -->
+                            <img src="https://www.vectorlogo.zone/logos/zoho/zoho-icon.svg" alt="Zoho" style="width: 40px; height: 40px; object-fit: contain;">
+                        </div>
+                        <div class="crm-card-name">Zoho</div>
+                    </div>
+                    <div class="crm-card">
+                        <div class="crm-card-icon crm-logo">
+                            <!-- Google Sheets Logo -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Sheets_logo_%282014-2020%29.svg" alt="Google Sheets" style="width: 40px; height: 40px; object-fit: contain;">
+                        </div>
+                        <div class="crm-card-name">Google Sheets</div>
+                    </div>
+                    <div class="crm-card">
+                        <div class="crm-card-icon crm-logo">
+                            <!-- Zapier Logo -->
+                            <img src="https://www.vectorlogo.zone/logos/zapier/zapier-icon.svg" alt="Zapier" style="width: 40px; height: 40px; object-fit: contain;">
+                        </div>
+                        <div class="crm-card-name">Zapier</div>
+                    </div>
+                    <div class="crm-card">
+                        <div class="crm-card-icon">
+                            <!-- Webhook Icon - Modern connected nodes design -->
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="24" cy="10" r="6" fill="#4da8da"/>
+                                <circle cx="10" cy="38" r="6" fill="#4da8da"/>
+                                <circle cx="38" cy="38" r="6" fill="#4da8da"/>
+                                <path d="M24 16v8M18 30l-4 4M30 30l4 4" stroke="#4da8da" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="24" cy="28" r="4" fill="#4da8da" fill-opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="crm-card-name">Webhooks</div>
+                    </div>
+                    <div class="crm-card">
+                        <div class="crm-card-icon">
+                            <!-- Custom API Icon - Code brackets with gear -->
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 12L6 24l8 12" stroke="#4da8da" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M34 12l8 12-8 12" stroke="#4da8da" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M28 8L20 40" stroke="#4da8da" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="crm-card-name">Custom API</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title fade-in">
+                    Ready to See What We Can<br><span class="text-blue">Deliver for You?</span>
+                </h2>
+                <p class="cta-subtitle fade-in">
+                    Get your custom lead projection and see exactly how many qualified leads we can generate for your business.
+                </p>
+                <a href="book-call.html" class="btn btn-primary fade-in" style="font-size: 18px; padding: 20px 40px;">Get Your Lead Projection →</a>
+                <p class="cta-trust fade-in">No retainers. No upfront costs. You only pay for leads that meet your criteria.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="index-v2.html" class="footer-logo">
+                    <svg class="footer-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="footer-logo-text">LeadPop</span>
+                </a>
+                
+                <div class="footer-links">
+                    <a href="about-v2.html">About Us</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="book-call.html">Book a Call</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                
+                <p class="footer-copyright">© 2025 LeadPop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

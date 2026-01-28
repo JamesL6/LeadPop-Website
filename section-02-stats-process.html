@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 02 - Stats + Process</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --bg-warm-gray: #f5f3f0;
+            --primary-dark: #1a3c34;
+            --primary: #2d5a4e;
+            --primary-light: #3d7a6a;
+            --accent-gold: #c9a227;
+            --accent-gold-light: #e3c255;
+            --accent-gold-dark: #a68519;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --text-muted: #6b6b6b;
+            --border-light: #e8e6e3;
+            --shadow-medium: 0 8px 30px rgba(0,0,0,0.12);
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            color: var(--text-dark);
+        }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: 1.5rem; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-primary { color: var(--primary); }
+
+        /* STATS BAR */
+        .stats-bar {
+            padding: 50px 0;
+            background: var(--primary-dark);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: #fff;
+        }
+        
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 8px;
+            color: var(--accent-gold-light);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* PROCESS SECTION */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-alt {
+            background: var(--bg-white);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 50px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(45, 90, 78, 0.1), rgba(45, 90, 78, 0.05));
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        
+        .section-header h2 { margin-bottom: 14px; }
+        
+        .section-header p {
+            font-size: 1.05rem;
+            color: var(--text-body);
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        
+        .process-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 36px 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .process-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary);
+        }
+        
+        .process-number {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        
+        .process-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(45, 90, 78, 0.1), rgba(45, 90, 78, 0.05));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 12px auto 20px;
+        }
+        
+        .process-icon i {
+            font-size: 1.75rem;
+            color: var(--primary);
+        }
+        
+        .process-card h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .process-card p {
+            color: var(--text-body);
+            margin-bottom: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .process-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-warm-gray);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- STATS BAR -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Houses Purchased</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9★</div>
+                    <div class="stat-label">Google Rating</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">A+</div>
+                    <div class="stat-label">BBB Rating</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years in Business</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PROCESS -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">How It Works</span>
+                <h2>Sell Your House in <span class="text-primary">3 Simple Steps</span></h2>
+                <p>We handle the hard parts. You just pick your closing date.</p>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <div class="process-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h3>Contact Us</h3>
+                    <p>Fill out the form or call. Takes 2 minutes. We'll ask about your property and situation.</p>
+                    <span class="process-time"><i class="fas fa-clock"></i> 2 minutes</span>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <div class="process-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3>Get Your Offer</h3>
+                    <p>We'll analyze your property and present a fair, no-obligation cash offer within 24 hours.</p>
+                    <span class="process-time"><i class="fas fa-clock"></i> Within 24 hours</span>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <div class="process-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Get Paid</h3>
+                    <p>YOU choose the closing date. We close at a local title company. You get paid that day.</p>
+                    <span class="process-time"><i class="fas fa-clock"></i> Close in 7-30 days</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

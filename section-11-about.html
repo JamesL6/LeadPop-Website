@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 11 - About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --bg-warm-gray: #f5f3f0;
+            --primary: #2d5a4e;
+            --accent-gold-dark: #a68519;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --text-light: #8a8a8a;
+            --border-light: #e8e6e3;
+            --radius-lg: 20px;
+            --radius-sm: 8px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-white);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            color: var(--text-dark);
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-primary { color: var(--primary); }
+
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-alt {
+            background: var(--bg-white);
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image-placeholder {
+            background: linear-gradient(135deg, var(--bg-warm-gray) 0%, var(--bg-cream) 100%);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            aspect-ratio: 4/3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+        }
+        
+        .about-image-placeholder i {
+            font-size: 3.5rem;
+            margin-bottom: 14px;
+            opacity: 0.4;
+        }
+        
+        .about-image-placeholder span {
+            font-weight: 600;
+        }
+        
+        .about-content h2 { margin-bottom: 18px; }
+        
+        .about-content p {
+            color: var(--text-body);
+            font-size: 1rem;
+            margin-bottom: 14px;
+            line-height: 1.8;
+        }
+        
+        .about-badges {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+        
+        .about-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-warm-gray);
+            border: 1px solid var(--border-light);
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        
+        .about-badge i {
+            color: var(--accent-gold-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- ABOUT -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <i class="fas fa-users"></i>
+                        <span>Real Team Photo</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2>We're John & Sarah – <span class="text-primary">Local Dallas Homeowners</span></h2>
+                    <p>We started this company in 2014 because we saw too many homeowners being taken advantage of by big corporations and pushy agents.</p>
+                    <p>We live right here in Dallas. Our kids go to Richardson ISD. We're not some out-of-state call center — we're your neighbors.</p>
+                    <p>We've helped over 500 families sell their homes quickly and fairly. We'd be honored to help you too.</p>
+                    
+                    <div class="about-badges">
+                        <div class="about-badge"><i class="fas fa-star"></i> A+ BBB Rated</div>
+                        <div class="about-badge"><i class="fas fa-star"></i> 200+ 5-Star Reviews</div>
+                        <div class="about-badge"><i class="fas fa-star"></i> 500+ Homes Purchased</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

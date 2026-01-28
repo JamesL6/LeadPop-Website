@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadPop | Exclusive Business Loan Leads - Pay Per Result</title>
+    <meta name="description" content="Get exclusive, pre-qualified business loan leads. We cover all ad spend - you only pay for results. SBA, MCA, Equipment Financing & more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-dark: #0a1628;
+            --navy: #0d1b2a;
+            --navy-light: #1b2838;
+            --navy-lighter: #243447;
+            --blue-accent: #4da8da;
+            --blue-bright: #5dade2;
+            --blue-glow: #7ec8e3;
+            --white: #ffffff;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #94a3b8;
+            --gray-600: #64748b;
+            --green: #10b981;
+            --red: #ef4444;
+            --gradient-blue: linear-gradient(135deg, #4da8da 0%, #5dade2 50%, #7ec8e3 100%);
+            --gradient-dark: linear-gradient(180deg, #0a1628 0%, #0d1b2a 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--navy-dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-alt {
+            background: var(--navy);
+        }
+
+        .text-blue {
+            color: var(--blue-accent);
+        }
+
+        .text-gray {
+            color: var(--gray-500);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            color: var(--navy-dark);
+            box-shadow: 0 4px 24px rgba(77, 168, 218, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(77, 168, 218, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--navy-lighter);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--blue-accent);
+            color: var(--blue-accent);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+        
+        /* ===== HEADER / NAV ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            background: rgba(10, 22, 40, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(77, 168, 218, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .nav-cta {
+            padding: 12px 24px;
+            font-size: 14px;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center top, rgba(77, 168, 218, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            margin-bottom: 32px;
+            animation: fadeInDown 0.6s ease;
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .hero-badge-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--blue-accent);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero-title {
+            font-size: clamp(40px, 7vw, 72px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease 0.1s both;
+        }
+
+        .hero-title-highlight {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 2.5vw, 22px);
+            color: var(--gray-500);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            animation: fadeInUp 0.6s ease 0.2s both;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 48px;
+            animation: fadeInUp 0.6s ease 0.3s both;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--gray-300);
+        }
+
+        .hero-feature-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 50%;
+            color: var(--green);
+            font-size: 12px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 48px;
+            animation: fadeInUp 0.6s ease 0.4s both;
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.2);
+            border-radius: 12px;
+            animation: fadeInUp 0.6s ease 0.5s both;
+        }
+
+        .hero-trust-icon {
+            font-size: 24px;
+        }
+
+        .hero-trust-text {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .hero-trust-text span {
+            color: var(--blue-accent);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== PROBLEM SECTION ===== */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .problem-card {
+            padding: 32px;
+            background: var(--navy-light);
+            border: 1px solid var(--navy-lighter);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            border-color: rgba(239, 68, 68, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .problem-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 12px;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .problem-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .problem-text {
+            color: var(--gray-500);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .problem-transition {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--blue-accent);
+        }
+
+        /* ===== SOLUTION SECTION ===== */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .solution-card {
+            padding: 36px;
+            background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy) 100%);
+            border: 1px solid var(--navy-lighter);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-blue);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .solution-card:hover {
+            border-color: rgba(77, 168, 218, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .solution-card:hover::before {
+            opacity: 1;
+        }
+
+        .solution-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.2);
+            border-radius: 16px;
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+
+        .solution-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .solution-text {
+            color: var(--gray-500);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        /* ===== LOAN TYPES SECTION ===== */
+        .loan-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .loan-type-card {
+            padding: 28px 24px;
+            background: var(--navy-light);
+            border: 1px solid var(--navy-lighter);
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .loan-type-card:hover {
+            border-color: var(--blue-accent);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(77, 168, 218, 0.15);
+        }
+
+        .loan-type-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(77, 168, 218, 0.1);
+            border-radius: 12px;
+            font-size: 28px;
+            margin: 0 auto 16px;
+        }
+
+        .loan-type-title {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .loan-types-footer {
+            text-align: center;
+            font-size: 18px;
+            color: var(--gray-500);
+        }
+
+        .loan-types-footer strong {
+            color: var(--blue-accent);
+        }
+
+        /* ===== HOW IT WORKS SECTION ===== */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            position: relative;
+        }
+        
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--blue-accent) 0%, var(--navy-lighter) 50%, var(--blue-accent) 100%);
+            z-index: 0;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+            border: 3px solid var(--blue-accent);
+            border-radius: 50%;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--blue-accent);
+            margin: 0 auto 28px;
+            box-shadow: 0 0 40px rgba(77, 168, 218, 0.2);
+        }
+
+        .step-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .step-text {
+            color: var(--gray-500);
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .steps-container::before {
+                display: none;
+            }
+        }
+
+        /* ===== FILTERS SECTION ===== */
+        .filters-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .filters-visual {
+            background: var(--navy-light);
+            border: 1px solid var(--navy-lighter);
+            border-radius: 20px;
+            padding: 32px;
+            position: relative;
+        }
+
+        .filters-visual::before {
+            content: 'Your Filters';
+            position: absolute;
+            top: -12px;
+            left: 32px;
+            background: var(--navy);
+            padding: 4px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--blue-accent);
+            border-radius: 100px;
+        }
+
+        .filter-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--navy-lighter);
+        }
+
+        .filter-item:last-child {
+            border-bottom: none;
+        }
+
+        .filter-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        .filter-check {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 6px;
+            color: var(--green);
+            font-size: 14px;
+        }
+
+        .filter-value {
+            color: var(--blue-accent);
+            font-weight: 600;
+            font-size: 14px;
+            padding: 6px 12px;
+            background: rgba(77, 168, 218, 0.1);
+            border-radius: 6px;
+        }
+
+        .filters-content h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .filters-content p {
+            color: var(--gray-500);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .filters-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .filters-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 15px;
+            color: var(--gray-300);
+        }
+
+        .filters-list-icon {
+            color: var(--blue-accent);
+            font-size: 18px;
+        }
+
+        .otp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 20px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+        }
+
+        .otp-badge-icon {
+            font-size: 24px;
+        }
+
+        .otp-badge-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        @media (max-width: 900px) {
+            .filters-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== COMPARISON TABLE ===== */
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            border-radius: 20px;
+            border: 1px solid var(--navy-lighter);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        .comparison-table thead {
+            background: var(--navy-light);
+        }
+
+        .comparison-table th {
+            padding: 24px 20px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--navy-lighter);
+        }
+
+        .comparison-table th:first-child {
+            border-radius: 20px 0 0 0;
+        }
+
+        .comparison-table th:last-child {
+            border-radius: 0 20px 0 0;
+        }
+
+        .comparison-table th.highlight {
+            background: linear-gradient(135deg, rgba(77, 168, 218, 0.2) 0%, rgba(77, 168, 218, 0.1) 100%);
+            color: var(--blue-accent);
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--navy-lighter);
+            font-size: 15px;
+            background: var(--navy);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--gray-300);
+        }
+
+        .comparison-table td.highlight {
+            background: rgba(77, 168, 218, 0.05);
+        }
+
+        .check-yes {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .check-no {
+            color: var(--red);
+        }
+
+        .check-partial {
+            color: var(--gray-500);
+        }
+
+        /* ===== SOCIAL PROOF SECTION ===== */
+        .proof-container {
+            text-align: center;
+        }
+
+        .proof-stat {
+            margin-bottom: 40px;
+        }
+
+        .proof-number {
+            font-size: clamp(60px, 12vw, 120px);
+            font-weight: 800;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .proof-label {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--gray-300);
+        }
+
+        .proof-text {
+            max-width: 600px;
+            margin: 0 auto 48px;
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        .proof-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .proof-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: var(--navy-light);
+            border: 1px solid var(--navy-lighter);
+            border-radius: 12px;
+        }
+
+        .proof-badge-icon {
+            font-size: 24px;
+        }
+
+        .proof-badge-text {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .video-container {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: var(--navy-light);
+            border: 1px solid var(--navy-lighter);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-placeholder {
+            text-align: center;
+        }
+
+        .video-play-btn {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            font-size: 40px;
+            color: var(--navy-dark);
+            margin: 0 auto 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 60px rgba(77, 168, 218, 0.3);
+        }
+
+        .video-play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .video-text {
+            font-size: 18px;
+            color: var(--gray-500);
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--navy-light);
+            border: 1px solid var(--navy-lighter);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(77, 168, 218, 0.05);
+        }
+
+        .faq-question h4 {
+            font-size: 17px;
+            font-weight: 600;
+            padding-right: 20px;
+        }
+
+        .faq-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy-lighter);
+            border-radius: 8px;
+            font-size: 18px;
+            color: var(--blue-accent);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 24px;
+            color: var(--gray-500);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== FINAL CTA SECTION ===== */
+        .final-cta {
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center bottom, rgba(77, 168, 218, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta-title {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .final-cta-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .final-cta-trust {
+            margin-top: 32px;
+            font-size: 15px;
+            color: var(--gray-500);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--navy);
+            border-top: 1px solid var(--navy-lighter);
+            padding: 48px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .footer-logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .footer-logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue-accent);
+        }
+
+        .footer-copyright {
+            color: var(--gray-600);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="logo-text">LeadPop</span>
+                </a>
+                <a href="#book-call" class="btn btn-primary nav-cta">Book a Call</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+                <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    <span class="hero-badge-text">Now Accepting Business Loan Partners</span>
+                    </div>
+                    
+                <h1 class="hero-title">
+                    Exclusive Business Loan Leads.<br>
+                    <span class="hero-title-highlight">You Only Pay for Results.</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    We absorb all ad spend risk. You get pre-qualified, OTP-verified leads delivered straight to your CRM — filtered to your exact lending criteria.
+                </p>
+                
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <span class="hero-feature-icon">✓</span>
+                        <span>100% Exclusive Leads</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="hero-feature-icon">✓</span>
+                        <span>Zero Upfront Cost</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="hero-feature-icon">✓</span>
+                        <span>Custom Qualification Filters</span>
+                        </div>
+                    <div class="hero-feature">
+                        <span class="hero-feature-icon">✓</span>
+                        <span>Free Replacements</span>
+                        </div>
+                        </div>
+                
+                <div class="hero-ctas">
+                    <a href="#book-call" class="btn btn-primary">Book Your Strategy Call →</a>
+                    <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+                        </div>
+                
+                <div class="hero-trust">
+                    <span class="hero-trust-icon">💰</span>
+                    <span class="hero-trust-text"><span>$150M+</span> Ad Spend Managed in 5 Years</span>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Problem</span>
+                <h2 class="section-title">Stop Burning Budget on Leads That Don't Close</h2>
+                <p class="section-subtitle">If you're funding business loans, you know the struggle. Most lead sources are broken.</p>
+                    </div>
+                    
+            <div class="problem-grid">
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">🔄</div>
+                    <h3 class="problem-title">Shared Leads</h3>
+                    <p class="problem-text">By the time you call, three other lenders already did. You're competing for attention instead of closing deals.</p>
+                        </div>
+                        
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">💸</div>
+                    <h3 class="problem-title">Retainer Agencies</h3>
+                    <p class="problem-text">$5K-$10K/month with zero guaranteed results. You pay whether the campaigns work or not.</p>
+                        </div>
+                        
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">📉</div>
+                    <h3 class="problem-title">Aged Lead Lists</h3>
+                    <p class="problem-text">Contacts who applied weeks ago and already moved on. You're chasing ghosts with dead phone numbers.</p>
+                        </div>
+                        
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">❌</div>
+                    <h3 class="problem-title">Unqualified Prospects</h3>
+                    <p class="problem-text">Sub-600 credit scores, $50K revenue, startups with no history — leads that will never fund.</p>
+                </div>
+                
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">🎲</div>
+                    <h3 class="problem-title">All the Risk on You</h3>
+                    <p class="problem-text">You pay for ads, you pay the agency, you pay per lead — regardless of whether any of it converts.</p>
+                        </div>
+                </div>
+            
+            <p class="problem-transition fade-in">There's a smarter way to scale your pipeline →</p>
+        </div>
+    </section>
+    
+    <!-- SOLUTION SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Solution</span>
+                <h2 class="section-title">Your Leads. Your Criteria. <span class="text-blue">Our Risk.</span></h2>
+                <p class="section-subtitle">We handle everything — ad spend, campaigns, verification. You only pay when qualified leads hit your CRM.</p>
+            </div>
+            
+            <div class="solution-grid">
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">🎯</div>
+                    <h3 class="solution-title">100% Exclusive</h3>
+                    <p class="solution-text">Every lead is yours alone. We never sell the same prospect to multiple lenders. Your pipeline stays competitive.</p>
+                            </div>
+                
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">💰</div>
+                    <h3 class="solution-title">We Cover Ad Spend</h3>
+                    <p class="solution-text">We invest in the campaigns. You only pay when a qualified lead hits your CRM. Zero financial risk on your end.</p>
+                            </div>
+                
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">⚙️</div>
+                    <h3 class="solution-title">Your Filters, Your Rules</h3>
+                    <p class="solution-text">Set the criteria that matter: credit score minimums, revenue thresholds, years in business, loan amounts, geography — we deliver to spec.</p>
+                            </div>
+                
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">🤖</div>
+                    <h3 class="solution-title">AI-Powered Optimization</h3>
+                    <p class="solution-text">Our campaigns learn and improve continuously. The longer we run together, the better your lead quality gets.</p>
+                            </div>
+                
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">✅</div>
+                    <h3 class="solution-title">OTP-Verified Contacts</h3>
+                    <p class="solution-text">Real phone numbers. Real emails. Every lead is verified before it reaches you — no bots, no tire-kickers, no spam.</p>
+                </div>
+                
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">🔄</div>
+                    <h3 class="solution-title">Replacement Guarantee</h3>
+                    <p class="solution-text">Lead doesn't meet your criteria? We replace it free. No disputes, no hassle, no exceptions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- LOAN TYPES SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Cover</span>
+                <h2 class="section-title">Leads for Every Loan Product You Fund</h2>
+                <p class="section-subtitle">Whether you're closing MCAs, SBA deals, or equipment financing — we generate leads tailored to your product mix.</p>
+                </div>
+            
+            <div class="loan-types-grid">
+                <div class="loan-type-card fade-in">
+                    <div class="loan-type-icon">🏛️</div>
+                    <h3 class="loan-type-title">SBA Loans<br>(7a, 504)</h3>
+                </div>
+                
+                <div class="loan-type-card fade-in">
+                    <div class="loan-type-icon">⚡</div>
+                    <h3 class="loan-type-title">Merchant Cash Advances</h3>
+                </div>
+                
+                <div class="loan-type-card fade-in">
+                    <div class="loan-type-icon">🏗️</div>
+                    <h3 class="loan-type-title">Equipment Financing</h3>
+                </div>
+                
+                <div class="loan-type-card fade-in">
+                    <div class="loan-type-icon">💳</div>
+                    <h3 class="loan-type-title">Lines of Credit</h3>
+            </div>
+                
+                <div class="loan-type-card fade-in">
+                    <div class="loan-type-icon">📄</div>
+                    <h3 class="loan-type-title">Invoice Factoring</h3>
+        </div>
+                
+                <div class="loan-type-card fade-in">
+                    <div class="loan-type-icon">📊</div>
+                    <h3 class="loan-type-title">Term Loans</h3>
+            </div>
+            
+                <div class="loan-type-card fade-in">
+                    <div class="loan-type-icon">💵</div>
+                    <h3 class="loan-type-title">Working Capital</h3>
+                    </div>
+                
+                <div class="loan-type-card fade-in">
+                    <div class="loan-type-icon">🏢</div>
+                    <h3 class="loan-type-title">Commercial Real Estate</h3>
+                </div>
+                
+                <div class="loan-type-card fade-in">
+                    <div class="loan-type-icon">📈</div>
+                    <h3 class="loan-type-title">Revenue-Based Financing</h3>
+                </div>
+                
+                <div class="loan-type-card fade-in">
+                    <div class="loan-type-icon">🚀</div>
+                    <h3 class="loan-type-title">Startup & Microloans</h3>
+                    </div>
+                </div>
+                
+            <p class="loan-types-footer fade-in">...and more. <strong>Whatever you fund, we'll deliver leads that match your buy box.</strong></p>
+        </div>
+    </section>
+    
+    <!-- HOW IT WORKS SECTION -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">How It Works</span>
+                <h2 class="section-title">From Setup to Funded Deals in 3 Steps</h2>
+                <p class="section-subtitle">We've simplified the process so you can focus on what you do best — closing loans.</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step fade-in">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Define Your Buy Box</h3>
+                    <p class="step-text">Tell us exactly what you're looking for: credit score minimums, revenue requirements, loan size range, geographic targets, industry preferences. We build campaigns around your ideal borrower profile.</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">We Handle Everything</h3>
+                    <p class="step-text">Our team launches targeted campaigns, absorbs all ad spend, and filters every lead through OTP verification and your custom criteria. AI optimization improves quality over time.</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Leads Flow to Your CRM</h3>
+                    <p class="step-text">Qualified leads are delivered in real-time to Salesforce, HubSpot, Velocify, Google Sheets — wherever your team works. You call, you close, you grow.</p>
+                    </div>
+                    </div>
+                </div>
+    </section>
+
+    <!-- FILTERS SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="filters-wrapper">
+                <div class="filters-visual fade-in">
+                    <div class="filter-item">
+                        <span class="filter-label">
+                            <span class="filter-check">✓</span>
+                            Minimum Credit Score
+                        </span>
+                        <span class="filter-value">650+</span>
+                    </div>
+                    <div class="filter-item">
+                        <span class="filter-label">
+                            <span class="filter-check">✓</span>
+                            Annual Revenue
+                        </span>
+                        <span class="filter-value">$250K+</span>
+                    </div>
+                    <div class="filter-item">
+                        <span class="filter-label">
+                            <span class="filter-check">✓</span>
+                            Years in Business
+                        </span>
+                        <span class="filter-value">2+ years</span>
+                </div>
+                    <div class="filter-item">
+                        <span class="filter-label">
+                            <span class="filter-check">✓</span>
+                            Loan Amount
+                        </span>
+                        <span class="filter-value">$50K - $500K</span>
+                    </div>
+                    <div class="filter-item">
+                        <span class="filter-label">
+                            <span class="filter-check">✓</span>
+                            Geographic Target
+                        </span>
+                        <span class="filter-value">Nationwide</span>
+                    </div>
+                    <div class="filter-item">
+                        <span class="filter-label">
+                            <span class="filter-check">✓</span>
+                            Use of Funds
+                        </span>
+                        <span class="filter-value">Working Capital</span>
+                    </div>
+                </div>
+                
+                <div class="filters-content fade-in">
+                    <h3>Leads Built to Your<br><span class="text-blue">Lending Criteria</span></h3>
+                    <p>Stop wasting time on leads that don't fit your underwriting guidelines. You set the rules — we deliver prospects that match.</p>
+                    
+                    <ul class="filters-list">
+                        <li><span class="filters-list-icon">→</span> Credit score thresholds (550+, 600+, 650+, etc.)</li>
+                        <li><span class="filters-list-icon">→</span> Annual revenue requirements ($100K to $10M+)</li>
+                        <li><span class="filters-list-icon">→</span> Time in business minimums</li>
+                        <li><span class="filters-list-icon">→</span> Loan amount ranges</li>
+                        <li><span class="filters-list-icon">→</span> Use of funds & loan purpose</li>
+                        <li><span class="filters-list-icon">→</span> Geographic targeting (state, region, nationwide)</li>
+                        <li><span class="filters-list-icon">→</span> Industry & business type preferences</li>
+                        <li><span class="filters-list-icon">→</span> Monthly bank deposits (for MCA products)</li>
+                    </ul>
+                    
+                    <div class="otp-badge">
+                        <span class="otp-badge-icon">🔒</span>
+                        <span class="otp-badge-text">Every lead is OTP-verified — real contacts, no spam</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- COMPARISON TABLE SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why LeadPop</span>
+                <h2 class="section-title">How We Stack Up</h2>
+                <p class="section-subtitle">See why lenders are switching from traditional agencies and shared lead providers.</p>
+            </div>
+            
+            <div class="comparison-table-wrapper fade-in">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="highlight">LeadPop</th>
+                            <th>Marketing Retainer Agency</th>
+                            <th>Shared Lead Providers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pricing Model</td>
+                            <td class="highlight"><span class="check-yes">✓ Pay per qualified lead</span></td>
+                            <td><span class="check-no">✗ $3K-$10K+/month regardless</span></td>
+                            <td><span class="check-partial">⚠ Pay per lead (but shared)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Who Pays for Ads</td>
+                            <td class="highlight"><span class="check-yes">✓ We do</span></td>
+                            <td><span class="check-no">✗ You do</span></td>
+                            <td><span class="check-yes">✓ They do</span></td>
+                        </tr>
+                        <tr>
+                            <td>Lead Exclusivity</td>
+                            <td class="highlight"><span class="check-yes">✓ 100% exclusive</span></td>
+                            <td><span class="check-partial">⚠ Varies</span></td>
+                            <td><span class="check-no">✗ Sold to 3-5+ buyers</span></td>
+                        </tr>
+                        <tr>
+                            <td>Custom Filters</td>
+                            <td class="highlight"><span class="check-yes">✓ Credit, revenue, geography & more</span></td>
+                            <td><span class="check-partial">⚠ Limited targeting</span></td>
+                            <td><span class="check-partial">⚠ Basic filters only</span></td>
+                        </tr>
+                        <tr>
+                            <td>Quality Guarantee</td>
+                            <td class="highlight"><span class="check-yes">✓ Free replacement</span></td>
+                            <td><span class="check-no">✗ No guarantee</span></td>
+                            <td><span class="check-no">✗ No guarantee</span></td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Speed</td>
+                            <td class="highlight"><span class="check-yes">✓ Real-time to your CRM</span></td>
+                            <td><span class="check-partial">⚠ Weekly/monthly reports</span></td>
+                            <td><span class="check-partial">⚠ Batch delivery</span></td>
+                        </tr>
+                        <tr>
+                            <td>AI Optimization</td>
+                            <td class="highlight"><span class="check-yes">✓ Continuous improvement</span></td>
+                            <td><span class="check-no">✗ Manual optimization</span></td>
+                            <td><span class="check-no">✗ Static campaigns</span></td>
+                        </tr>
+                        <tr>
+                            <td>Upfront Costs</td>
+                            <td class="highlight"><span class="check-yes">✓ $0</span></td>
+                            <td><span class="check-no">✗ Setup fees + retainer</span></td>
+                            <td><span class="check-partial">⚠ Varies</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SOCIAL PROOF SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="proof-container">
+                <div class="proof-stat fade-in">
+                    <div class="proof-number">$150M+</div>
+                    <div class="proof-label">Ad Spend Managed in 5 Years</div>
+            </div>
+            
+                <p class="proof-text fade-in">
+                    Our team has scaled lead generation campaigns across multiple industries — generating millions in closed revenue for our clients. Now we're bringing that same performance-driven approach to business lending.
+                </p>
+                
+                <div class="proof-badges fade-in">
+                    <div class="proof-badge">
+                        <span class="proof-badge-icon">🇺🇸</span>
+                        <span class="proof-badge-text">All 50 States</span>
+                    </div>
+                    <div class="proof-badge">
+                        <span class="proof-badge-icon">🔌</span>
+                        <span class="proof-badge-text">All Major CRMs</span>
+                        </div>
+                    <div class="proof-badge">
+                        <span class="proof-badge-icon">🤖</span>
+                        <span class="proof-badge-text">AI-Powered</span>
+                    </div>
+                    <div class="proof-badge">
+                        <span class="proof-badge-icon">✅</span>
+                        <span class="proof-badge-text">OTP Verified</span>
+                </div>
+                    </div>
+                        </div>
+                    </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">See It In Action</span>
+                <h2 class="section-title">How LeadPop Works</h2>
+                <p class="section-subtitle">Watch our quick overview to see how we deliver exclusive, qualified business loan leads to your pipeline.</p>
+                </div>
+                
+            <div class="video-wrapper fade-in">
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="video-play-btn">▶</div>
+                        <p class="video-text">Video Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ SECTION -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Questions? We've Got Answers.</h2>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>Are leads exclusive?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Yes — 100%. Every lead we deliver is yours alone. We never sell the same lead to multiple lenders or brokers. Your leads are exclusive to you.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>What if a lead doesn't meet my criteria?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            We replace it free. If a lead is clearly unqualified or bogus, just flag it and we'll send a replacement at no charge. No disputes, no hassle.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>What loan types do you cover?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            All of them — SBA, MCA, equipment financing, lines of credit, invoice factoring, term loans, commercial real estate, revenue-based financing, and more. We tailor leads to your specific product offerings.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How do you ensure lead quality?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            OTP verification confirms real contact info. Custom filters ensure leads match your buy box. AI optimization improves quality over time. Every lead is vetted before it reaches your CRM.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>What CRMs do you integrate with?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            All major platforms — Salesforce, HubSpot, Velocify, Zoho, and even Google Sheets. If you use it, we can push leads there in real-time.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How quickly will I receive leads?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Once campaigns are live, leads are delivered in real-time directly to your CRM. No waiting, no batching — leads flow as they're generated.
+                    </div>
+                </div>
+            </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>Do you cover the entire US?</h4>
+                        <span class="faq-icon">+</span>
+            </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Yes — we can target any state, region, or go nationwide based on your preferences. You tell us where you lend, we deliver leads there.
+                    </div>
+                </div>
+                    </div>
+                    
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How is pricing structured?</h4>
+                        <span class="faq-icon">+</span>
+                </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Pricing varies based on loan type, qualification criteria, and volume. Book a call and we'll build a custom quote based on your specific needs and goals.
+            </div>
+        </div>
+                    </div>
+                </div>
+                    </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section id="book-call" class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2 class="final-cta-title fade-in">
+                    Ready to Fill Your Pipeline with<br><span class="text-blue">Exclusive, Qualified Leads?</span>
+                </h2>
+                <p class="final-cta-subtitle fade-in">
+                    Book a strategy call and we'll show you exactly how LeadPop can deliver the business loan leads your team needs to hit quota.
+                </p>
+                <a href="#" class="btn btn-primary fade-in" style="font-size: 18px; padding: 20px 40px;">Schedule Your Call Now →</a>
+                <p class="final-cta-trust fade-in">No retainers. No upfront fees. You only pay for leads that meet your criteria.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="#" class="footer-logo">
+                    <svg class="footer-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="footer-logo-text">LeadPop</span>
+                </a>
+                
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                
+                <p class="footer-copyright">© 2026 LeadPop. All rights reserved.</p>
+                </div>
+            </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

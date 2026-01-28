@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 06 - Situations Marquee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --primary: #2d5a4e;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --border-light: #e8e6e3;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            color: var(--text-dark);
+        }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-primary { color: var(--primary); }
+
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 40px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(45, 90, 78, 0.1), rgba(45, 90, 78, 0.05));
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        
+        .section-header h2 { margin-bottom: 14px; }
+        
+        .section-header p {
+            font-size: 1.05rem;
+            color: var(--text-body);
+        }
+
+        /* Scrolling Marquee */
+        .situations-marquee {
+            overflow: hidden;
+            padding: 25px 0;
+            position: relative;
+        }
+        
+        .situations-marquee::before,
+        .situations-marquee::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .situations-marquee::before {
+            left: 0;
+            background: linear-gradient(90deg, var(--bg-cream), transparent);
+        }
+        
+        .situations-marquee::after {
+            right: 0;
+            background: linear-gradient(-90deg, var(--bg-cream), transparent);
+        }
+        
+        .marquee-track {
+            display: flex;
+            gap: 14px;
+            animation: scroll-marquee 40s linear infinite;
+            width: max-content;
+        }
+        
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scroll-marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .situation-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        
+        .situation-chip:hover {
+            border-color: var(--primary);
+            background: rgba(45, 90, 78, 0.05);
+            transform: scale(1.05);
+        }
+        
+        .situation-chip span {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">We've Seen It All</span>
+                <h2>No Matter Your <span class="text-primary">Situation</span>, We Can Help</h2>
+                <p>We've helped thousands of homeowners in every imaginable circumstance. There's no situation too complex, no condition too challenging.</p>
+            </div>
+        </div>
+        
+        <!-- Scrolling Marquee -->
+        <div class="situations-marquee">
+            <div class="marquee-track">
+                <!-- First set -->
+                <div class="situation-chip"><span>🏠</span> Inherited Property</div>
+                <div class="situation-chip"><span>✈️</span> Relocating</div>
+                <div class="situation-chip"><span>⚠️</span> Foreclosure</div>
+                <div class="situation-chip"><span>🔧</span> Major Repairs</div>
+                <div class="situation-chip"><span>💔</span> Divorce</div>
+                <div class="situation-chip"><span>📉</span> Bankruptcy</div>
+                <div class="situation-chip"><span>🏥</span> Health Issues</div>
+                <div class="situation-chip"><span>🌪️</span> Storm Damage</div>
+                <div class="situation-chip"><span>🔥</span> Fire Damage</div>
+                <div class="situation-chip"><span>🐜</span> Termite Damage</div>
+                <div class="situation-chip"><span>📦</span> Hoarder Home</div>
+                <div class="situation-chip"><span>👥</span> Problem Tenants</div>
+                <div class="situation-chip"><span>📋</span> Code Violations</div>
+                <div class="situation-chip"><span>📑</span> Title Issues</div>
+                <div class="situation-chip"><span>💰</span> Large Liens</div>
+                <div class="situation-chip"><span>🏚️</span> Old Houses</div>
+                <div class="situation-chip"><span>🚧</span> Unfinished Work</div>
+                <div class="situation-chip"><span>📍</span> Out of Area</div>
+                <div class="situation-chip"><span>⬇️</span> Downsizing</div>
+                <div class="situation-chip"><span>⬆️</span> Upgrading</div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="situation-chip"><span>🏠</span> Inherited Property</div>
+                <div class="situation-chip"><span>✈️</span> Relocating</div>
+                <div class="situation-chip"><span>⚠️</span> Foreclosure</div>
+                <div class="situation-chip"><span>🔧</span> Major Repairs</div>
+                <div class="situation-chip"><span>💔</span> Divorce</div>
+                <div class="situation-chip"><span>📉</span> Bankruptcy</div>
+                <div class="situation-chip"><span>🏥</span> Health Issues</div>
+                <div class="situation-chip"><span>🌪️</span> Storm Damage</div>
+                <div class="situation-chip"><span>🔥</span> Fire Damage</div>
+                <div class="situation-chip"><span>🐜</span> Termite Damage</div>
+                <div class="situation-chip"><span>📦</span> Hoarder Home</div>
+                <div class="situation-chip"><span>👥</span> Problem Tenants</div>
+                <div class="situation-chip"><span>📋</span> Code Violations</div>
+                <div class="situation-chip"><span>📑</span> Title Issues</div>
+                <div class="situation-chip"><span>💰</span> Large Liens</div>
+                <div class="situation-chip"><span>🏚️</span> Old Houses</div>
+                <div class="situation-chip"><span>🚧</span> Unfinished Work</div>
+                <div class="situation-chip"><span>📍</span> Out of Area</div>
+                <div class="situation-chip"><span>⬇️</span> Downsizing</div>
+                <div class="situation-chip"><span>⬆️</span> Upgrading</div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

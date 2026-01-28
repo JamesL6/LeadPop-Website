@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 05 - Situations Grid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --bg-warm-gray: #f5f3f0;
+            --primary: #2d5a4e;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --text-muted: #6b6b6b;
+            --border-light: #e8e6e3;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --radius-md: 12px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            color: var(--text-dark);
+        }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h4 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1rem; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-primary { color: var(--primary); }
+
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 50px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(45, 90, 78, 0.1), rgba(45, 90, 78, 0.05));
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        
+        .section-header h2 { margin-bottom: 14px; }
+        
+        .section-header p {
+            font-size: 1.05rem;
+            color: var(--text-body);
+        }
+
+        /* SITUATIONS GRID */
+        .situations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+        
+        .situation-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px 18px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .situation-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .situation-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-warm-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+        }
+        
+        .situation-card:hover .situation-icon {
+            background: linear-gradient(135deg, rgba(45, 90, 78, 0.1), rgba(45, 90, 78, 0.05));
+        }
+        
+        .situation-card h4 {
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        
+        .situation-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- SITUATIONS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">We Can Help</span>
+                <h2>We Buy Houses in <span class="text-primary">Any Situation</span></h2>
+                <p>No matter what you're going through, we're here to help — not judge.</p>
+            </div>
+            
+            <div class="situations-grid">
+                <div class="situation-card">
+                    <div class="situation-icon">⚠️</div>
+                    <h4>Foreclosure</h4>
+                    <p>Behind on payments? We can help you avoid foreclosure.</p>
+                </div>
+                <div class="situation-card">
+                    <div class="situation-icon">💔</div>
+                    <h4>Divorce</h4>
+                    <p>Need to sell quickly to split assets fairly?</p>
+                </div>
+                <div class="situation-card">
+                    <div class="situation-icon">📜</div>
+                    <h4>Inherited Property</h4>
+                    <p>Dealing with probate? We handle it all.</p>
+                </div>
+                <div class="situation-card">
+                    <div class="situation-icon">🔧</div>
+                    <h4>Major Repairs</h4>
+                    <p>Can't afford repairs? Sell as-is.</p>
+                </div>
+                <div class="situation-card">
+                    <div class="situation-icon">🏚️</div>
+                    <h4>Vacant Property</h4>
+                    <p>Tired of paying for an empty house?</p>
+                </div>
+                <div class="situation-card">
+                    <div class="situation-icon">👥</div>
+                    <h4>Bad Tenants</h4>
+                    <p>Problem tenants? Sell with them in place.</p>
+                </div>
+                <div class="situation-card">
+                    <div class="situation-icon">📋</div>
+                    <h4>Code Violations</h4>
+                    <p>City fines piling up? We buy anyway.</p>
+                </div>
+                <div class="situation-card">
+                    <div class="situation-icon">✈️</div>
+                    <h4>Relocating</h4>
+                    <p>Need to move fast for work?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

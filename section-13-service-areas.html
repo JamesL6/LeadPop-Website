@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 13 - Service Areas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --bg-warm-gray: #f5f3f0;
+            --primary: #2d5a4e;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --text-muted: #6b6b6b;
+            --text-light: #8a8a8a;
+            --border-light: #e8e6e3;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-white);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        
+        h2, h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            color: var(--text-dark);
+        }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-primary { color: var(--primary); }
+
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-alt {
+            background: var(--bg-white);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 50px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(45, 90, 78, 0.1), rgba(45, 90, 78, 0.05));
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        /* SERVICE AREAS */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+        }
+        
+        .map-placeholder {
+            background: linear-gradient(135deg, var(--bg-warm-gray) 0%, var(--bg-cream) 100%);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .map-placeholder i {
+            font-size: 3.5rem;
+            color: var(--text-light);
+            opacity: 0.4;
+            margin-right: 14px;
+        }
+        
+        .map-placeholder span {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        
+        .areas-content h3 {
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .areas-content h3 i { color: var(--primary); }
+        
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .city-tag {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-left: 3px solid var(--primary);
+            padding: 10px 14px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .city-tag:hover {
+            background: var(--bg-warm-gray);
+            transform: translateX(4px);
+        }
+        
+        .expand-btn {
+            background: var(--bg-white);
+            border: 2px dashed var(--primary);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            text-align: center;
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .expand-btn:hover {
+            background: rgba(45, 90, 78, 0.05);
+        }
+        
+        .areas-note {
+            margin-top: 14px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .areas-note strong { color: var(--primary); }
+    </style>
+</head>
+<body>
+    <!-- SERVICE AREAS -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Service Area</span>
+                <h2>We Buy Houses Throughout <span class="text-primary">DFW</span></h2>
+            </div>
+            
+            <div class="areas-grid">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Interactive Map</span>
+                </div>
+                <div class="areas-content">
+                    <h3><i class="fas fa-home"></i> Cities We Serve</h3>
+                    <div class="cities-grid">
+                        <div class="city-tag">Dallas</div>
+                        <div class="city-tag">Fort Worth</div>
+                        <div class="city-tag">Arlington</div>
+                        <div class="city-tag">Plano</div>
+                        <div class="city-tag">Irving</div>
+                        <div class="city-tag">Garland</div>
+                        <div class="city-tag">McKinney</div>
+                        <div class="city-tag">Frisco</div>
+                    </div>
+                    <div class="expand-btn">
+                        <i class="fas fa-plus"></i> View 75+ More Areas We Service
+                    </div>
+                    <p class="areas-note">Don't see your city? <strong>We likely serve your area too!</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

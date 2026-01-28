@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadPop Video Storyboard — Becker x Hormozi Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark: #0a1628;
+            --navy: #0f1d32;
+            --blue: #2d7ff9;
+            --white: #ffffff;
+            --gray: #94a3b8;
+            --light: #f8fafc;
+            --red: #ef4444;
+            --green: #22c55e;
+            --yellow: #eab308;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            padding: 60px 40px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .header p {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        /* Overview */
+        .overview {
+            padding: 60px 40px;
+            background: var(--navy);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .overview-item {
+            padding: 24px;
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .overview-item .time {
+            font-size: 12px;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .overview-item .name {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .section:nth-child(even) {
+            background: var(--navy);
+        }
+
+        .section-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .section-number {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--blue);
+            font-size: 32px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .section-meta h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-meta .timing {
+            display: flex;
+            gap: 24px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .section-meta .timing span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-meta .timing .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--blue);
+            border-radius: 50%;
+        }
+
+        /* Storyboard Frame */
+        .storyboard {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .frame {
+            aspect-ratio: 16/9;
+            background: #000;
+            border: 3px solid var(--blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .frame-label {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 12px;
+            background: var(--blue);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .frame-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .frame-speaker {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark) 100%);
+            border: 3px solid var(--blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .frame-text {
+            font-size: 14px;
+            color: var(--gray);
+            max-width: 300px;
+        }
+
+        /* Visual Elements Panel */
+        .visuals-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .visual-card {
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .visual-card h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
+        .visual-card p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .visual-card ul {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .visual-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .visual-card li:last-child {
+            border-bottom: none;
+        }
+
+        .visual-card .icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--blue);
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Script Box */
+        .script-box {
+            background: var(--dark);
+            border: 2px solid rgba(255,255,255,0.1);
+            padding: 32px;
+            position: relative;
+        }
+
+        .script-box::before {
+            content: '"';
+            position: absolute;
+            top: 16px;
+            left: 24px;
+            font-size: 80px;
+            color: var(--blue);
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .script-box p {
+            font-size: 20px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .script-box .highlight {
+            background: rgba(45, 127, 249, 0.2);
+            padding: 2px 6px;
+        }
+
+        /* On-Screen Elements */
+        .onscreen-elements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .onscreen-item {
+            padding: 24px;
+            background: var(--navy);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .onscreen-item .preview {
+            padding: 16px;
+            background: var(--dark);
+            margin-bottom: 16px;
+            font-weight: 700;
+            font-size: 14px;
+            border: 2px solid var(--blue);
+        }
+
+        .onscreen-item .preview.red {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        .onscreen-item .preview.green {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        .onscreen-item .preview.yellow {
+            border-color: var(--yellow);
+            color: var(--yellow);
+        }
+
+        .onscreen-item .label {
+            font-size: 12px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Mood/Energy Bar */
+        .mood-bar {
+            display: flex;
+            gap: 8px;
+            margin-top: 32px;
+        }
+
+        .mood-segment {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mood-segment.high {
+            background: var(--red);
+        }
+
+        .mood-segment.medium {
+            background: var(--yellow);
+            color: var(--dark);
+        }
+
+        .mood-segment.low {
+            background: var(--green);
+        }
+
+        .mood-segment.calm {
+            background: var(--blue);
+        }
+
+        /* Tips */
+        .tips {
+            background: rgba(45, 127, 249, 0.1);
+            border: 1px solid var(--blue);
+            padding: 24px;
+            margin-top: 32px;
+        }
+
+        .tips h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tips ul {
+            list-style: none;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .tips li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .tips li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--blue);
+        }
+
+        /* Value Stack Visual */
+        .value-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .value-stack-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: var(--dark);
+            border-left: 4px solid var(--blue);
+            animation: slideIn 0.3s ease forwards;
+            opacity: 0;
+        }
+
+        .value-stack-item:nth-child(1) { animation-delay: 0.1s; }
+        .value-stack-item:nth-child(2) { animation-delay: 0.2s; }
+        .value-stack-item:nth-child(3) { animation-delay: 0.3s; }
+        .value-stack-item:nth-child(4) { animation-delay: 0.4s; }
+        .value-stack-item:nth-child(5) { animation-delay: 0.5s; }
+        .value-stack-item:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .value-stack-item .check {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--green);
+            font-size: 14px;
+        }
+
+        .value-stack-item span {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 40px;
+            text-align: center;
+            background: var(--navy);
+        }
+
+        .footer h3 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-item {
+            padding: 24px;
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-item h4 {
+            font-size: 14px;
+            color: var(--blue);
+            margin-bottom: 8px;
+        }
+
+        .footer-item p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        @media (max-width: 1000px) {
+            .storyboard {
+                grid-template-columns: 1fr;
+            }
+            .overview-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .overview-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <span class="badge">Video Production Guide</span>
+        <h1>LeadPop Video Storyboard</h1>
+        <p>Becker x Hormozi Style — 60-90 Second Explainer Video</p>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div class="overview">
+        <div class="overview-grid">
+            <div class="overview-item">
+                <div class="time">0-8s</div>
+                <div class="name">Cold Open</div>
+            </div>
+            <div class="overview-item">
+                <div class="time">8-25s</div>
+                <div class="name">Call Out BS</div>
+            </div>
+            <div class="overview-item">
+                <div class="time">25-45s</div>
+                <div class="name">Flip Script</div>
+            </div>
+            <div class="overview-item">
+                <div class="time">45-55s</div>
+                <div class="name">Credibility</div>
+            </div>
+            <div class="overview-item">
+                <div class="time">55-75s</div>
+                <div class="name">Offer Stack</div>
+            </div>
+            <div class="overview-item">
+                <div class="time">75-85s</div>
+                <div class="name">Close/CTA</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 1: COLD OPEN -->
+    <div class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <div class="section-meta">
+                    <h2>Cold Open — Pattern Interrupt</h2>
+                    <div class="timing">
+                        <span><span class="dot"></span> 0:00 - 0:08</span>
+                        <span><span class="dot"></span> 8 seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="storyboard">
+                <div>
+                    <div class="frame">
+                        <span class="frame-label">Camera View</span>
+                        <div class="frame-content">
+                            <div class="frame-speaker">👤</div>
+                            <p class="frame-text">Direct to camera. Tight shot (chest up). Plain dark background. No intro graphics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mood-bar">
+                        <div class="mood-segment high">HIGH ENERGY</div>
+                        <div class="mood-segment high">AGGRESSIVE</div>
+                        <div class="mood-segment high">DIRECT</div>
+                    </div>
+                </div>
+
+                <div class="visuals-panel">
+                    <div class="visual-card">
+                        <h4>On-Screen Text</h4>
+                        <ul>
+                            <li><span class="icon">T</span> No text — just the speaker</li>
+                            <li><span class="icon">!</span> Optional: Subtle "LIVE" or nothing</li>
+                        </ul>
+                    </div>
+                    <div class="visual-card">
+                        <h4>Camera Notes</h4>
+                        <p>Becker style: No fancy intro. Start mid-sentence if possible. Feels like you're interrupting their scroll. Slight lean forward, direct eye contact.</p>
+                    </div>
+                    <div class="visual-card">
+                        <h4>Audio</h4>
+                        <p>No music. Just voice. Maybe a subtle bass hit on "screwed" for impact.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="script-box">
+                <p>"If you're buying business loan leads right now, you're probably <span class="highlight">getting screwed</span>. Let me explain."</p>
+            </div>
+
+            <div class="tips">
+                <h4>💡 Director's Notes</h4>
+                <ul>
+                    <li>Start recording 2 seconds before the line — cut the silence in post</li>
+                    <li>Say "screwed" with a slight pause before it for impact</li>
+                    <li>No smile. Dead serious. Becker energy.</li>
+                    <li>This is the HOOK — if this doesn't land, nothing else matters</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: CALL OUT THE BS -->
+    <div class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <div class="section-meta">
+                    <h2>Call Out the BS — The 3 Bad Options</h2>
+                    <div class="timing">
+                        <span><span class="dot"></span> 0:08 - 0:25</span>
+                        <span><span class="dot"></span> 17 seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="storyboard">
+                <div>
+                    <div class="frame">
+                        <span class="frame-label">Split Screen</span>
+                        <div class="frame-content" style="flex-direction: row; gap: 20px;">
+                            <div style="flex: 1; background: var(--navy); padding: 20px; border: 2px solid var(--red);">
+                                <div style="font-size: 48px; margin-bottom: 8px;">💸</div>
+                                <div style="font-size: 12px; color: var(--red);">OPTION 1</div>
+                                <div style="font-size: 14px;">Retainer Agency</div>
+                                <div style="font-size: 24px; font-weight: 700; color: var(--red);">$7,500/mo</div>
+                            </div>
+                            <div style="flex: 1; background: var(--navy); padding: 20px; border: 2px solid var(--yellow);">
+                                <div style="font-size: 48px; margin-bottom: 8px;">🔄</div>
+                                <div style="font-size: 12px; color: var(--yellow);">OPTION 2</div>
+                                <div style="font-size: 14px;">Shared Leads</div>
+                                <div style="font-size: 24px; font-weight: 700; color: var(--yellow);">SOLD 4X</div>
+                            </div>
+                            <div style="flex: 1; background: var(--navy); padding: 20px; border: 2px solid var(--red);">
+                                <div style="font-size: 48px; margin-bottom: 8px;">📉</div>
+                                <div style="font-size: 12px; color: var(--red);">OPTION 3</div>
+                                <div style="font-size: 14px;">DIY Ads</div>
+                                <div style="font-size: 24px; font-weight: 700; color: var(--red);">$20K+ RISK</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mood-bar">
+                        <div class="mood-segment high">FRUSTRATED</div>
+                        <div class="mood-segment medium">EXPOSING</div>
+                        <div class="mood-segment high">BUILDING PAIN</div>
+                    </div>
+                </div>
+
+                <div class="visuals-panel">
+                    <div class="visual-card">
+                        <h4>Visual Sequence</h4>
+                        <ul>
+                            <li><span class="icon">1</span> Option 1 card animates in (left)</li>
+                            <li><span class="icon">2</span> Option 2 card animates in (center)</li>
+                            <li><span class="icon">3</span> Option 3 card animates in (right)</li>
+                            <li><span class="icon">X</span> All 3 get "X" overlays at the end</li>
+                        </ul>
+                    </div>
+                    <div class="visual-card">
+                        <h4>B-Roll Options</h4>
+                        <p>Quick cuts between speaker and: money burning GIF, phones ringing chaos, frustrated person at laptop, Facebook ad manager errors</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="script-box">
+                <p>"Here's how lead gen works for most lenders:<br><br>
+                <span class="highlight">Option 1:</span> You pay some agency $7,500 a month. They 'run ads.' Maybe you get leads, maybe you don't. Either way, they get paid.<br><br>
+                <span class="highlight">Option 2:</span> You buy 'leads' that have already been sold to four other lenders. So now you're in a race to see who can dial fastest.<br><br>
+                <span class="highlight">Option 3:</span> You generate your own leads. Cool. Now you're spending $20K a month on ads and praying Facebook doesn't shut you down.<br><br>
+                All three options have the same problem: <span class="highlight">YOU take all the risk.</span>"</p>
+            </div>
+
+            <div class="onscreen-elements">
+                <div class="onscreen-item">
+                    <div class="preview red">$7,500/mo GONE</div>
+                    <div class="label">Text Overlay — Option 1</div>
+                </div>
+                <div class="onscreen-item">
+                    <div class="preview yellow">SOLD TO 4 LENDERS</div>
+                    <div class="label">Text Overlay — Option 2</div>
+                </div>
+                <div class="onscreen-item">
+                    <div class="preview red">$20K+ AD SPEND</div>
+                    <div class="label">Text Overlay — Option 3</div>
+                </div>
+                <div class="onscreen-item">
+                    <div class="preview red">YOU = ALL THE RISK</div>
+                    <div class="label">Final Punch — End of Section</div>
+                </div>
+            </div>
+
+            <div class="tips">
+                <h4>💡 Director's Notes</h4>
+                <ul>
+                    <li>Use finger counting (1, 2, 3) for each option — Hormozi does this</li>
+                    <li>Speed up slightly on each option — builds frustration</li>
+                    <li>Pause and lean in on "YOU take all the risk"</li>
+                    <li>Consider quick zoom on the word "risk" for emphasis</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: FLIP THE SCRIPT -->
+    <div class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <div class="section-meta">
+                    <h2>Flip the Script — The LeadPop Difference</h2>
+                    <div class="timing">
+                        <span><span class="dot"></span> 0:25 - 0:45</span>
+                        <span><span class="dot"></span> 20 seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="storyboard">
+                <div>
+                    <div class="frame">
+                        <span class="frame-label">Value Reveal</span>
+                        <div class="frame-content" style="align-items: flex-start; text-align: left;">
+                            <div style="font-size: 14px; color: var(--blue); margin-bottom: 16px;">HERE'S WHAT WE DO DIFFERENTLY:</div>
+                            <div class="value-stack" style="width: 100%;">
+                                <div class="value-stack-item">
+                                    <span class="check">✓</span>
+                                    <span>We run all the ads</span>
+                                </div>
+                                <div class="value-stack-item">
+                                    <span class="check">✓</span>
+                                    <span>We pay for all the ads</span>
+                                </div>
+                                <div class="value-stack-item">
+                                    <span class="check">✓</span>
+                                    <span>We take all the risk</span>
+                                </div>
+                                <div class="value-stack-item">
+                                    <span class="check">✓</span>
+                                    <span>100% Exclusive leads</span>
+                                </div>
+                                <div class="value-stack-item">
+                                    <span class="check">✓</span>
+                                    <span>YOUR criteria, YOUR filters</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mood-bar">
+                        <div class="mood-segment calm">CONFIDENT</div>
+                        <div class="mood-segment calm">BUILDING</div>
+                        <div class="mood-segment green">SOLVING</div>
+                    </div>
+                </div>
+
+                <div class="visuals-panel">
+                    <div class="visual-card">
+                        <h4>Animation Style</h4>
+                        <p>Each benefit line animates in from left as speaker says it. Checkmark appears with a satisfying "pop" sound. Stack builds vertically — very Hormozi.</p>
+                    </div>
+                    <div class="visual-card">
+                        <h4>Speaker Energy</h4>
+                        <p>Shift from frustrated → confident. Slight smile when saying "differently." Hand gestures emphasizing "we" vs "you."</p>
+                    </div>
+                    <div class="visual-card">
+                        <h4>Key Visual Moment</h4>
+                        <p>When saying "What exactly are you risking? Nothing." — all previous elements fade, big "NOTHING" appears center screen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="script-box">
+                <p>"Here's what we do differently.<br><br>
+                <span class="highlight">We run all the ads. We pay for all the ads. We take all the risk.</span><br><br>
+                You pay us NOTHING until a qualified lead hits your CRM.<br><br>
+                And these aren't recycled leads. They're <span class="highlight">exclusive. Yours. No one else gets them.</span><br><br>
+                You tell us your criteria — credit score, revenue, time in business — and we ONLY send you leads that match. If one doesn't? We replace it. Free.<br><br>
+                So let me get this straight: We spend the money. We take the risk. We filter to YOUR specs. And we guarantee quality.<br><br>
+                <span class="highlight">What exactly are you risking here? Nothing.</span>"</p>
+            </div>
+
+            <div class="onscreen-elements">
+                <div class="onscreen-item">
+                    <div class="preview green">100% EXCLUSIVE</div>
+                    <div class="label">Exclusive Badge</div>
+                </div>
+                <div class="onscreen-item">
+                    <div class="preview green">$0 UPFRONT</div>
+                    <div class="label">Zero Risk Badge</div>
+                </div>
+                <div class="onscreen-item">
+                    <div class="preview green">FREE REPLACEMENT</div>
+                    <div class="label">Guarantee Badge</div>
+                </div>
+                <div class="onscreen-item">
+                    <div class="preview" style="font-size: 24px; border-color: var(--white);">NOTHING.</div>
+                    <div class="label">Final Punch</div>
+                </div>
+            </div>
+
+            <div class="tips">
+                <h4>💡 Director's Notes</h4>
+                <ul>
+                    <li>"We run... we pay... we take..." — use hand gestures pointing to self</li>
+                    <li>Slow down on "exclusive" — let it breathe</li>
+                    <li>The "Nothing" at the end needs a beat of silence after</li>
+                    <li>This is the TURN — energy shifts from problem to solution</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4: CREDIBILITY -->
+    <div class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <div class="section-meta">
+                    <h2>Credibility Drop — Social Proof</h2>
+                    <div class="timing">
+                        <span><span class="dot"></span> 0:45 - 0:55</span>
+                        <span><span class="dot"></span> 10 seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="storyboard">
+                <div>
+                    <div class="frame">
+                        <span class="frame-label">Stats Display</span>
+                        <div class="frame-content">
+                            <div style="font-size: 72px; font-weight: 700; color: var(--blue); line-height: 1;">$150M+</div>
+                            <div style="font-size: 16px; color: var(--gray); margin-top: 8px;">REVENUE GENERATED IN 2024</div>
+                            <div style="display: flex; gap: 24px; margin-top: 32px;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 14px; color: var(--green);">✓ OTP VERIFIED</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 14px; color: var(--green);">✓ REAL HUMANS</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 14px; color: var(--green);">✓ ALL LOAN TYPES</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mood-bar">
+                        <div class="mood-segment calm">AUTHORITATIVE</div>
+                        <div class="mood-segment calm">PROVEN</div>
+                        <div class="mood-segment green">TRUSTWORTHY</div>
+                    </div>
+                </div>
+
+                <div class="visuals-panel">
+                    <div class="visual-card">
+                        <h4>Counter Animation</h4>
+                        <p>$30M number counts up rapidly from $0. Feels impressive and dynamic. Counter sound effects optional.</p>
+                    </div>
+                    <div class="visual-card">
+                        <h4>Loan Type Icons</h4>
+                        <ul>
+                            <li><span class="icon">$</span> SBA</li>
+                            <li><span class="icon">$</span> MCA</li>
+                            <li><span class="icon">$</span> Equipment</li>
+                            <li><span class="icon">$</span> Lines of Credit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="script-box">
+                <p>"We managed <span class="highlight">$150 million in ad spend</span> for clients over 5 years.<br><br>
+                Every lead is <span class="highlight">OTP verified</span> — meaning a real human confirmed their phone number before it ever touches your system.<br><br>
+                SBA, MCA, equipment, lines of credit — doesn't matter. If you fund it, we can fill your pipeline with it."</p>
+            </div>
+
+            <div class="tips">
+                <h4>💡 Director's Notes</h4>
+                <ul>
+                    <li>Emphasize "REVENUE" vs "ad spend" — common BS metric</li>
+                    <li>Quick explanation of OTP for those who don't know</li>
+                    <li>Loan types listed fast — shows breadth without boring</li>
+                    <li>This section is SHORT — don't oversell, just drop proof and move</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 5: OFFER STACK -->
+    <div class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <div class="section-meta">
+                    <h2>The Offer Stack — Hormozi Style</h2>
+                    <div class="timing">
+                        <span><span class="dot"></span> 0:55 - 1:15</span>
+                        <span><span class="dot"></span> 20 seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="storyboard">
+                <div>
+                    <div class="frame">
+                        <span class="frame-label">Full Stack Build</span>
+                        <div class="frame-content" style="align-items: flex-start; text-align: left; padding: 24px;">
+                            <div style="font-size: 14px; color: var(--blue); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 2px;">THE OFFER:</div>
+                            <div style="width: 100%; display: flex; flex-direction: column; gap: 8px;">
+                                <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(34,197,94,0.1); border-left: 3px solid var(--green);">
+                                    <span style="color: var(--green);">✓</span>
+                                    <span style="font-size: 14px;">Exclusive leads — never shared</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(34,197,94,0.1); border-left: 3px solid var(--green);">
+                                    <span style="color: var(--green);">✓</span>
+                                    <span style="font-size: 14px;">Custom filtered to YOUR buy box</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(34,197,94,0.1); border-left: 3px solid var(--green);">
+                                    <span style="color: var(--green);">✓</span>
+                                    <span style="font-size: 14px;">OTP verified contacts</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(34,197,94,0.1); border-left: 3px solid var(--green);">
+                                    <span style="color: var(--green);">✓</span>
+                                    <span style="font-size: 14px;">Free replacements</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(34,197,94,0.1); border-left: 3px solid var(--green);">
+                                    <span style="color: var(--green);">✓</span>
+                                    <span style="font-size: 14px;">Zero upfront cost</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(34,197,94,0.1); border-left: 3px solid var(--green);">
+                                    <span style="color: var(--green);">✓</span>
+                                    <span style="font-size: 14px;">Direct CRM delivery</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mood-bar">
+                        <div class="mood-segment green">STACKING</div>
+                        <div class="mood-segment green">VALUE</div>
+                        <div class="mood-segment green">IRRESISTIBLE</div>
+                    </div>
+                </div>
+
+                <div class="visuals-panel">
+                    <div class="visual-card">
+                        <h4>Animation Timing</h4>
+                        <p>Each line animates in as speaker says it. Checkmark pops in with subtle sound. Stack grows taller — overwhelming value visually.</p>
+                    </div>
+                    <div class="visual-card">
+                        <h4>This is THE Hormozi Move</h4>
+                        <p>The visual stack is signature Hormozi. It makes the offer feel massive. By the time all 6 items are on screen, it looks like a no-brainer.</p>
+                    </div>
+                    <div class="visual-card">
+                        <h4>End with Question</h4>
+                        <p>"How many leads can you handle?" — shifts power to viewer. They're now thinking about buying, not whether to buy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="script-box">
+                <p>"So here's the offer:<br><br>
+                <span class="highlight">Exclusive leads</span> — not shared, ever.<br>
+                <span class="highlight">Custom filtered</span> to YOUR buy box.<br>
+                <span class="highlight">OTP verified</span> — real contacts only.<br>
+                <span class="highlight">Free replacements</span> if anything's off.<br>
+                <span class="highlight">Zero upfront cost</span> — we cover ad spend.<br>
+                <span class="highlight">Direct CRM delivery</span> — Salesforce, HubSpot, whatever.<br><br>
+                The only question is: <span class="highlight">how many leads can you actually handle?</span>"</p>
+            </div>
+
+            <div class="tips">
+                <h4>💡 Director's Notes</h4>
+                <ul>
+                    <li>Each benefit = one breath. Don't rush.</li>
+                    <li>Slight head nod on each checkmark — confident</li>
+                    <li>The question at the end is a REFRAME — now they're thinking capacity, not cost</li>
+                    <li>This is where Hormozi would slightly smile — you've won</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 6: CLOSE/CTA -->
+    <div class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <div class="section-meta">
+                    <h2>The Close — CTA</h2>
+                    <div class="timing">
+                        <span><span class="dot"></span> 1:15 - 1:25</span>
+                        <span><span class="dot"></span> 10 seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="storyboard">
+                <div>
+                    <div class="frame">
+                        <span class="frame-label">Final Frame</span>
+                        <div class="frame-content">
+                            <div style="font-size: 32px; font-weight: 700; margin-bottom: 24px;">Book Your Strategy Call</div>
+                            <div style="padding: 16px 32px; background: var(--blue); font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer;">
+                                SCHEDULE NOW →
+                            </div>
+                            <div style="margin-top: 24px; font-size: 14px; color: var(--gray);">
+                                No retainers • No upfront fees • Pay only for results
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mood-bar">
+                        <div class="mood-segment calm">DIRECT</div>
+                        <div class="mood-segment calm">CONFIDENT</div>
+                        <div class="mood-segment green">ACTION</div>
+                    </div>
+                </div>
+
+                <div class="visuals-panel">
+                    <div class="visual-card">
+                        <h4>Speaker Final Shot</h4>
+                        <p>Back to speaker, same tight shot. Direct eye contact. No smile — serious closing energy. Then cut to logo + CTA.</p>
+                    </div>
+                    <div class="visual-card">
+                        <h4>End Card Elements</h4>
+                        <ul>
+                            <li><span class="icon">◆</span> LeadPop Logo</li>
+                            <li><span class="icon">◆</span> "Schedule Your Call" button</li>
+                            <li><span class="icon">◆</span> Trust line underneath</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="script-box">
+                <p>"Book a call. Let's figure out your capacity and build a pipeline that prints.<br><br>
+                <span class="highlight">Stop competing for garbage. Start closing exclusives.</span>"</p>
+            </div>
+
+            <div class="tips">
+                <h4>💡 Director's Notes</h4>
+                <ul>
+                    <li>"Pipeline that prints" — let it land. Pause after.</li>
+                    <li>Last line is the tagline — delivered with finality</li>
+                    <li>Hold on logo/CTA for 3+ seconds at the end</li>
+                    <li>Music (if any) should crescendo and cut clean at the end</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER: PRODUCTION NOTES -->
+    <div class="footer">
+        <h3>Production Quick Reference</h3>
+        <div class="footer-grid">
+            <div class="footer-item">
+                <h4>Camera Setup</h4>
+                <p>Single camera, tight shot (chest up), dark/neutral background, good lighting on face</p>
+            </div>
+            <div class="footer-item">
+                <h4>Audio</h4>
+                <p>Lav mic or shotgun. Clean audio is critical. Minimal music — voice carries it.</p>
+            </div>
+            <div class="footer-item">
+                <h4>Graphics Style</h4>
+                <p>Clean, bold, sans-serif. Brand blue (#2d7ff9) for accents. Animate in from left.</p>
+            </div>
+            <div class="footer-item">
+                <h4>Total Runtime</h4>
+                <p>Target: 75-85 seconds. Can cut to 60 by trimming Section 4 (credibility).</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

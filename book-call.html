@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Call | LeadPop - Get Your Custom Lead Projection</title>
+    <meta name="description" content="Schedule a free strategy call with LeadPop. Get your custom lead projection and see exactly how many qualified business loan leads we can deliver for your lending business.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+    <style>
+        :root {
+            --navy-dark: #0a1628;
+            --navy: #0d1b2a;
+            --navy-light: #1b2838;
+            --navy-lighter: #243447;
+            --blue-accent: #4da8da;
+            --blue-bright: #5dade2;
+            --blue-glow: #7ec8e3;
+            --blue-pale: #e8f4f8;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #94a3b8;
+            --gray-600: #64748b;
+            --gray-700: #475569;
+            --gray-800: #334155;
+            --gray-900: #1e293b;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --red: #ef4444;
+            --red-light: #fee2e2;
+            --gradient-blue: linear-gradient(135deg, #4da8da 0%, #5dade2 50%, #7ec8e3 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .text-blue {
+            color: var(--blue-accent);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            color: var(--navy-dark);
+            box-shadow: 0 4px 24px rgba(77, 168, 218, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(77, 168, 218, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(77, 168, 218, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            padding: 12px 24px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a:not(.btn) {
+                display: none;
+            }
+            .nav-links {
+                gap: 0;
+            }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 140px 0 80px;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center top, rgba(77, 168, 218, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        .hero-title-highlight {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== MAIN BOOKING SECTION ===== */
+        .booking-section {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .booking-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .booking-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Left Side - What to Expect */
+        .booking-info {
+            padding: 40px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        .booking-info h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--gray-900);
+        }
+
+        .booking-info > p {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .expect-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .expect-item {
+            display: flex;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .expect-item:last-child {
+            border-bottom: none;
+        }
+
+        .expect-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--blue-pale);
+            border-radius: 12px;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .expect-content h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--gray-900);
+        }
+
+        .expect-content p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .call-details {
+            display: flex;
+            gap: 24px;
+            padding: 20px;
+            background: var(--blue-pale);
+            border-radius: 12px;
+            margin-top: 24px;
+        }
+
+        .call-detail {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .call-detail-icon {
+            font-size: 20px;
+        }
+
+        .call-detail-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        @media (max-width: 500px) {
+            .call-details {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        /* Right Side - Calendar/Form */
+        .booking-calendar {
+            background: var(--white);
+            border: 2px solid var(--blue-accent);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(77, 168, 218, 0.15);
+        }
+
+        .calendar-header {
+            background: var(--navy);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .calendar-header h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .calendar-header p {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        /* Calendar Embed */
+        .calendar-embed {
+            padding: 16px;
+            min-height: 600px;
+        }
+
+        .calendar-embed iframe {
+            border-radius: 8px;
+        }
+
+        @media (max-width: 500px) {
+            .calendar-embed {
+                padding: 8px;
+            }
+        }
+
+        /* ===== TRUST BADGES ===== */
+        .trust-section {
+            padding: 60px 0;
+            background: var(--white);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .trust-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .trust-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        @media (max-width: 768px) {
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .faq-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        .faq-header h2 {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--gray-900);
+        }
+
+        .faq-header p {
+            font-size: 16px;
+            color: var(--gray-600);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--gray-100);
+        }
+
+        .faq-question h4 {
+            font-size: 15px;
+            font-weight: 600;
+            padding-right: 16px;
+            color: var(--gray-900);
+        }
+
+        .faq-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--blue-pale);
+            border-radius: 8px;
+            font-size: 18px;
+            color: var(--blue-accent);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 20px;
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            padding: 80px 0;
+            background: var(--navy);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center bottom, rgba(77, 168, 218, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+
+        .final-cta p {
+            font-size: 17px;
+            color: var(--gray-500);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .scroll-to-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-to-top:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--navy-dark);
+            border-top: 1px solid var(--navy-lighter);
+            padding: 48px 0;
+            color: var(--white);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .footer-logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .footer-logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue-accent);
+        }
+
+        .footer-copyright {
+            color: var(--gray-600);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="index-v2.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="logo-text">LeadPop</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="index-v2.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="book-call.html" class="btn btn-primary nav-cta active">Get Your Lead Projection</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-label">Free Strategy Call</span>
+                <h1 class="hero-title">
+                    Get Your Custom<br><span class="hero-title-highlight">Lead Projection</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Book a quick call with our team. We'll analyze your lending criteria and show you exactly how many qualified leads we can deliver each month.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN BOOKING SECTION -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <div class="booking-wrapper">
+                <!-- Left Side - What to Expect -->
+                <div class="booking-info fade-in">
+                    <h2>What to Expect on This Call</h2>
+                    <p>This isn't a sales pitch. It's a strategy session to see if we're a good fit for each other.</p>
+                    
+                    <ul class="expect-list">
+                        <li class="expect-item">
+                            <div class="expect-icon">🎯</div>
+                            <div class="expect-content">
+                                <h3>Define Your Buy Box</h3>
+                                <p>Tell us your ideal lead criteria — credit score, revenue, loan amount, geography — so we know exactly what to target.</p>
+                            </div>
+                        </li>
+                        <li class="expect-item">
+                            <div class="expect-icon">📊</div>
+                            <div class="expect-content">
+                                <h3>Get Your Volume Projection</h3>
+                                <p>Based on your criteria, we'll show you how many qualified leads we can realistically deliver each month.</p>
+                            </div>
+                        </li>
+                        <li class="expect-item">
+                            <div class="expect-icon">💰</div>
+                            <div class="expect-content">
+                                <h3>Custom Pricing Quote</h3>
+                                <p>Get transparent pricing tailored to your specific requirements. No hidden fees, no surprises.</p>
+                            </div>
+                        </li>
+                        <li class="expect-item">
+                            <div class="expect-icon">🔌</div>
+                            <div class="expect-content">
+                                <h3>CRM Integration Plan</h3>
+                                <p>We'll discuss how leads will flow directly into your existing systems — Salesforce, HubSpot, or whatever you use.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Side - Calendar Booking -->
+                <div class="booking-calendar fade-in">
+                    <div class="calendar-header">
+                        <h3>Schedule Your Call</h3>
+                        <p>Pick a time that works for you</p>
+                    </div>
+                    
+                    <!-- Calendar Embed -->
+                    <div class="calendar-embed">
+                        <iframe src="https://api.leadconnectorhq.com/widget/booking/SZTAXrNWv121HHKREphG" style="width: 100%;border:none;overflow: hidden;min-height: 700px;" scrolling="no" id="SQVZmTCojJ9JS04OdVTi_1769550652439"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BADGES -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item fade-in">
+                    <div class="trust-icon">🔒</div>
+                    <div class="trust-text">$0 Upfront Cost</div>
+                </div>
+                <div class="trust-item fade-in">
+                    <div class="trust-icon">🎯</div>
+                    <div class="trust-text">100% Exclusive Leads</div>
+                </div>
+                <div class="trust-item fade-in">
+                    <div class="trust-icon">✅</div>
+                    <div class="trust-text">OTP Verified Contacts</div>
+                </div>
+                <div class="trust-item fade-in">
+                    <div class="trust-icon">🔄</div>
+                    <div class="trust-text">Free Replacements</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-header fade-in">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>Is this a sales call?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No pressure tactics here. It's a strategy session to see if we're a good fit. If we can't help you, we'll tell you upfront.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How long is the call and how does it work?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Plan for 30 minutes. We'll meet via Zoom (preferred) so we can share screens and walk through your projection together. If you'd prefer a phone call instead, just let us know when booking.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>What should I prepare?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Know your ideal lead criteria: credit score minimums, revenue thresholds, loan amounts you fund, and geographic targets. That helps us give accurate projections.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>What if I'm not ready to commit?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No problem. The call is zero commitment. Get your projection, think it over, and reach out when you're ready. No follow-up pressure.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>Do you have minimum requirements?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            We offer trial lead tests — a smaller batch of leads that fit your buy box so you can experience our quality firsthand. Once you see the results, you can scale up with confidence. No long-term commitment required to get started.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How soon can we start?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            If we're a good fit, we can typically have your CRM integrated and campaigns live within a week of our call.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="index-v2.html" class="footer-logo">
+                    <svg class="footer-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="footer-logo-text">LeadPop</span>
+                </a>
+                
+                <div class="footer-links">
+                    <a href="about-v2.html">About Us</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                
+                <p class="footer-copyright">© 2026 LeadPop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

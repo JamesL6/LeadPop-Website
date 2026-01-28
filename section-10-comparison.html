@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 10 - Comparison Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --bg-warm-gray: #f5f3f0;
+            --bg-section: #fdfcfa;
+            --primary: #2d5a4e;
+            --accent-gold-dark: #a68519;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --text-muted: #6b6b6b;
+            --border-light: #e8e6e3;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --radius-lg: 20px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            color: var(--text-dark);
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-gold { color: var(--accent-gold-dark); }
+
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 50px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(45, 90, 78, 0.1), rgba(45, 90, 78, 0.05));
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        
+        .section-header h2 { margin-bottom: 14px; }
+        
+        .section-header p {
+            font-size: 1.05rem;
+            color: var(--text-body);
+        }
+
+        /* COMPARISON */
+        .comparison-wrapper {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 18px 24px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .comparison-table th {
+            background: var(--bg-warm-gray);
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+        
+        .comparison-table th:nth-child(2) {
+            background: var(--primary);
+            color: #fff;
+        }
+        
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .comparison-table td:nth-child(2) {
+            color: var(--primary);
+            font-weight: 600;
+            background: rgba(45, 90, 78, 0.05);
+        }
+        
+        .comparison-table td:nth-child(3) {
+            color: var(--text-muted);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:hover td {
+            background: var(--bg-section);
+        }
+        
+        .comparison-table tr:hover td:nth-child(2) {
+            background: rgba(45, 90, 78, 0.1);
+        }
+        
+        .check-yes {
+            color: var(--primary);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .check-yes i {
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+        }
+        
+        .check-no {
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .check-no i {
+            width: 20px;
+            height: 20px;
+            background: #ef4444;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- COMPARISON -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Compare</span>
+                <h2>Why Homeowners <span class="text-gold">Choose Us</span> Over Agents</h2>
+                <p>See the difference for yourself</p>
+            </div>
+            
+            <div class="comparison-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th><i class="fas fa-check-circle"></i> Selling To Us</th>
+                            <th>Traditional Agent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Commissions/Fees</td>
+                            <td><span class="check-yes"><i class="fas fa-check"></i> $0 – ZERO fees</span></td>
+                            <td><span class="check-no"><i class="fas fa-times"></i> 6% (~$18,000)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Closing Costs</td>
+                            <td><span class="check-yes"><i class="fas fa-check"></i> We pay 100%</span></td>
+                            <td><span class="check-no"><i class="fas fa-times"></i> You pay 2-3% (~$9,000)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Repairs Required</td>
+                            <td><span class="check-yes"><i class="fas fa-check"></i> None – Sell as-is</span></td>
+                            <td><span class="check-no"><i class="fas fa-times"></i> $5,000-$15,000+</span></td>
+                        </tr>
+                        <tr>
+                            <td>Timeline to Close</td>
+                            <td><span class="check-yes"><i class="fas fa-check"></i> 7-14 days</span></td>
+                            <td><span class="check-no"><i class="fas fa-times"></i> 60-120+ days</span></td>
+                        </tr>
+                        <tr>
+                            <td>Showings/Open Houses</td>
+                            <td><span class="check-yes"><i class="fas fa-check"></i> None – Private sale</span></td>
+                            <td><span class="check-no"><i class="fas fa-times"></i> Multiple strangers</span></td>
+                        </tr>
+                        <tr>
+                            <td>Certainty of Sale</td>
+                            <td><span class="check-yes"><i class="fas fa-check"></i> 100% Guaranteed</span></td>
+                            <td><span class="check-no"><i class="fas fa-times"></i> Buyers back out</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cleaning/Junk Removal</td>
+                            <td><span class="check-yes"><i class="fas fa-check"></i> Leave everything</span></td>
+                            <td><span class="check-no"><i class="fas fa-times"></i> Spotless required</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

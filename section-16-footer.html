@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 16 - Footer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #1a3c34;
+            --accent-gold: #c9a227;
+            --accent-gold-light: #e3c255;
+            --radius-md: 12px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.7;
+        }
+        
+        h3, h4 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* FOOTER */
+        .footer {
+            background: var(--primary-dark);
+            color: #fff;
+            padding: 70px 0 28px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+            color: #fff;
+        }
+        
+        .footer-brand h3 span { color: var(--accent-gold-light); }
+        
+        .footer-contact {
+            line-height: 2;
+            opacity: 0.85;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer-contact i {
+            width: 18px;
+            color: var(--accent-gold-light);
+            margin-right: 8px;
+        }
+        
+        .footer h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+            color: #fff;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li { margin-bottom: 10px; }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold-light);
+            transform: translateX(4px);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 18px;
+        }
+        
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+        
+        .footer-certifications {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .cert-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8rem;
+        }
+        
+        .cert-badge i {
+            color: var(--accent-gold-light);
+        }
+        
+        .footer-disclaimer {
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+        
+        .footer-bottom {
+            padding-top: 28px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+        }
+        
+        .footer-bottom a {
+            color: rgba(255,255,255,0.6);
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-bottom a:hover {
+            color: var(--accent-gold-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>DFW Cash<span>Home</span>Buyers</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Suite 100<br>Dallas, TX 75201</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+12145552274">(214) 555-CASH</a></p>
+                        <p><i class="fas fa-envelope"></i> info@dfwcashhomebuyers.com</p>
+                    </div>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Google"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    
+                    <div class="footer-certifications">
+                        <div class="cert-badge"><i class="fas fa-award"></i> BBB A+ Rated</div>
+                        <div class="cert-badge"><i class="fas fa-shield-alt"></i> Licensed & Insured</div>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Situations</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Foreclosure</a></li>
+                        <li><a href="#">Divorce</a></li>
+                        <li><a href="#">Inherited Property</a></li>
+                        <li><a href="#">Relocation</a></li>
+                        <li><a href="#">See All →</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Service Areas</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Dallas</a></li>
+                        <li><a href="#">Fort Worth</a></li>
+                        <li><a href="#">Arlington</a></li>
+                        <li><a href="#">Plano</a></li>
+                        <li><a href="#">See All →</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-disclaimer">
+                DFW Cash Home Buyers is a licensed real estate solutions company. We are not real estate agents or brokers. We buy houses directly from homeowners. Your information will be handled with strict confidentiality. By submitting your property information, you agree to be contacted regarding your property. We are committed to treating all homeowners fairly and with respect. TREC Information About Brokerage Services | TREC Consumer Protection Notice
+            </div>
+            
+            <div class="footer-bottom">
+                © 2024 DFW Cash Home Buyers. All Rights Reserved.
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

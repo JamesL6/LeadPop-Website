@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Lead Projection | LeadPop - Free Custom Quote</title>
+    <meta name="description" content="Get your custom lead projection from LeadPop. Tell us your lending criteria and see exactly how many qualified business loan leads we can deliver each month.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://assets.prd.heyflow.com/builder/widget/latest/webview.js"></script>
+    <style>
+        :root {
+            --navy-dark: #0a1628;
+            --navy: #0d1b2a;
+            --navy-light: #1b2838;
+            --navy-lighter: #243447;
+            --blue-accent: #4da8da;
+            --blue-bright: #5dade2;
+            --blue-glow: #7ec8e3;
+            --blue-pale: #e8f4f8;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #94a3b8;
+            --gray-600: #64748b;
+            --gray-700: #475569;
+            --gray-800: #334155;
+            --gray-900: #1e293b;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --gradient-blue: linear-gradient(135deg, #4da8da 0%, #5dade2 50%, #7ec8e3 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .text-blue {
+            color: var(--blue-accent);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            color: var(--navy-dark);
+            box-shadow: 0 4px 24px rgba(77, 168, 218, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(77, 168, 218, 0.4);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(77, 168, 218, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            padding: 12px 24px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a:not(.btn) {
+                display: none;
+            }
+            .nav-links {
+                gap: 0;
+            }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 140px 0 60px;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center top, rgba(77, 168, 218, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero-title-highlight {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== FORM SECTION ===== */
+        .form-section {
+            padding: 60px 0 80px;
+            background: var(--off-white);
+        }
+
+        .form-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .form-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            font-size: 15px;
+            color: var(--gray-600);
+        }
+
+        /* Heyflow Container */
+        .heyflow-container {
+            display: flex;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+        heyflow-wrapper {
+            max-width: 100%;
+        }
+
+        @media (max-width: 850px) {
+            .form-container {
+                padding: 24px 16px;
+            }
+            
+            heyflow-wrapper {
+                width: 100% !important;
+            }
+        }
+
+        /* ===== BENEFITS BAR ===== */
+        .benefits-bar {
+            padding: 40px 0;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 16px;
+        }
+
+        .benefit-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .benefit-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .benefit-subtext {
+            font-size: 12px;
+            color: var(--gray-500);
+            margin-top: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== WHAT HAPPENS NEXT ===== */
+        .next-steps {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .next-steps-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        .next-steps-header h2 {
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--gray-900);
+        }
+
+        .next-steps-header p {
+            font-size: 16px;
+            color: var(--gray-600);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin: 0 auto 16px;
+        }
+
+        .step-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--gray-900);
+        }
+
+        .step-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+        }
+
+        /* ===== ALTERNATIVE CTA ===== */
+        .alt-cta {
+            padding: 60px 0;
+            background: var(--navy);
+            text-align: center;
+        }
+
+        .alt-cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .alt-cta h2 {
+            font-size: clamp(20px, 3vw, 28px);
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        .alt-cta p {
+            font-size: 16px;
+            color: var(--gray-500);
+            margin-bottom: 24px;
+        }
+
+        .alt-cta a {
+            color: var(--blue-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .alt-cta a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--navy-dark);
+            border-top: 1px solid var(--navy-lighter);
+            padding: 48px 0;
+            color: var(--white);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .footer-logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .footer-logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue-accent);
+        }
+
+        .footer-copyright {
+            color: var(--gray-600);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="index-v2.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="logo-text">LeadPop</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="index-v2.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="book-call.html" class="btn btn-primary nav-cta">Get Your Lead Projection</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-label">Takes 2 Minutes</span>
+                <h1 class="hero-title">
+                    Get Your Custom<br><span class="hero-title-highlight">Lead Projection</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Tell us about your lending business and criteria. We'll show you exactly how many qualified leads we can deliver — and at what price.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-container fade-in">
+                    <div class="form-header">
+                        <h2>Answer a Few Quick Questions</h2>
+                        <p>We'll use this to build your custom projection</p>
+                    </div>
+                    
+                    <!-- Heyflow Embed -->
+                    <div class="heyflow-container">
+                        <heyflow-wrapper flow-id="aub7qWw70NO7Nafvd7B8" dynamic-height scroll-up-on-navigation style-config='{"width":"800px"}'></heyflow-wrapper>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS BAR -->
+    <section class="benefits-bar">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">💰</div>
+                    <div class="benefit-text">$0 Upfront</div>
+                    <div class="benefit-subtext">We cover all ad spend</div>
+                </div>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-text">100% Exclusive</div>
+                    <div class="benefit-subtext">Never resold to competitors</div>
+                </div>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">✅</div>
+                    <div class="benefit-text">OTP Verified</div>
+                    <div class="benefit-subtext">Real phone numbers only</div>
+                </div>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">🔄</div>
+                    <div class="benefit-text">Free Replacements</div>
+                    <div class="benefit-subtext">For any bad leads</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT HAPPENS NEXT -->
+    <section class="next-steps">
+        <div class="container">
+            <div class="next-steps-header fade-in">
+                <h2>What Happens Next?</h2>
+                <p>Here's what to expect after you submit the form</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card fade-in">
+                    <div class="step-number">1</div>
+                    <h3>We Review Your Criteria</h3>
+                    <p>Our team analyzes your buy box and lending requirements to build an accurate projection.</p>
+                </div>
+                
+                <div class="step-card fade-in">
+                    <div class="step-number">2</div>
+                    <h3>You Get Your Projection</h3>
+                    <p>Within 1 business day, we'll send you a custom quote with volume estimates and pricing.</p>
+                </div>
+                
+                <div class="step-card fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Quick Strategy Call</h3>
+                    <p>If you like what you see, we'll hop on a 15-minute call to finalize details and get you started.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALTERNATIVE CTA -->
+    <section class="alt-cta">
+        <div class="container">
+            <div class="alt-cta-content">
+                <h2>Prefer to Talk to Someone Directly?</h2>
+                <p>No problem — <a href="book-call.html">schedule a call with our team</a> or email us at <a href="mailto:hello@leadpop.com">hello@leadpop.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="index-v2.html" class="footer-logo">
+                    <svg class="footer-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="footer-logo-text">LeadPop</span>
+                </a>
+                
+                <div class="footer-links">
+                    <a href="about-v2.html">About Us</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="book-call.html">Book a Call</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                
+                <p class="footer-copyright">© 2026 LeadPop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

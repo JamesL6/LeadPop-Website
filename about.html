@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | LeadPop - Our Story & Mission</title>
+    <meta name="description" content="Learn about LeadPop's mission to eliminate lead generation risk for business lenders. Meet our team and discover why we only get paid when you get results.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Dark Colors */
+            --navy-dark: #0a1628;
+            --navy: #0d1b2a;
+            --navy-light: #1b2838;
+            --navy-lighter: #243447;
+            
+            /* Blue Accents */
+            --blue-accent: #4da8da;
+            --blue-bright: #5dade2;
+            --blue-glow: #7ec8e3;
+            --blue-pale: #e8f4f8;
+            
+            /* Light Colors */
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --light-gray: #f1f5f9;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #94a3b8;
+            --gray-600: #64748b;
+            --gray-700: #475569;
+            --gray-800: #334155;
+            --gray-900: #1e293b;
+            
+            /* Status Colors */
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --red: #ef4444;
+            --red-light: #fee2e2;
+            
+            /* Gradients */
+            --gradient-blue: linear-gradient(135deg, #4da8da 0%, #5dade2 50%, #7ec8e3 100%);
+            --gradient-dark: linear-gradient(180deg, #0a1628 0%, #0d1b2a 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-dark {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .section-light {
+            background: var(--white);
+            color: var(--gray-900);
+        }
+
+        .section-light-alt {
+            background: var(--off-white);
+            color: var(--gray-900);
+        }
+
+        .text-blue {
+            color: var(--blue-accent);
+        }
+
+        .text-gray {
+            color: var(--gray-600);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            color: var(--navy-dark);
+            box-shadow: 0 4px 24px rgba(77, 168, 218, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(77, 168, 218, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* ===== HEADER / NAV ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(77, 168, 218, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            padding: 12px 24px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 160px 0 100px;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center top, rgba(77, 168, 218, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        .hero-title-highlight {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== MISSION SECTION ===== */
+        .mission-section {
+            padding: 100px 0;
+            background: var(--off-white);
+        }
+
+        .mission-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .mission-content h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--gray-900);
+        }
+
+        .mission-statement {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--blue-accent);
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .mission-content p {
+            font-size: 17px;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .mission-visual {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+        }
+
+        .mission-stat {
+            text-align: center;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .mission-stat:last-child {
+            border-bottom: none;
+        }
+
+        .mission-stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .mission-stat-label {
+            font-size: 15px;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        @media (max-width: 900px) {
+            .mission-wrapper {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        /* ===== STORY SECTION ===== */
+        .story-section {
+            padding: 100px 0;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .story-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .story-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .story-header h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .story-header p {
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        .story-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--blue-accent) 0%, var(--navy-lighter) 100%);
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+            border: 3px solid var(--blue-accent);
+            border-radius: 50%;
+            font-size: 20px;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-top: 8px;
+        }
+
+        .timeline-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .timeline-content p {
+            font-size: 16px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .story-timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                gap: 20px;
+            }
+            .timeline-dot {
+                width: 42px;
+                height: 42px;
+                min-width: 42px;
+                font-size: 16px;
+            }
+        }
+
+        /* ===== WHY SECTION ===== */
+        .why-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .why-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .why-content h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--gray-900);
+        }
+
+        .why-content p {
+            font-size: 17px;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .why-content p strong {
+            color: var(--gray-900);
+        }
+
+        .why-quote {
+            background: var(--blue-pale);
+            border-left: 4px solid var(--blue-accent);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 32px 0;
+        }
+
+        .why-quote p {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        .why-quote-attribution {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            gap: 12px;
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        .why-quote-signature {
+            font-family: 'Caveat', cursive;
+            font-size: 32px;
+            color: var(--navy);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .why-quote-title {
+            font-size: 14px;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        .why-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .why-card {
+            background: var(--off-white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            border-color: var(--blue-accent);
+            transform: translateX(8px);
+        }
+
+        .why-card-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--blue-pale);
+            border-radius: 12px;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .why-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--gray-900);
+        }
+
+        .why-card p {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 900px) {
+            .why-wrapper {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team-section {
+            padding: 100px 0;
+            background: var(--off-white);
+        }
+
+        .team-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .team-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--blue-pale);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .team-header h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--gray-900);
+        }
+
+        .team-header p {
+            font-size: 18px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .team-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            border-color: var(--blue-accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(77, 168, 218, 0.15);
+        }
+
+        .team-card.featured {
+            grid-column: span 1;
+        }
+
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue-pale) 0%, var(--gray-200) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            border: 3px solid var(--blue-accent);
+            overflow: hidden;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--gray-900);
+        }
+
+        .team-role {
+            font-size: 15px;
+            color: var(--blue-accent);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .team-bio {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ===== VALUES SECTION ===== */
+        .values-section {
+            padding: 100px 0;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .values-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .values-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .values-header h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .values-header p {
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy) 100%);
+            border: 1px solid var(--navy-lighter);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-blue);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: rgba(77, 168, 218, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .value-card:hover::before {
+            opacity: 1;
+        }
+
+        .value-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.2);
+            border-radius: 14px;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center bottom, rgba(77, 168, 218, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .cta-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .cta-trust {
+            margin-top: 24px;
+            font-size: 15px;
+            color: var(--gray-500);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--navy-dark);
+            border-top: 1px solid var(--navy-lighter);
+            padding: 48px 0;
+            color: var(--white);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .footer-logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .footer-logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue-accent);
+        }
+
+        .footer-copyright {
+            color: var(--gray-600);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="index-v2.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="logo-text">LeadPop</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="index-v2.html">Home</a>
+                    <a href="about.html" class="active">About</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="book-call.html" class="btn btn-primary nav-cta">Get Your Lead Projection</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-label">About LeadPop</span>
+                <h1 class="hero-title">
+                    We Get Paid When<br><span class="hero-title-highlight">You Get Results</span>
+                </h1>
+                <p class="hero-subtitle">
+                    That's not a tagline — it's how we built our entire business. We absorb the risk so you don't have to.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-wrapper fade-in">
+                <div class="mission-content">
+                    <h2>Our Mission</h2>
+                    <p class="mission-statement">"We only get paid when you get results."</p>
+                    <p>
+                        Most marketing agencies hide behind vanity metrics — impressions, clicks, "brand awareness." They collect their retainer whether you close deals or not.
+                    </p>
+                    <p>
+                        We think that's backwards. If we're good at what we do, we should be willing to prove it. That's why we cover all ad spend upfront and only charge you for qualified leads that meet your criteria.
+                    </p>
+                    <p>
+                        <strong>No retainers. No setup fees. No risk on your end.</strong> We put our money where our mouth is — and we've built a growing business doing exactly that.
+                    </p>
+                </div>
+                <div class="mission-visual">
+                    <div class="mission-stat">
+                        <div class="mission-stat-number">$150M+</div>
+                        <div class="mission-stat-label">Ad Spend Managed in 5 Years</div>
+                    </div>
+                    <div class="mission-stat">
+                        <div class="mission-stat-number">3</div>
+                        <div class="mission-stat-label">Major Ad Platforms (Meta, Google, TikTok)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-header fade-in">
+                <span class="story-label">Our Story</span>
+                <h2>From Pressure Washing to Pay-Per-Lead</h2>
+                <p>LeadPop didn't start in a boardroom. It started with real experience running businesses and generating leads that actually convert.</p>
+            </div>
+            
+            <div class="story-timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">🧹</div>
+                    <div class="timeline-content">
+                        <h3>Started a Pressure Washing Company</h3>
+                        <p>James LaRosa's first business taught him what every service business owner learns fast: leads are everything. Without a steady flow of qualified prospects, even the best service doesn't matter. He built it up and sold it — but the lesson stuck.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">🏠</div>
+                    <div class="timeline-content">
+                        <h3>Founded Restoration Growth Partners</h3>
+                        <p>James founded Restoration Growth Partners, a marketing agency built specifically for restoration businesses — water damage, fire damage, mold remediation, and biohazard cleanup. With over 60 clients and growing, RGP became a trusted partner in the industry. But running a traditional agency revealed a hard truth: most marketing companies don't have skin in the game.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">💡</div>
+                    <div class="timeline-content">
+                        <h3>Chose a Better Model</h3>
+                        <p>Pay-per-lead isn't a new concept — but it's rarely done right. James decided to build a company that fully commits to it: we absorb the ad spend risk, only charge for qualified leads that meet your criteria, and replace any that don't. When incentives are aligned, everybody wins.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot">🚀</div>
+                    <div class="timeline-content">
+                        <h3>LeadPop is Born</h3>
+                        <p>LeadPop launched with one simple promise: we only get paid when you get results. We cover the ad spend, run the campaigns, verify every lead — and you only pay for qualified prospects that meet your exact criteria. No retainers, no risk, no BS.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY SECTION -->
+    <section class="why-section">
+        <div class="container">
+            <div class="why-wrapper">
+                <div class="why-content fade-in">
+                    <h2>Why This Model Exists</h2>
+                    <p>
+                        Here's the truth about most marketing agencies: <strong>they get paid whether you succeed or not.</strong>
+                    </p>
+                    <p>
+                        They'll charge you $5K-$10K/month in retainers. They'll ask for ad spend on top of that. They'll send you reports full of impressions and click-through rates. But when you ask "how many market qualified leads did you generate?" or "how many deals did this close?" — suddenly it's complicated.
+                    </p>
+                    <p>
+                        We think that's broken. If a lead generation company is actually good at generating leads, they should be willing to prove it with their own money first.
+                    </p>
+                    
+                    <div class="why-quote">
+                        <p>"If we're legitimate, we deliver legitimate results and grow because of it. It's that simple."</p>
+                        <div class="why-quote-attribution">
+                            <span class="why-quote-signature">James LaRosa</span>
+                            <span class="why-quote-title">— Owner, LeadPop</span>
+                        </div>
+                    </div>
+                    
+                    <p>
+                        That's why we built LeadPop the way we did. We invest in the campaigns. We absorb the ad spend risk. We only make money when you get leads that actually match what you're looking for.
+                    </p>
+                    <p>
+                        <strong>Our success is directly tied to yours.</strong> That's how it should be.
+                    </p>
+                </div>
+                
+                <div class="why-cards fade-in">
+                    <div class="why-card">
+                        <div class="why-card-icon">💸</div>
+                        <h4>We Cover Ad Spend</h4>
+                        <p>We invest our own money in campaigns before you pay anything. If we don't deliver, we eat the loss.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card-icon">🎯</div>
+                        <h4>You Define Success</h4>
+                        <p>You set the criteria — credit score, revenue, geography. We only get paid for leads that match.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card-icon">🔄</div>
+                        <h4>Free Replacements</h4>
+                        <p>Lead doesn't meet your criteria? We replace it at no charge. No arguments, no hoops.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card-icon">📈</div>
+                        <h4>Aligned Incentives</h4>
+                        <p>The better your leads convert, the more you buy. We're motivated to deliver quality, not quantity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section">
+        <div class="container">
+            <div class="team-header fade-in">
+                <span class="team-label">Our Team</span>
+                <h2>The People Behind the Leads</h2>
+                <p>A dedicated team of client success managers, paid ads specialists, and campaign strategists — all focused on one thing: delivering leads that convert.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card featured fade-in">
+                    <div class="team-photo">
+                        <img src="Photos/likes1.png" alt="James LaRosa - Founder & CEO">
+                    </div>
+                    <h3>James LaRosa</h3>
+                    <p class="team-role">Founder & CEO</p>
+                    <p class="team-bio">From running a service business to building a 60+ client agency, James saw both sides of lead gen. LeadPop exists because he believed clients shouldn't carry all the risk — so we cover ad spend upfront and only charge for leads that deliver. When your leads convert, you buy more. That's how we grow — by actually being good at this.</p>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <div class="team-photo">
+                        <img src="Photos/isaac-.jpeg" alt="Isaac Luce - Paid Ads Director">
+                    </div>
+                    <h3>Isaac Luce</h3>
+                    <p class="team-role">Paid Ads Director</p>
+                    <p class="team-bio">Leading campaign strategy and optimization across Meta, Google/YouTube, and TikTok. Isaac's managed over $150M+ in ad spend and knows what converts. He's always testing, always optimizing — because better campaigns mean better leads for you and more growth for us both.</p>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <div class="team-photo">
+                        <img src="Photos/paola .jpeg" alt="Paola Vega - Client Success Manager">
+                    </div>
+                    <h3>Paola Vega</h3>
+                    <p class="team-role">Client Success Manager</p>
+                    <p class="team-bio">Your dedicated point of contact for everything LeadPop. Paola knows your business, your criteria, and your goals — and makes sure we deliver.</p>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <div class="team-photo">
+                        <img src="Photos/dylan-purcell.png" alt="Dylan Purcell - Sales Director">
+                    </div>
+                    <h3>Dylan Purcell</h3>
+                    <p class="team-role">Sales Director</p>
+                    <p class="team-bio">With 5+ years in sales and a background in building lasting partnerships, Dylan brings a consultative approach focused on understanding your business first — then finding the right solution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES SECTION -->
+    <section class="values-section">
+        <div class="container">
+            <div class="values-header fade-in">
+                <span class="values-label">Our Values</span>
+                <h2>What We Stand For</h2>
+                <p>These aren't corporate buzzwords — they're the principles we actually run the business on.</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">💰</div>
+                    <h3>Skin in the Game</h3>
+                    <p>We invest our own money in campaigns before you pay a dime. If we don't deliver, we don't get paid. Simple as that.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">📊</div>
+                    <h3>Results Over Promises</h3>
+                    <p>No retainers, no fluff, no vanity metrics. You pay for leads that meet your criteria — that's the only metric that matters.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">🔍</div>
+                    <h3>Radical Transparency</h3>
+                    <p>Clear pricing, real metrics, no hidden fees. You always know exactly what you're getting and what you're paying for.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">✅</div>
+                    <h3>Quality Over Quantity</h3>
+                    <p>Every lead is exclusive and OTP-verified. We'd rather send fewer leads that close than flood you with junk.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">🤝</div>
+                    <h3>Partnership, Not Vendor</h3>
+                    <p>We work alongside your team to hit your goals. Your success is our success — that's not a tagline, it's our business model.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">🚀</div>
+                    <h3>Continuous Improvement</h3>
+                    <p>Our AI-powered campaigns learn and optimize constantly. The longer we work together, the better your results get.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title fade-in">
+                    Ready to Work with a Team That<br><span class="text-blue">Actually Has Skin in the Game?</span>
+                </h2>
+                <p class="cta-subtitle fade-in">
+                    Get your custom lead projection and see what we can deliver for your business.
+                </p>
+                <a href="index-v2.html#book-call" class="btn btn-primary fade-in" style="font-size: 18px; padding: 20px 40px;">Get Your Lead Projection →</a>
+                <p class="cta-trust fade-in">No retainers. No upfront fees. You only pay for results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="index-v2.html" class="footer-logo">
+                    <svg class="footer-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="footer-logo-text">LeadPop</span>
+                </a>
+                
+                <div class="footer-links">
+                    <a href="about.html">About Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                
+                <p class="footer-copyright">© 2025 LeadPop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

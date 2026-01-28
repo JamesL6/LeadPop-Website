@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | LeadPop - Our Story & Mission</title>
+    <meta name="description" content="Learn about LeadPop's mission to eliminate lead generation risk for business lenders. Meet our team and discover why we only get paid when you get results.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-dark: #0a1628;
+            --navy: #0d1b2a;
+            --navy-light: #1b2838;
+            --navy-lighter: #243447;
+            --blue-accent: #4da8da;
+            --blue-bright: #5dade2;
+            --blue-glow: #7ec8e3;
+            --blue-pale: #e8f4f8;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --light-gray: #f1f5f9;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #94a3b8;
+            --gray-600: #64748b;
+            --gray-700: #475569;
+            --gray-800: #334155;
+            --gray-900: #1e293b;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --red: #ef4444;
+            --red-light: #fee2e2;
+            --gradient-blue: linear-gradient(135deg, #4da8da 0%, #5dade2 50%, #7ec8e3 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .text-blue {
+            color: var(--blue-accent);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            color: var(--navy-dark);
+            box-shadow: 0 4px 24px rgba(77, 168, 218, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(77, 168, 218, 0.4);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(77, 168, 218, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            padding: 12px 24px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 160px 0 80px;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center top, rgba(77, 168, 218, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        .hero-title-highlight {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== 3 DIFFERENTIATORS ===== */
+        .differentiators {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .diff-card {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .diff-card:hover {
+            border-color: var(--blue-accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(77, 168, 218, 0.15);
+        }
+
+        .diff-number {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin: 0 auto 20px;
+        }
+
+        .diff-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--gray-900);
+        }
+
+        .diff-card p {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .diff-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        /* ===== COMPARISON SECTION ===== */
+        .comparison-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .comparison-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .comparison-header h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--gray-900);
+        }
+
+        .comparison-header p {
+            font-size: 18px;
+            color: var(--gray-600);
+        }
+
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comparison-col {
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .comparison-col.traditional {
+            background: var(--gray-200);
+            border: 2px solid var(--gray-300);
+        }
+
+        .comparison-col.leadpop {
+            background: linear-gradient(135deg, rgba(77, 168, 218, 0.1) 0%, rgba(93, 173, 226, 0.1) 100%);
+            border: 2px solid var(--blue-accent);
+        }
+
+        .comparison-col h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .comparison-col.traditional h3 {
+            color: var(--gray-700);
+        }
+
+        .comparison-col.leadpop h3 {
+            color: var(--blue-accent);
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            font-size: 15px;
+            color: var(--gray-700);
+        }
+
+        .comparison-list li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== STORY SECTION (CONDENSED) ===== */
+        .story-section {
+            padding: 100px 0;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .story-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .story-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(77, 168, 218, 0.1);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .story-header h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .story-header p {
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        .story-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .story-step {
+            text-align: center;
+            padding: 24px;
+            position: relative;
+        }
+
+        .story-step::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: var(--blue-accent);
+            opacity: 0.5;
+        }
+
+        .story-step:last-child::after {
+            display: none;
+        }
+
+        .story-step-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(77, 168, 218, 0.1);
+            border: 2px solid rgba(77, 168, 218, 0.3);
+            border-radius: 16px;
+            font-size: 28px;
+            margin: 0 auto 16px;
+        }
+
+        .story-step h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .story-step p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
+            .story-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .story-step:nth-child(2)::after {
+                display: none;
+            }
+            .story-step::after {
+                right: -15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .story-steps {
+                grid-template-columns: 1fr;
+            }
+            .story-step::after {
+                display: none;
+            }
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team-section {
+            padding: 100px 0;
+            background: var(--off-white);
+        }
+
+        .team-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .team-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--blue-pale);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .team-header h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--gray-900);
+        }
+
+        .team-header p {
+            font-size: 18px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            border-color: var(--blue-accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(77, 168, 218, 0.15);
+        }
+
+        .team-photo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue-pale) 0%, var(--gray-200) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            border: 3px solid var(--blue-accent);
+            overflow: hidden;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--gray-900);
+        }
+
+        .team-role {
+            font-size: 14px;
+            color: var(--blue-accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .team-bio {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+            }
+        }
+
+        /* ===== VALUES (CONDENSED) ===== */
+        .values-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .values-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .values-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--blue-pale);
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .values-header h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--gray-900);
+        }
+
+        .values-header p {
+            font-size: 18px;
+            color: var(--gray-600);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            background: var(--off-white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: var(--blue-accent);
+            transform: translateY(-4px);
+        }
+
+        .value-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--blue-pale);
+            border-radius: 14px;
+            font-size: 28px;
+            margin: 0 auto 16px;
+        }
+
+        .value-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--gray-900);
+        }
+
+        .value-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center bottom, rgba(77, 168, 218, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: var(--gray-500);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        .cta-trust {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--navy-dark);
+            border-top: 1px solid var(--navy-lighter);
+            padding: 48px 0;
+            color: var(--white);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .footer-logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .footer-logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue-accent);
+        }
+
+        .footer-copyright {
+            color: var(--gray-600);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="index-v2.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="logo-text">LeadPop</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="index-v2.html">Home</a>
+                    <a href="about.html" class="active">About</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="book-call.html" class="btn btn-primary nav-cta">Get Your Lead Projection</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-label">About LeadPop</span>
+                <h1 class="hero-title">
+                    We Get Paid When<br><span class="hero-title-highlight">You Get Results</span>
+                </h1>
+                <p class="hero-subtitle">
+                    We cover the ad spend, generate the leads, and only charge you for qualified prospects that meet your criteria.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 DIFFERENTIATORS -->
+    <section class="differentiators">
+        <div class="container">
+            <div class="diff-grid">
+                <div class="diff-card fade-in">
+                    <div class="diff-number">1</div>
+                    <h3>We Cover Ad Spend</h3>
+                    <p>We invest our own money in campaigns. If we don't deliver leads, we eat the loss — not you.</p>
+                </div>
+                <div class="diff-card fade-in">
+                    <div class="diff-number">2</div>
+                    <h3>You Define Quality</h3>
+                    <p>Set your exact criteria (credit score, revenue, geography). You only pay for leads that match.</p>
+                </div>
+                <div class="diff-card fade-in">
+                    <div class="diff-number">3</div>
+                    <h3>Free Replacements</h3>
+                    <p>Lead doesn't meet your criteria? We replace it at no charge. No arguments, no hoops.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="comparison-header fade-in">
+                <h2>A Different Kind of Lead Gen</h2>
+                <p>See how we compare to traditional marketing agencies</p>
+            </div>
+            
+            <div class="comparison-table">
+                <div class="comparison-col traditional fade-in">
+                    <h3><span class="comparison-icon">🏢</span> Traditional Agency</h3>
+                    <ul class="comparison-list">
+                        <li><span class="comparison-icon">❌</span> $5K-$10K monthly retainers</li>
+                        <li><span class="comparison-icon">❌</span> You pay for ad spend upfront</li>
+                        <li><span class="comparison-icon">❌</span> Reports full of vanity metrics</li>
+                        <li><span class="comparison-icon">❌</span> Shared leads sold to competitors</li>
+                        <li><span class="comparison-icon">❌</span> No guarantees on lead quality</li>
+                        <li><span class="comparison-icon">❌</span> Long-term contracts required</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-col leadpop fade-in">
+                    <h3><span class="comparison-icon">🚀</span> LeadPop</h3>
+                    <ul class="comparison-list">
+                        <li><span class="comparison-icon">✅</span> No retainers or setup fees</li>
+                        <li><span class="comparison-icon">✅</span> We cover all ad spend</li>
+                        <li><span class="comparison-icon">✅</span> Pay only for qualified leads</li>
+                        <li><span class="comparison-icon">✅</span> 100% exclusive leads</li>
+                        <li><span class="comparison-icon">✅</span> Free replacements for bad leads</li>
+                        <li><span class="comparison-icon">✅</span> No contracts — scale anytime</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY (CONDENSED) -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-header fade-in">
+                <span class="story-label">Our Story</span>
+                <h2>From Business Owner to Lead Gen Partner</h2>
+                <p>LeadPop was built by someone who's been in your shoes — and got tired of marketing agencies that don't have skin in the game.</p>
+            </div>
+            
+            <div class="story-steps">
+                <div class="story-step fade-in">
+                    <div class="story-step-icon">🧹</div>
+                    <h3>Started a Service Business</h3>
+                    <p>Learned firsthand that leads are everything</p>
+                </div>
+                <div class="story-step fade-in">
+                    <div class="story-step-icon">🏠</div>
+                    <h3>Built a Marketing Agency</h3>
+                    <p>60+ clients, but saw the industry's flaws</p>
+                </div>
+                <div class="story-step fade-in">
+                    <div class="story-step-icon">💡</div>
+                    <h3>Chose a Better Model</h3>
+                    <p>Pay-per-lead aligns incentives the right way</p>
+                </div>
+                <div class="story-step fade-in">
+                    <div class="story-step-icon">🚀</div>
+                    <h3>LeadPop Was Born</h3>
+                    <p>Pay-per-lead with zero risk for clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team-section">
+        <div class="container">
+            <div class="team-header fade-in">
+                <span class="team-label">Our Team</span>
+                <h2>The People Behind the Leads</h2>
+                <p>Dedicated specialists focused on one thing: delivering leads that convert.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card fade-in">
+                    <div class="team-photo">
+                        <img src="Photos/likes1.png" alt="James LaRosa">
+                    </div>
+                    <h3>James LaRosa</h3>
+                    <p class="team-role">Founder & CEO</p>
+                    <p class="team-bio">Built LeadPop on a simple belief: lead gen companies should have skin in the game.</p>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <div class="team-photo">
+                        <img src="Photos/isaac-.jpeg" alt="Isaac Luce">
+                    </div>
+                    <h3>Isaac Luce</h3>
+                    <p class="team-role">Paid Ads Director</p>
+                    <p class="team-bio">Leads campaign strategy across Meta, Google/YouTube, and TikTok.</p>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <div class="team-photo">
+                        <img src="Photos/paola .jpeg" alt="Paola Vega">
+                    </div>
+                    <h3>Paola Vega</h3>
+                    <p class="team-role">Client Success Manager</p>
+                    <p class="team-bio">Your dedicated point of contact — knows your business and makes sure we deliver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES (4 instead of 6) -->
+    <section class="values-section">
+        <div class="container">
+            <div class="values-header fade-in">
+                <span class="values-label">Our Values</span>
+                <h2>What We Stand For</h2>
+                <p>The principles we actually run the business on.</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">💰</div>
+                    <h3>Skin in the Game</h3>
+                    <p>We invest first. If we don't deliver, we don't get paid.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">🔍</div>
+                    <h3>Radical Transparency</h3>
+                    <p>Clear pricing, real metrics, no hidden fees.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">✅</div>
+                    <h3>Quality Over Quantity</h3>
+                    <p>Exclusive, OTP-verified leads that actually close.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">🤝</div>
+                    <h3>True Partnership</h3>
+                    <p>Your success is our success — literally our business model.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title fade-in">
+                    Ready to Work with a Team That<br><span class="text-blue">Has Skin in the Game?</span>
+                </h2>
+                <p class="cta-subtitle fade-in">
+                    Get your custom lead projection and see what we can deliver.
+                </p>
+                <a href="book-call.html" class="btn btn-primary fade-in" style="font-size: 18px; padding: 20px 40px;">Get Your Lead Projection →</a>
+                <p class="cta-trust fade-in">No retainers. No upfront fees. You only pay for results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="index-v2.html" class="footer-logo">
+                    <svg class="footer-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="footer-logo-text">LeadPop</span>
+                </a>
+                
+                <div class="footer-links">
+                    <a href="about-v2.html">About Us</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="book-call.html">Book a Call</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                
+                <p class="footer-copyright">© 2025 LeadPop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

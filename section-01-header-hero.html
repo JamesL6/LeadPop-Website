@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 01 - Header + Hero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --bg-warm-gray: #f5f3f0;
+            --bg-section: #fdfcfa;
+            --primary-dark: #1a3c34;
+            --primary: #2d5a4e;
+            --primary-light: #3d7a6a;
+            --accent-gold: #c9a227;
+            --accent-gold-light: #e3c255;
+            --accent-gold-dark: #a68519;
+            --cta-orange: #d35400;
+            --cta-orange-light: #e67e22;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --text-muted: #6b6b6b;
+            --text-light: #8a8a8a;
+            --border-light: #e8e6e3;
+            --border-medium: #d4d1cc;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-medium: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-strong: 0 12px 40px rgba(0,0,0,0.15);
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+            color: var(--text-dark);
+        }
+        h1 { font-size: clamp(2.5rem, 5vw, 3.75rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: 1.5rem; }
+        h4 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text-dark); }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .text-primary { color: var(--primary); }
+        .text-gold { color: var(--accent-gold-dark); }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--cta-orange);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(211, 84, 0, 0.3);
+        }
+        .btn-primary:hover {
+            background: var(--cta-orange-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(211, 84, 0, 0.4);
+        }
+
+        /* HEADER */
+        .header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            padding: 16px 0;
+        }
+        
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .logo span { color: var(--accent-gold-dark); }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-body);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { color: var(--primary); }
+        
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .header-phone:hover { color: var(--cta-orange); }
+        .header-phone i { color: var(--cta-orange); }
+
+        /* HERO */
+        .hero {
+            padding: 40px 0 60px;
+            background: 
+                linear-gradient(135deg, rgba(250, 248, 245, 0.92) 0%, rgba(250, 248, 245, 0.88) 50%, rgba(245, 243, 240, 0.85) 100%),
+                url('https://images.unsplash.com/photo-1545194445-dddb8f4487c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 70% 30%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(45, 90, 78, 0.05) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .hero-badge i { color: var(--accent-gold-light); }
+        .hero h1 { margin-bottom: 16px; }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            margin-bottom: 24px;
+            max-width: 520px;
+        }
+        
+        .hero-benefits {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+        
+        .hero-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .benefit-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 0.65rem;
+            flex-shrink: 0;
+        }
+        
+        .trust-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px 0;
+            border-top: 1px solid var(--border-light);
+            flex-wrap: wrap;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .trust-item i {
+            color: var(--accent-gold-dark);
+            font-size: 1rem;
+        }
+        
+        .trust-item span {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        /* Hero Form */
+        .hero-form {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            box-shadow: var(--shadow-strong);
+            border: 1px solid var(--border-light);
+            position: relative;
+        }
+        
+        .hero-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            right: 20px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-gold) 100%);
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .form-header h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.35rem;
+            margin-bottom: 6px;
+        }
+        
+        .form-header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .form-group {
+            margin-bottom: 14px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-warm-gray);
+            border: 2px solid transparent;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: inherit;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--bg-white);
+        }
+        
+        .form-group input::placeholder {
+            color: var(--text-light);
+        }
+        
+        .hero-form .btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            margin-top: 6px;
+        }
+        
+        .form-trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-light);
+        }
+        
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+        }
+        
+        .trust-badge i {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+        
+        .trust-badge span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-confidential {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        
+        .form-confidential i {
+            color: var(--primary);
+            margin-right: 4px;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 4px 15px rgba(211, 84, 0, 0.3); }
+            50% { box-shadow: 0 4px 25px rgba(211, 84, 0, 0.5), 0 0 40px rgba(211, 84, 0, 0.2); }
+        }
+        
+        .btn-pulse { animation: pulse-glow 2s ease-in-out infinite; }
+        .btn-pulse:hover { animation: none; }
+
+        /* ========== TABLET STYLES (768px) ========== */
+        @media (max-width: 1024px) {
+            .container { padding: 0 20px; }
+            
+            .header-inner {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                padding-top: 12px;
+                border-top: 1px solid var(--border-light);
+                margin-top: 8px;
+            }
+            
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .hero-content {
+                order: 1;
+            }
+            
+            .hero-form-wrapper {
+                order: 2;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+            
+            .hero-badge {
+                margin: 0 auto 20px;
+            }
+            
+            .hero-subtitle {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .hero-benefits {
+                display: inline-block;
+                text-align: left;
+            }
+            
+            .trust-row {
+                justify-content: center;
+            }
+            
+            h1 { font-size: 2.5rem; }
+        }
+
+        /* ========== MOBILE STYLES (375px) ========== */
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            
+            .header { padding: 12px 0; }
+            
+            .header-inner {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .logo { font-size: 1.25rem; }
+            
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                padding-top: 10px;
+            }
+            
+            .nav-links a { font-size: 0.9rem; }
+            
+            .header-phone {
+                font-size: 0.9rem;
+            }
+            
+            .hero { padding: 24px 0 40px; }
+            
+            h1 { font-size: 2rem; }
+            
+            .hero-badge {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-benefits li {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+            
+            .benefit-icon {
+                width: 20px;
+                height: 20px;
+                font-size: 0.55rem;
+            }
+            
+            .trust-row {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .hero-form {
+                padding: 24px 20px;
+            }
+            
+            .form-header h3 { font-size: 1.2rem; }
+            
+            .form-group input {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+            
+            .btn {
+                padding: 14px 24px;
+                font-size: 0.95rem;
+            }
+            
+            .form-trust-badges {
+                gap: 12px;
+            }
+            
+            .trust-badge span {
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">DFW Cash<span>Home</span>Buyers</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </nav>
+                <a href="tel:+12145552274" class="header-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>(214) 555-CASH</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-bolt"></i>
+                        Fast Cash Offers Within 24 Hours
+                    </div>
+                    <h1>We Buy Houses In <span class="text-primary">Dallas</span> – Sell Fast for Cash</h1>
+                    <p class="hero-subtitle">Get a fair cash offer in 24 hours. Close in as little as 7 days. No repairs, no fees, no hassle.</p>
+                    
+                    <ul class="hero-benefits">
+                        <li><span class="benefit-icon"><i class="fas fa-check"></i></span> Cash offer within 24 hours</li>
+                        <li><span class="benefit-icon"><i class="fas fa-check"></i></span> Close on YOUR timeline (as fast as 7 days)</li>
+                        <li><span class="benefit-icon"><i class="fas fa-check"></i></span> Sell as-is – no repairs or cleaning</li>
+                        <li><span class="benefit-icon"><i class="fas fa-check"></i></span> Zero fees, zero commissions</li>
+                    </ul>
+                    
+                    <div class="trust-row">
+                        <div class="trust-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.9 Google Rating</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-award"></i>
+                            <span>A+ BBB Rating</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-lock"></i>
+                            <span>100% Confidential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-form-wrapper">
+                    <div class="hero-form">
+                        <div class="form-header">
+                            <h3>Get Your <span class="text-gold">Cash Offer</span></h3>
+                            <p>100% Free • No Obligation • Confidential</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Property Address *</label>
+                            <input type="text" placeholder="Enter your property address...">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label>Email (Optional)</label>
+                            <input type="email" placeholder="your@email.com">
+                        </div>
+                        
+                        <button class="btn btn-primary btn-pulse">
+                            Get My Fair Cash Offer <i class="fas fa-arrow-right"></i>
+                        </button>
+                        
+                        <div class="form-trust-badges">
+                            <div class="trust-badge">
+                                <i class="fas fa-handshake"></i>
+                                <span>No Obligation</span>
+                            </div>
+                            <div class="trust-badge">
+                                <i class="fas fa-clock"></i>
+                                <span>24hr Response</span>
+                            </div>
+                            <div class="trust-badge">
+                                <i class="fas fa-check-circle"></i>
+                                <span>100% Free</span>
+                            </div>
+                        </div>
+                        
+                        <p class="form-confidential">
+                            <i class="fas fa-lock"></i> Your information is 100% confidential and will never be shared.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

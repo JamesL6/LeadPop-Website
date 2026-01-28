@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 08 - As-Is Section</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #1a3c34;
+            --primary: #2d5a4e;
+            --radius-lg: 20px;
+            --radius-sm: 8px;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.7;
+        }
+        
+        h2, h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            line-height: 1.2; 
+        }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        /* AS-IS */
+        .as-is-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #fff;
+        }
+        
+        .as-is-section h2 { color: #fff; }
+        
+        .as-is-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .as-is-content > p {
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+        
+        .as-is-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+        
+        .as-is-feature {
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-sm);
+            padding: 18px;
+        }
+        
+        .as-is-feature h4 {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+        
+        .as-is-feature p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+        
+        .as-is-callout {
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            text-align: center;
+        }
+        
+        .callout-icon {
+            font-size: 3rem;
+            margin-bottom: 18px;
+            display: block;
+        }
+        
+        .as-is-callout h3 {
+            font-family: 'DM Sans', sans-serif;
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .as-is-callout p {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- AS-IS -->
+    <section class="section as-is-section">
+        <div class="container">
+            <div class="as-is-grid">
+                <div class="as-is-content">
+                    <h2>We Mean It: Sell 100% As-Is</h2>
+                    <p>When we say "as-is," we truly mean it. You don't need to lift a finger:</p>
+                    
+                    <div class="as-is-features">
+                        <div class="as-is-feature">
+                            <h4>🧹 No Cleaning</h4>
+                            <p>Leave the house exactly as it is</p>
+                        </div>
+                        <div class="as-is-feature">
+                            <h4>🛋️ Leave Furniture</h4>
+                            <p>Take what you want, leave the rest</p>
+                        </div>
+                        <div class="as-is-feature">
+                            <h4>🗑️ Skip Junk Removal</h4>
+                            <p>We handle everything you leave behind</p>
+                        </div>
+                        <div class="as-is-feature">
+                            <h4>🔧 No Repairs Ever</h4>
+                            <p>Broken, damaged, outdated — no problem</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="as-is-callout">
+                    <span class="callout-icon">🏠</span>
+                    <h3>Inherited a Cluttered House?</h3>
+                    <p>We've bought homes filled floor-to-ceiling. No judgment. We handle the cleanout so you don't have to.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Banner - Dual Brand</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+    h1 {
+      color: white;
+      margin-bottom: 10px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .instructions {
+      color: #888;
+      margin-bottom: 30px;
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .download-btn {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 30px;
+      transition: background 0.2s;
+    }
+    .download-btn:hover {
+      background: #2563eb;
+    }
+    .preview-container {
+      width: 100%;
+      max-width: 900px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .preview-wrapper {
+      transform: scale(0.57);
+      transform-origin: top left;
+      width: 175.4%;
+    }
+    .banner {
+      width: 1584px;
+      height: 396px;
+      background: linear-gradient(135deg, #0a1628 0%, #152d4a 50%, #0d2440 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 80px;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+    .glow-1 {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,138,61,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .glow-2 {
+      position: absolute;
+      bottom: -150px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .content {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      width: 100%;
+      max-width: 1400px;
+      position: relative;
+      z-index: 1;
+    }
+    .brand-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .brand-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .logo-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-box.restoration {
+      background: linear-gradient(180deg, #ff8a3d 0%, #3b82f6 100%);
+    }
+    .logo-box.leadpop {
+      background: #1a3654;
+      border: 2px solid rgba(59,130,246,0.4);
+    }
+    .logo-letter {
+      font-size: 30px;
+      color: white;
+      font-weight: 800;
+    }
+    .logo-icon {
+      font-size: 28px;
+    }
+    .brand-name {
+      font-size: 30px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 1px;
+    }
+    .brand-tagline {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      margin-top: 2px;
+    }
+    .brand-tagline.orange {
+      color: #ff8a3d;
+    }
+    .brand-tagline.blue {
+      color: #3b82f6;
+    }
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-left: 4px;
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .feature-icon.orange {
+      background: rgba(255,138,61,0.15);
+      color: #ff8a3d;
+    }
+    .feature-icon.blue {
+      background: rgba(59,130,246,0.15);
+      color: #3b82f6;
+    }
+    .feature-text {
+      font-size: 19px;
+      color: white;
+      font-weight: 500;
+    }
+    .feature-text.secondary {
+      color: rgba(255,255,255,0.8);
+      font-weight: 400;
+    }
+    .divider {
+      width: 2px;
+      height: 200px;
+      background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+      flex-shrink: 0;
+    }
+    .scale-note {
+      color: #555;
+      margin-top: 20px;
+      font-size: 12px;
+    }
+    
+    /* Hidden full-size banner for export */
+    #export-banner {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>LinkedIn Banner</h1>
+  <p class="instructions">Click the button to download at full resolution (1584 × 396px)</p>
+  
+  <button class="download-btn" onclick="downloadBanner()">Download Banner PNG</button>
+  
+  <!-- Scaled preview -->
+  <div class="preview-container">
+    <div class="preview-wrapper">
+      <div class="banner">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+        
+        <div class="content">
+          <!-- Restoration Growth Partners -->
+          <div class="brand-section">
+            <div class="brand-header">
+              <div class="logo-box restoration">
+                <span class="logo-letter">R</span>
+              </div>
+              <div>
+                <div class="brand-name">RESTORATION</div>
+                <div class="brand-tagline orange">GROWTH PARTNERS</div>
+              </div>
+            </div>
+            <div class="features">
+              <div class="feature">
+                <div class="feature-icon orange">$</div>
+                <span class="feature-text">30M+ Client Revenue in 2024</span>
+              </div>
+              <div class="feature">
+                <div class="feature-icon orange">↗</div>
+                <span class="feature-text secondary">ROI-Focused Digital Marketing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- LeadPop -->
+          <div class="brand-section">
+            <div class="brand-header">
+              <div class="logo-box leadpop">
+                <span class="logo-icon">💬</span>
+              </div>
+              <div>
+                <div class="brand-name">LeadPop</div>
+                <div class="brand-tagline blue">PERFORMANCE MARKETING</div>
+              </div>
+            </div>
+            <div class="features">
+              <div class="feature">
+                <div class="feature-icon blue">✓</div>
+                <span class="feature-text">Wealth, Loans & Tax Relief</span>
+              </div>
+              <div class="feature">
+                <div class="feature-icon blue">★</div>
+                <span class="feature-text secondary">We Pay, You Gain Clients</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p class="scale-note">Preview scaled to fit screen • Download for full 1584×396 resolution</p>
+
+  <!-- Hidden full-size banner for export -->
+  <div id="export-banner">
+    <div class="banner" id="banner-export">
+      <div class="glow-1"></div>
+      <div class="glow-2"></div>
+      
+      <div class="content">
+        <div class="brand-section">
+          <div class="brand-header">
+            <div class="logo-box restoration">
+              <span class="logo-letter">R</span>
+            </div>
+            <div>
+              <div class="brand-name">RESTORATION</div>
+              <div class="brand-tagline orange">GROWTH PARTNERS</div>
+            </div>
+          </div>
+          <div class="features">
+            <div class="feature">
+              <div class="feature-icon orange">$</div>
+              <span class="feature-text">30M+ Client Revenue in 2024</span>
+            </div>
+            <div class="feature">
+              <div class="feature-icon orange">↗</div>
+              <span class="feature-text secondary">ROI-Focused Digital Marketing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="brand-section">
+          <div class="brand-header">
+            <div class="logo-box leadpop">
+              <span class="logo-icon">💬</span>
+            </div>
+            <div>
+              <div class="brand-name">LeadPop</div>
+              <div class="brand-tagline blue">PERFORMANCE MARKETING</div>
+            </div>
+          </div>
+          <div class="features">
+            <div class="feature">
+              <div class="feature-icon blue">✓</div>
+              <span class="feature-text">Wealth, Loans & Tax Relief</span>
+            </div>
+            <div class="feature">
+              <div class="feature-icon blue">★</div>
+              <span class="feature-text secondary">We Pay, You Gain Clients</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function downloadBanner() {
+      const element = document.getElementById('banner-export');
+      // Temporarily move to visible area for capture
+      element.parentElement.style.left = '0';
+      element.parentElement.style.position = 'fixed';
+      element.parentElement.style.top = '0';
+      element.parentElement.style.zIndex = '-1';
+      
+      html2canvas(element, {
+        width: 1584,
+        height: 396,
+        scale: 2,
+        useCORS: true,
+        backgroundColor: null
+      }).then(canvas => {
+        // Move back
+        element.parentElement.style.left = '-9999px';
+        element.parentElement.style.position = 'absolute';
+        
+        const link = document.createElement('a');
+        link.download = 'linkedin-banner.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    }
+  </script>
+</body>
+</html>
