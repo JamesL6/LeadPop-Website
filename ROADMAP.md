@@ -25,7 +25,7 @@ This document tracks future improvements and pages needed for the LeadPop busine
 
 ### Medium Priority
 - [x] **How It Works Page** — Expanded version with full user journey (dedicated page)
-- [ ] **Homepage "How It Works" section** — Add back a concise 3-step version for desktop
+- [x] **Homepage "How It Works" section** — Add back a concise 3-step version for desktop
 - [ ] **FAQ Page** — Comprehensive FAQ beyond what's on the homepage
 
 ### Service Pages (Individual Landing Pages)

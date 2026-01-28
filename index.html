@@ -788,6 +788,78 @@
             line-height: 1.7;
         }
 
+        /* ===== HOW IT WORKS SECTION (HOMEPAGE) ===== */
+        .how-it-works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .hiw-step {
+            text-align: center;
+            padding: 40px 24px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        }
+
+        .hiw-step:hover {
+            border-color: var(--blue-accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(77, 168, 218, 0.15);
+        }
+
+        .hiw-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--navy-dark);
+            box-shadow: 0 4px 16px rgba(77, 168, 218, 0.4);
+        }
+
+        .hiw-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hiw-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--gray-900);
+        }
+
+        .hiw-text {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .hiw-cta {
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .how-it-works-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
         /* ===== LOAN TYPES SECTION (LIGHT) ===== */
         .loan-types-grid {
             display: grid;
@@ -1650,6 +1722,44 @@
                     <h3 class="solution-title">Replacement Guarantee</h3>
                     <p class="solution-text">Lead doesn't meet your criteria? We replace it free. No disputes, no hassle, no exceptions.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION (LIGHT) -->
+    <section class="section section-light" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label section-label-light">How It Works</span>
+                <h2 class="section-title">Three Steps to a Full Pipeline</h2>
+                <p class="section-subtitle">No long onboarding. No complicated setup. Just qualified leads flowing to your CRM.</p>
+            </div>
+            
+            <div class="how-it-works-grid">
+                <div class="hiw-step fade-in">
+                    <div class="hiw-number">1</div>
+                    <div class="hiw-icon">📞</div>
+                    <h3 class="hiw-title">Get Your Lead Projection</h3>
+                    <p class="hiw-text">Tell us your buy box — loan types, credit minimums, revenue thresholds, geography. We'll show you exactly how many leads we can deliver and at what price.</p>
+                </div>
+                
+                <div class="hiw-step fade-in">
+                    <div class="hiw-number">2</div>
+                    <div class="hiw-icon">🚀</div>
+                    <h3 class="hiw-title">We Launch Campaigns</h3>
+                    <p class="hiw-text">We build and fund targeted ad campaigns across Meta, Google, and more. You pay nothing until qualified, OTP-verified leads start flowing.</p>
+                </div>
+                
+                <div class="hiw-step fade-in">
+                    <div class="hiw-number">3</div>
+                    <div class="hiw-icon">📥</div>
+                    <h3 class="hiw-title">Leads Hit Your CRM</h3>
+                    <p class="hiw-text">Exclusive leads delivered in real-time to Salesforce, HubSpot, or any CRM you use. Bad lead? We replace it free — no questions asked.</p>
+                </div>
+            </div>
+            
+            <div class="hiw-cta fade-in">
+                <a href="how-it-works.html" class="btn btn-outline-dark">See the Full Process →</a>
             </div>
         </div>
     </section>
