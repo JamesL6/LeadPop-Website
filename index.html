@@ -18,7 +18,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             /* Dark Colors */
@@ -1427,34 +1427,24 @@
         }
 
         .founder-signature {
-            display: flex;
-            align-items: center;
-            gap: 16px;
             margin: 40px 0 32px;
             padding-top: 32px;
             border-top: 2px solid var(--gray-200);
         }
 
-        .founder-signature-photo {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--blue-accent);
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-        }
-
         .founder-signature-name {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--gray-900);
+            font-family: 'Caveat', cursive;
+            font-size: 42px;
+            color: var(--navy);
+            font-weight: 600;
             margin-bottom: 4px;
+            line-height: 1;
         }
 
         .founder-signature-title {
             font-size: 14px;
             color: var(--gray-600);
+            margin-top: 8px;
         }
 
         .founder-photo-wrapper {
@@ -1480,10 +1470,6 @@
 
             .founder-message-content {
                 max-width: 100%;
-            }
-
-            .founder-signature {
-                justify-content: center;
             }
 
             .founder-photo {
@@ -2430,11 +2416,8 @@
                     <p>You're not betting on us — we're betting on ourselves.</p>
                     
                     <div class="founder-signature">
-                        <img src="Photos/james-headshot-hq.png" alt="James LaRosa" class="founder-signature-photo">
-                        <div class="founder-signature-text">
-                            <div class="founder-signature-name">James LaRosa</div>
-                            <div class="founder-signature-title">Owner, LeadPop</div>
-                        </div>
+                        <div class="founder-signature-name">James LaRosa</div>
+                        <div class="founder-signature-title">— Owner, LeadPop</div>
                     </div>
                     
                     <a href="book-call.html" class="btn btn-primary">Get Your Lead Projection →</a>
