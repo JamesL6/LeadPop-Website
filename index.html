@@ -415,11 +415,14 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 60px;
             align-items: center;
             position: relative;
             z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .hero-content {
@@ -586,20 +589,11 @@
             color: var(--gray-500);
         }
 
-        @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-features {
-                justify-content: center;
-            }
-            .hero-ctas {
-                justify-content: center;
-            }
-            .hero-trust {
-                margin: 0 auto;
-            }
+        .hero-features {
+            justify-content: center;
+        }
+        .hero-ctas {
+            justify-content: center;
         }
 
         @keyframes fadeInUp {
@@ -1688,7 +1682,7 @@
                     </h1>
                     
                     <p class="hero-subtitle">
-                        We absorb all ad spend risk. You get pre-qualified, OTP-verified leads delivered straight to your CRM — filtered to your exact lending criteria.
+                        We cover all ad spend upfront. You get exclusive, OTP-verified leads matched to your exact lending criteria — and only pay for what converts.
                     </p>
                     
                     <div class="hero-features">
@@ -1716,13 +1710,6 @@
                     </div>
                 </div>
                 
-                <div class="hero-video">
-                    <div class="hero-video-container">
-                        <div class="video-placeholder">
-                            <p class="video-text" style="font-size: 20px; font-weight: 600; color: var(--gray-400);">Video Coming Soon</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -2392,6 +2379,42 @@
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
                             We run targeted paid advertising campaigns across multiple platforms to reach business owners actively seeking financing. Our campaigns are optimized specifically for business loan intent, not recycled from other industries. We handle all creative, targeting, and optimization in-house.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>What's the catch?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            The only "catch" is that we're selective — and we take all the risk. We invest our own money in ad spend upfront, so if we fail to deliver, it's entirely on us. You pay nothing unless we deliver qualified leads. If your criteria is too narrow or your market too small for us to deliver profitably, we'll tell you that on the first call. We'd rather be honest than take you on as a client we can't deliver for.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How much do leads cost?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Pricing depends on your specific criteria — the types of loans you fund, your qualification filters, credit thresholds, revenue minimums, and monthly volume. Tighter criteria = higher quality = higher cost per lead. Broader criteria = lower cost, higher volume. We'll give you exact pricing on your strategy call once we understand your buy box.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>Why do I need to book a call for pricing?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Because cookie-cutter pricing doesn't work. Your lead cost depends entirely on your lending criteria and buy box. A lender funding $50K MCAs has different needs than one doing $500K SBA loans. The call lets us understand your exact requirements so we can give you accurate pricing and realistic volume projections.
                         </div>
                     </div>
                 </div>
