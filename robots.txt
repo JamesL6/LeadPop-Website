@@ -1,0 +1,34 @@
+# robots.txt for LeadPop
+User-agent: *
+Allow: /
+
+# Disallow admin/internal pages
+Disallow: /deploy-leadpop/
+Disallow: /wordpress-files/
+Disallow: /scripts/
+
+# Sitemap
+Sitemap: https://leadpop.io/sitemap.xml
+
+# Common crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /

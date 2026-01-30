@@ -1,0 +1,56 @@
+# LeadPop - Exclusive Business Loan Leads
+
+## About
+LeadPop provides exclusive, pre-qualified business loan leads to lenders. We cover all ad spend upfront - lenders only pay for qualified leads that meet their criteria.
+
+## Business Model
+- Pay-per-qualified-lead pricing
+- Zero upfront costs for lenders
+- 100% exclusive leads (never sold to multiple buyers)
+- OTP-verified contacts
+- Free lead replacement guarantee
+
+## Services
+- SBA Loans (7a, 504)
+- Merchant Cash Advances (MCA)
+- Equipment Financing
+- Lines of Credit
+- Invoice Factoring
+- Term Loans
+- Working Capital
+- Commercial Real Estate Financing
+- Revenue-Based Financing
+- Startup & Microloans
+
+## Lead Filtering
+Custom filters available:
+- Credit score thresholds (550+, 600+, 650+, etc.)
+- Annual revenue requirements ($100K to $10M+)
+- Time in business minimums
+- Loan amount ranges
+- Geographic targeting (state, region, nationwide)
+- Industry & business type preferences
+- Monthly bank deposits (for MCA products)
+
+## Contact
+- Website: https://leadpop.io
+- Email: james@leadpop.io
+- Booking: https://leadpop.io/book-call
+
+## Key Pages
+- Homepage: https://leadpop.io/
+- About: https://leadpop.io/about
+- How It Works: https://leadpop.io/how-it-works
+- Book a Call: https://leadpop.io/book-call
+
+## Founder
+James LaRosa - Owner, LeadPop
+
+## Coverage
+All 50 US states
+
+## Technology Stack
+- Static HTML/CSS/JavaScript
+- Hosted on Vercel
+- Global CDN for fast delivery
+- AI-powered campaign optimization
