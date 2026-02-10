@@ -396,6 +396,116 @@
             color: var(--green);
         }
 
+        /* ===== DUAL STAT STRIP (Screen 2 Var B) ===== */
+        .dual-stats {
+            display: flex;
+            gap: 16px;
+            width: 100%;
+            margin-bottom: 28px;
+        }
+
+        .dual-stat-card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 20px 12px;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+
+        .dual-stat-card.blue {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 1px solid #bfdbfe;
+        }
+
+        .dual-stat-card.green {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 1px solid #bbf7d0;
+        }
+
+        .dual-stat-number {
+            font-size: clamp(28px, 6vw, 36px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .dual-stat-card.blue .dual-stat-number {
+            color: var(--primary);
+        }
+
+        .dual-stat-card.green .dual-stat-number {
+            color: #059669;
+        }
+
+        .dual-stat-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            line-height: 1.35;
+        }
+
+        @media (max-width: 480px) {
+            .dual-stats {
+                flex-direction: column;
+                gap: 8px;
+                margin-bottom: 16px;
+            }
+
+            .dual-stat-card {
+                flex-direction: row;
+                justify-content: center;
+                gap: 12px;
+                padding: 12px 16px;
+            }
+
+            .dual-stat-number {
+                font-size: 28px;
+            }
+
+            .dual-stat-label {
+                text-align: left;
+                font-size: 13px;
+            }
+
+            .dual-stat-label br {
+                display: none;
+            }
+
+            /* Compact subtitle on mobile */
+            #screen-2 .screen-subtitle {
+                font-size: 13px;
+                margin-bottom: 16px;
+                line-height: 1.5;
+            }
+
+            /* Tighter title spacing */
+            #screen-2 .screen-title {
+                margin-bottom: 12px;
+            }
+
+            /* Smaller team photos to save space */
+            #screen-2 .team-member-photo {
+                width: 56px;
+                height: 56px;
+            }
+
+            #screen-2 .team-row {
+                margin-bottom: 16px;
+                gap: 20px;
+            }
+
+            #screen-2 .team-member-name {
+                font-size: 12px;
+            }
+
+            #screen-2 .team-member-role {
+                font-size: 10px;
+            }
+        }
+
         /* ===== TEAM PHOTOS ===== */
         .team-row {
             display: flex;
@@ -970,11 +1080,11 @@
             </div>
         </div>
 
-        <!-- ==================== SCREEN 2: CREDIBILITY + TEAM ==================== -->
+        <!-- ==================== SCREEN 2: CREDIBILITY + TEAM (VAR B — PAIRED STATS) ==================== -->
         <div class="screen" id="screen-2" data-step="2">
             <div class="info-card">
                 <h2 class="screen-title">
-                    Our team has managed <span class="screen-title-highlight">$150M+ in ad spend</span> over 5 years
+                    Our team has managed <span class="screen-title-highlight">$150M+ in ad spend</span> and generated <span class="screen-title-highlight">$30M+ in client revenue</span> in 2024
                 </h2>
 
                 <p class="screen-subtitle">
@@ -1016,11 +1126,11 @@
         <div class="screen" id="screen-3" data-step="3">
             <div class="info-card">
                 <h2 class="screen-title">
-                    You only pay for <span class="screen-title-highlight">qualified, verified leads</span>
+                    You only <span class="screen-title-highlight">pay per qualified lead</span> that <span class="screen-title-highlight">matches your criteria</span> (read below)
                 </h2>
 
                 <p class="screen-subtitle">
-                    Our clients generated $30M+ in funded revenue in 2024 alone. Here's why they stay:
+                    Our clients generated $30M+ revenue in 2024 alone. Here's why they stay:
                 </p>
 
                 <ul class="checklist">
@@ -1034,7 +1144,7 @@
                     </li>
                     <li>
                         <span class="check-icon green">&#10003;</span>
-                        You only pay for leads that match your buy box
+                        You only pay for leads that match your buy box criteria
                     </li>
                     <li>
                         <span class="check-icon green">&#10003;</span>
