@@ -7,7 +7,7 @@
   "rewrites": [
     {
       "source": "/",
-      "has": [{"type": "host", "value": "apply.leadpop.io"}],
+      "has": [{"type": "header", "key": "host", "value": "apply.leadpop.io"}],
       "destination": "/quiz-funnel.html"
     }
   ]
