@@ -1587,23 +1587,6 @@
                 min-width: 0;
             }
 
-            .mobile-book-copy > span {
-                align-items: center;
-                display: flex;
-                gap: 7px;
-            }
-
-            .mobile-book-copy > span::before {
-                animation: mobileBookPulse 1.5s ease-out infinite;
-                background: var(--blue-accent);
-                border-radius: 999px;
-                box-shadow: 0 0 0 0 rgba(77, 168, 218, 0.55);
-                content: "";
-                flex: 0 0 auto;
-                height: 8px;
-                width: 8px;
-            }
-
             .mobile-book-copy span {
                 color: #9fb4c7;
                 display: block;
@@ -1640,20 +1623,6 @@
                 white-space: nowrap;
             }
 
-            @keyframes mobileBookPulse {
-                0% {
-                    box-shadow: 0 0 0 0 rgba(77, 168, 218, 0.55);
-                }
-
-                70% {
-                    box-shadow: 0 0 0 9px rgba(77, 168, 218, 0);
-                }
-
-                100% {
-                    box-shadow: 0 0 0 0 rgba(77, 168, 218, 0);
-                }
-            }
-
             @keyframes mobileBookLift {
                 0% {
                     transform: translateY(110%);
@@ -1669,8 +1638,7 @@
             }
 
             @media (prefers-reduced-motion: reduce) {
-                .mobile-book-bar.is-visible,
-                .mobile-book-copy > span::before {
+                .mobile-book-bar.is-visible {
                     animation: none;
                 }
             }
