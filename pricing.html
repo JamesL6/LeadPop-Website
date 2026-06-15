@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Pricing Calculator | LeadPop</title>
+    <meta name="description" content="Estimate LeadPop lead pricing by revenue tier, time in business, credit score, and funded-deal economics.">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0d1b2a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-dark: #0a1628;
+            --navy: #0d1b2a;
+            --navy-light: #1b2838;
+            --blue-accent: #4da8da;
+            --blue-bright: #5dade2;
+            --blue-pale: #e8f4f8;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --line: #d9e5ef;
+            --gray-500: #94a3b8;
+            --gray-600: #64748b;
+            --gray-700: #475569;
+            --gray-900: #1e293b;
+            --green: #10b981;
+            --gold: #df9f22;
+            --gradient-blue: linear-gradient(135deg, #4da8da 0%, #5dade2 50%, #7ec8e3 100%);
+            --shadow: 0 14px 34px rgba(13, 27, 42, 0.1);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--off-white);
+            color: var(--gray-900);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 84px;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        button {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            box-shadow: 0 4px 24px rgba(77, 168, 218, 0.3);
+            color: var(--navy-dark);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 8px 32px rgba(77, 168, 218, 0.4);
+            transform: translateY(-2px);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(77, 168, 218, 0.1);
+        }
+
+        .header-inner {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-left,
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left {
+            justify-content: flex-start;
+        }
+
+        .header-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .header-right {
+            justify-content: flex-end;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .header-cta {
+            padding: 12px 28px;
+            white-space: nowrap;
+        }
+
+        .menu-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .menu-btn.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-btn.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            z-index: 1002;
+            width: 320px;
+            max-width: 85vw;
+            height: 100vh;
+            background: var(--navy-dark);
+            box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+            transition: left 0.3s ease;
+        }
+
+        .mobile-sidebar.active {
+            left: 0;
+        }
+
+        .mobile-sidebar-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 100px 24px 24px;
+        }
+
+        .mobile-sidebar a {
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 600;
+            padding: 14px 16px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .mobile-sidebar a:hover,
+        .mobile-sidebar a.active {
+            background: rgba(77, 168, 218, 0.12);
+            color: var(--blue-accent);
+        }
+
+        .mobile-sidebar-cta {
+            margin-top: 16px;
+            color: var(--navy-dark) !important;
+            text-align: center;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 160px 0 96px;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 150%;
+            height: 100%;
+            transform: translateX(-50%);
+            background: radial-gradient(ellipse at center top, rgba(77, 168, 218, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-label {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            border: 1px solid rgba(77, 168, 218, 0.3);
+            border-radius: 100px;
+            background: rgba(77, 168, 218, 0.1);
+            color: var(--blue-accent);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            margin-bottom: 24px;
+            color: var(--white);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .hero-title-highlight {
+            background: var(--gradient-blue);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            max-width: 650px;
+            margin: 0 auto;
+            color: var(--gray-500);
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .trust-row {
+            display: grid;
+            gap: 10px;
+            max-width: 760px;
+            margin: 28px auto 0;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            color: #f2f9ff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .check {
+            display: grid;
+            width: 20px;
+            height: 20px;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--blue-accent);
+            color: var(--navy);
+            flex: 0 0 auto;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .calculator-section {
+            padding: 54px 0 80px;
+        }
+
+        .pricing-shell {
+            width: min(100%, 820px);
+            margin: 0 auto;
+        }
+
+        .builder {
+            display: grid;
+            gap: 14px;
+        }
+
+        .section,
+        .result-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: 0 10px 26px rgba(13, 27, 42, 0.06);
+            padding: 18px;
+        }
+
+        .section-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .step,
+        .result-label {
+            color: #1d84c9;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            color: var(--navy);
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        h3 {
+            color: var(--navy);
+            font-size: 15px;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .plain-help {
+            margin-top: 6px;
+            color: var(--gray-600);
+            font-size: 14px;
+        }
+
+        .choice-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .choice {
+            display: grid;
+            width: 100%;
+            min-height: 74px;
+            align-items: center;
+            gap: 12px;
+            padding: 13px;
+            border: 1px solid #cbd9e6;
+            border-radius: var(--radius);
+            background: var(--white);
+            color: var(--gray-900);
+            cursor: pointer;
+            text-align: left;
+            transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+        }
+
+        .choice strong {
+            display: block;
+            color: var(--navy);
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .choice span {
+            display: block;
+            color: var(--gray-600);
+            font-size: 13px;
+            margin-top: 3px;
+        }
+
+        .choice .best-for {
+            color: var(--gray-700);
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.35;
+            margin-top: 7px;
+        }
+
+        .choice.active,
+        .mini-choice.active {
+            border-color: var(--blue-accent);
+            background: #edf8ff;
+            box-shadow: inset 0 0 0 1px var(--blue-accent);
+        }
+
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .mini-choice {
+            display: grid;
+            min-height: 58px;
+            place-items: center;
+            gap: 2px;
+            padding: 9px 8px;
+            border: 1px solid #cbd9e6;
+            border-radius: var(--radius);
+            background: var(--white);
+            color: var(--gray-900);
+            cursor: pointer;
+            text-align: center;
+            transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+        }
+
+        .mini-choice strong {
+            color: var(--navy);
+            font-size: 15px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .mini-choice span {
+            color: var(--gray-600);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .custom-field {
+            margin-top: 10px;
+        }
+
+        .custom-field.hidden {
+            display: none;
+        }
+
+        .custom-input {
+            width: 100%;
+            min-height: 48px;
+            border: 1px solid #cbd9e6;
+            border-radius: var(--radius);
+            background: var(--white);
+            color: var(--gray-900);
+            font-weight: 800;
+            padding: 10px 12px;
+        }
+
+        .result-title {
+            margin-top: 5px;
+            color: var(--navy);
+            font-size: clamp(28px, 4vw, 38px);
+            line-height: 1.1;
+        }
+
+        .result-subtitle {
+            margin-top: 7px;
+            color: var(--gray-600);
+            font-size: 14px;
+        }
+
+        .price-list {
+            display: grid;
+            gap: 9px;
+            margin-top: 16px;
+        }
+
+        .price-line {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 12px;
+            padding: 13px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fbfdff;
+        }
+
+        .tier-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--navy);
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--blue-accent);
+            flex: 0 0 auto;
+        }
+
+        .dot.standard {
+            background: var(--green);
+        }
+
+        .dot.premium {
+            background: var(--gold);
+        }
+
+        .tier-range {
+            margin-top: 2px;
+            color: var(--gray-600);
+            font-size: 12px;
+        }
+
+        .tier-price {
+            color: var(--navy);
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .tier-price span {
+            display: block;
+            color: var(--gray-600);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .roi-block {
+            border-top: 1px solid var(--line);
+            margin-top: 18px;
+            padding-top: 18px;
+        }
+
+        .roi-list {
+            display: grid;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .roi-card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fbfdff;
+            padding: 13px;
+        }
+
+        .roi-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .roi-top strong {
+            color: var(--navy);
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .roi-pill {
+            border-radius: 999px;
+            background: #dff3ff;
+            color: #1d84c9;
+            padding: 4px 8px;
+            font-size: 11px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .roi-metrics {
+            display: grid;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .roi-subhead {
+            color: #1d84c9;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            margin-top: 6px;
+            text-transform: uppercase;
+        }
+
+        .roi-metric {
+            color: #40576d;
+            font-size: 13px;
+            line-height: 1.35;
+        }
+
+        .roi-metric span {
+            color: var(--gray-600);
+            font-weight: 700;
+        }
+
+        .roi-metric strong {
+            color: var(--navy);
+            font-weight: 800;
+        }
+
+        .roi-metric.feature {
+            margin-top: 4px;
+            padding: 9px;
+            border: 1px solid #e4edf5;
+            border-radius: var(--radius);
+            background: var(--white);
+        }
+
+        .roi-divider {
+            border-top: 1px solid #e4edf5;
+            margin: 4px 0;
+        }
+
+        .roi-education {
+            margin-top: 12px;
+            padding: 10px;
+            border: 1px solid #bfe3fa;
+            border-radius: var(--radius);
+            background: #eef8ff;
+            color: #244d70;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .roi-note {
+            margin-top: 9px;
+            color: var(--gray-600);
+            font-size: 12px;
+        }
+
+        .simple-explain {
+            display: grid;
+            gap: 10px;
+        }
+
+        .explain-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #41576c;
+            font-size: 14px;
+        }
+
+        .number {
+            display: grid;
+            width: 22px;
+            height: 22px;
+            place-items: center;
+            border-radius: 50%;
+            background: #dff3ff;
+            color: #1d84c9;
+            flex: 0 0 auto;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .cta-strip {
+            margin-top: 18px;
+            padding: 20px;
+            border-radius: var(--radius);
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-strip h2 {
+            color: var(--white);
+            font-size: 24px;
+        }
+
+        .cta-strip p {
+            max-width: 620px;
+            margin: 8px auto 16px;
+            color: var(--gray-500);
+            font-size: 15px;
+        }
+
+        .mobile-price-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 900;
+            background: rgba(255, 255, 255, 0.97);
+            border-top: 1px solid var(--line);
+            box-shadow: 0 -12px 28px rgba(13, 27, 42, 0.12);
+            padding: 10px 14px;
+        }
+
+        .mobile-price-inner {
+            display: flex;
+            width: min(100%, 820px);
+            margin: 0 auto;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .mobile-price-inner span {
+            display: block;
+            color: var(--gray-600);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .mobile-price-inner strong {
+            color: var(--navy);
+            font-size: 26px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .mobile-package {
+            color: var(--gray-600);
+            font-size: 13px;
+            text-align: right;
+        }
+
+        footer {
+            background: var(--navy-dark);
+            color: var(--white);
+            padding: 48px 0 32px;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .footer-logo-icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        .footer-logo-text {
+            color: var(--white);
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue-accent);
+        }
+
+        .footer-copyright {
+            width: 100%;
+            color: var(--gray-500);
+            font-size: 14px;
+            text-align: center;
+        }
+
+        @media (min-width: 560px) {
+            .trust-row {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .mini-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 880px) {
+            body {
+                padding-bottom: 0;
+            }
+
+            .mini-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .mobile-price-bar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 18px;
+            }
+
+            .header-cta {
+                display: none;
+            }
+
+            .hero {
+                padding: 130px 0 64px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 17px;
+            }
+
+            .calculator-section {
+                padding: 34px 0 56px;
+            }
+
+            .section,
+            .result-card {
+                padding: 16px;
+            }
+
+            .price-line {
+                grid-template-columns: 1fr;
+            }
+
+            .tier-price {
+                text-align: left;
+            }
+
+            .roi-top {
+                display: grid;
+            }
+
+            .roi-pill {
+                width: fit-content;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-left">
+                    <button class="menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="header-center">
+                    <a href="index.html" class="logo">
+                        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                            <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                            <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                        </svg>
+                        <span class="logo-text">LeadPop</span>
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="book-call.html" class="btn btn-primary header-cta">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-overlay" onclick="closeMobileMenu()"></div>
+
+    <div class="mobile-sidebar">
+        <div class="mobile-sidebar-content">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="pricing.html" class="active">Pricing</a>
+            <a href="book-call.html" class="btn btn-primary mobile-sidebar-cta">Get Your Free Lead Analysis</a>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-label">LeadPop Pricing</span>
+                <h1 class="hero-title">
+                    See What Your Leads Cost<br><span class="hero-title-highlight">Before You Buy</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Choose the business funding leads you want, set your minimums, and see the estimated cost per lead and cost to fund a deal.
+                </p>
+                <div class="trust-row">
+                    <div class="trust-item"><span class="check">✓</span><span>Exclusive to you</span></div>
+                    <div class="trust-item"><span class="check">✓</span><span>Delivered in real time</span></div>
+                    <div class="trust-item"><span class="check">✓</span><span>Phone verified</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="calculator-section">
+        <div class="container">
+            <div class="pricing-shell">
+                <div class="builder">
+                    <section class="section">
+                        <div class="section-top">
+                            <div>
+                                <p class="step">Step 1</p>
+                                <h2>Which revenue tiers do you want?</h2>
+                                <p class="plain-help">Revenue tiers are based on the business's monthly revenue.</p>
+                            </div>
+                        </div>
+                        <div class="choice-list" id="packageButtons"></div>
+                    </section>
+
+                    <section class="section">
+                        <div class="section-top">
+                            <div>
+                                <p class="step">Step 2</p>
+                                <h2>Choose your minimums</h2>
+                                <p class="plain-help">Stricter minimums can increase price because fewer leads qualify.</p>
+                            </div>
+                        </div>
+
+                        <h3>Minimum monthly revenue</h3>
+                        <p class="plain-help">For Economy leads, choose the lowest monthly revenue you want. Standard and Premium already start higher.</p>
+                        <div class="mini-grid" id="revenueButtons" style="margin-top:10px;"></div>
+
+                        <h3 style="margin-top:18px;">Minimum time in business</h3>
+                        <div class="mini-grid" id="tibButtons" style="margin-top:10px;"></div>
+
+                        <h3 style="margin-top:18px;">Minimum credit score</h3>
+                        <p class="plain-help">No minimum and 500+ are included. 500+ simply removes Below 500 leads.</p>
+                        <div class="mini-grid" id="creditButtons" style="margin-top:10px;"></div>
+                    </section>
+
+                    <section class="section">
+                        <div class="section-top">
+                            <div>
+                                <p class="step">Step 3</p>
+                                <h2>What do you earn on a funded deal?</h2>
+                                <p class="plain-help">Choose your average commission or points.</p>
+                            </div>
+                        </div>
+
+                        <h3>Your average commission or points</h3>
+                        <div class="mini-grid" id="commissionButtons" style="margin-top:10px;"></div>
+                        <div class="custom-field hidden" id="commissionCustomField">
+                            <input class="custom-input" id="commissionInput" type="number" min="0" step="0.5" value="10" aria-label="Custom commission percentage">
+                        </div>
+                    </section>
+
+                    <section class="result-card" aria-live="polite">
+                        <div class="section-top">
+                            <div>
+                                <p class="step">Step 4</p>
+                                <h2>Your lead prices</h2>
+                                <p class="plain-help">These update when you change the choices above.</p>
+                            </div>
+                        </div>
+                        <p class="result-label">Selected package</p>
+                        <h2 class="result-title" id="resultTitle">Economy leads</h2>
+                        <p class="result-subtitle" id="resultSubtitle"></p>
+                        <div class="price-list" id="priceList"></div>
+
+                        <div class="roi-block">
+                            <p class="result-label">50-lead example</p>
+                            <p class="result-subtitle" id="roiSubtitle"></p>
+                            <div class="roi-list" id="roiList"></div>
+                            <p class="roi-education">The goal is not to buy the cheapest lead. The goal is to buy leads where your funded-deal revenue is higher than your cost to fund a deal.</p>
+                            <p class="roi-note">Estimates are not guarantees. Your funded rate may be higher or lower depending on speed to lead, offer, follow-up, and underwriting.</p>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <div class="section-top">
+                            <div>
+                                <p class="step">Step 5</p>
+                                <h2>What this means</h2>
+                            </div>
+                        </div>
+                        <div class="simple-explain">
+                            <div class="explain-row"><span class="number">1</span><span>You only pay for leads that match your selected criteria.</span></div>
+                            <div class="explain-row"><span class="number">2</span><span>Stricter filters can increase price because fewer businesses qualify.</span></div>
+                            <div class="explain-row"><span class="number">3</span><span>Higher-revenue businesses usually qualify for larger funding amounts, which can increase your revenue per funded deal.</span></div>
+                            <div class="explain-row"><span class="number">4</span><span>Premium leads are available only when you also buy Economy and Standard.</span></div>
+                        </div>
+                    </section>
+
+                    <section class="cta-strip">
+                        <h2>Want a custom volume plan?</h2>
+                        <p>Book a call and we will confirm volume, delivery setup, dispute rules, and the exact criteria you want to buy.</p>
+                        <a href="book-call.html" class="btn btn-primary">Get Your Free Lead Analysis</a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="mobile-price-bar" aria-live="polite">
+        <div class="mobile-price-inner">
+            <div>
+                <span>Lowest price</span>
+                <strong id="stickyPrice">$55</strong>
+            </div>
+            <div class="mobile-package" id="stickyPackage">Economy leads</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="index.html" class="footer-logo">
+                    <svg class="footer-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="24" height="20" rx="4" fill="#4da8da"/>
+                        <rect x="14" y="14" width="24" height="20" rx="4" fill="#4da8da" fill-opacity="0.6"/>
+                        <path d="M8 26L8 32L14 26" fill="#4da8da"/>
+                    </svg>
+                    <span class="footer-logo-text">LeadPop</span>
+                </a>
+
+                <div class="footer-links">
+                    <a href="about.html">About Us</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="book-call.html">Book a Call</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+
+                <p class="footer-copyright">&copy; 2026 LeadPop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const tiers = {
+            economy: {
+                customerLabel: "Economy leads",
+                shortRange: "$15K-$49,999/mo",
+                base: 55,
+                packageRank: 1,
+                dotClass: "",
+                fundedRate: 0.18
+            },
+            standard: {
+                customerLabel: "Standard leads",
+                shortRange: "$50K-$99,999/mo",
+                base: 105,
+                packageRank: 2,
+                dotClass: "standard",
+                fundedRate: 0.15
+            },
+            premium: {
+                customerLabel: "Premium leads",
+                shortRange: "$100K+/mo",
+                base: 155,
+                packageRank: 3,
+                dotClass: "premium",
+                fundedRate: 0.12
+            }
+        };
+
+        const packageOptions = [
+            {
+                value: "economy",
+                rank: 1,
+                label: "Economy",
+                sub: "Businesses doing $15K-$49,999/month",
+                bestFor: "Best for buyers who want lower-cost lead volume."
+            },
+            {
+                value: "standard",
+                rank: 2,
+                label: "Economy + Standard",
+                sub: "Adds businesses doing $50K-$99,999/month",
+                bestFor: "Best for buyers who want a mix of volume and larger funding opportunities."
+            },
+            {
+                value: "premium",
+                rank: 3,
+                label: "Economy + Standard + Premium",
+                sub: "Adds businesses doing $100K+/month",
+                bestFor: "Best for buyers who want access to higher-revenue businesses and larger potential funding amounts."
+            }
+        ];
+
+        const revenueOptions = [
+            { value: 15000, label: "$15K+", add: 0 },
+            { value: 20000, label: "$20K+", add: 10 },
+            { value: 25000, label: "$25K+", add: 15 },
+            { value: 30000, label: "$30K+", add: 20 },
+            { value: 35000, label: "$35K+", add: 25 },
+            { value: 40000, label: "$40K+", add: 30 },
+            { value: 45000, label: "$45K+", add: 35 }
+        ];
+
+        const tibOptions = [
+            { value: 6, label: "6+ mo", fullLabel: "6+ months", add: 0 },
+            { value: 12, label: "1+ yr", fullLabel: "1+ year", add: 10 },
+            { value: 24, label: "2+ yrs", fullLabel: "2+ years", add: 20 },
+            { value: 36, label: "3+ yrs", fullLabel: "3+ years", add: 30 },
+            { value: 48, label: "4+ yrs", fullLabel: "4+ years", add: 40 }
+        ];
+
+        const creditOptions = [
+            { value: 0, label: "No min", fullLabel: "No minimum", add: 0 },
+            { value: 500, label: "500+", fullLabel: "500+", add: 0 },
+            { value: 550, label: "550+", fullLabel: "550+", add: 5 },
+            { value: 600, label: "600+", fullLabel: "600+", add: 10 },
+            { value: 650, label: "650+", fullLabel: "650+", add: 15 },
+            { value: 700, label: "700+", fullLabel: "700+", add: 25 }
+        ];
+
+        const commissionOptions = [
+            { value: "8", label: "8%", sub: "commission" },
+            { value: "10", label: "10%", sub: "commission" },
+            { value: "12", label: "12%", sub: "commission" },
+            { value: "custom", label: "Custom", sub: "type it in" }
+        ];
+
+        const state = {
+            package: "economy",
+            revenueFloor: 15000,
+            tibFloor: 6,
+            creditFloor: 0,
+            leadVolume: 50,
+            commissionMode: "10",
+            commissionPercent: 10
+        };
+
+        const money = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0
+        }).format;
+
+        const number = new Intl.NumberFormat("en-US", {
+            maximumFractionDigits: 1
+        }).format;
+
+        function optionByValue(options, value) {
+            return options.find((option) => String(option.value) === String(value)) || options[0];
+        }
+
+        function packageByValue(value) {
+            return packageOptions.find((option) => option.value === value) || packageOptions[0];
+        }
+
+        function addText(amount) {
+            return amount ? `+$${amount}` : "Included";
+        }
+
+        function includedTierKeys() {
+            const selectedPackage = packageByValue(state.package);
+            return Object.keys(tiers).filter((key) => tiers[key].packageRank <= selectedPackage.rank);
+        }
+
+        function calculateTierPrice(tierKey) {
+            const tier = tiers[tierKey];
+            const revenue = optionByValue(revenueOptions, state.revenueFloor);
+            const tib = optionByValue(tibOptions, state.tibFloor);
+            const credit = optionByValue(creditOptions, state.creditFloor);
+            const revenueAdd = tierKey === "economy" ? revenue.add : 0;
+
+            return tier.base + revenueAdd + tib.add + credit.add;
+        }
+
+        function formatEconomyRange(revenue) {
+            const floor = `$${revenue.value / 1000}K`;
+            return `${floor}-$49,999/mo`;
+        }
+
+        function formatTierCriteria(tierKey) {
+            const revenue = optionByValue(revenueOptions, state.revenueFloor);
+            const revenueRange = tierKey === "economy" ? formatEconomyRange(revenue) : tiers[tierKey].shortRange;
+            return `${revenueRange} | Matches your selected minimums`;
+        }
+
+        function fundedAmountRange(tierKey) {
+            const revenue = optionByValue(revenueOptions, state.revenueFloor);
+
+            if (tierKey === "economy") return { min: revenue.value, max: 50000 };
+            if (tierKey === "standard") return { min: 50000, max: 100000 };
+            return { min: 100000, max: null };
+        }
+
+        function formatMoneyRange(min, max) {
+            return max === null ? `${money(min)}+` : `${money(min)}-${money(max)}`;
+        }
+
+        function formatFundedDeals(deals) {
+            if (Number.isInteger(deals)) return `~${deals}`;
+            const low = Math.floor(deals);
+            const high = Math.ceil(deals);
+            return `~${low}-${high}`;
+        }
+
+        function calculateExample(tierKey) {
+            const tier = tiers[tierKey];
+            const price = calculateTierPrice(tierKey);
+            const commissionRate = state.commissionPercent / 100;
+            const amountRange = fundedAmountRange(tierKey);
+            const costPerFundedDeal = price / tier.fundedRate;
+            const revenuePerDealMin = amountRange.min * commissionRate;
+            const revenuePerDealMax = amountRange.max === null ? null : amountRange.max * commissionRate;
+            const spreadPerDealMin = revenuePerDealMin - costPerFundedDeal;
+            const spreadPerDealMax = revenuePerDealMax === null ? null : revenuePerDealMax - costPerFundedDeal;
+
+            return {
+                amountRange,
+                costPerFundedDeal,
+                expectedFundedDeals: state.leadVolume * tier.fundedRate,
+                modeledLeadCost: price * state.leadVolume,
+                revenuePerDealMin,
+                revenuePerDealMax,
+                spreadPerDealMin,
+                spreadPerDealMax
+            };
+        }
+
+        function renderPackageButtons() {
+            document.getElementById("packageButtons").innerHTML = packageOptions.map((option) => `
+                <button class="choice ${option.value === state.package ? "active" : ""}" type="button" data-group="package" data-value="${option.value}">
+                    <span>
+                        <strong>${option.label}</strong>
+                        <span>${option.sub}</span>
+                        <span class="best-for">${option.bestFor}</span>
+                    </span>
+                </button>
+            `).join("");
+        }
+
+        function renderMiniButtons(id, group, options, activeValue) {
+            document.getElementById(id).innerHTML = options.map((option) => `
+                <button class="mini-choice ${String(option.value) === String(activeValue) ? "active" : ""}" type="button" data-group="${group}" data-value="${option.value}">
+                    <strong>${option.label}</strong>
+                    <span>${addText(option.add)}</span>
+                </button>
+            `).join("");
+        }
+
+        function renderPlainButtons(id, group, options, activeValue) {
+            document.getElementById(id).innerHTML = options.map((option) => `
+                <button class="mini-choice ${String(option.value) === String(activeValue) ? "active" : ""}" type="button" data-group="${group}" data-value="${option.value}">
+                    <strong>${option.label}</strong>
+                    <span>${option.sub}</span>
+                </button>
+            `).join("");
+        }
+
+        function renderCustomFields() {
+            document.getElementById("commissionCustomField").classList.toggle("hidden", state.commissionMode !== "custom");
+            document.getElementById("commissionInput").value = state.commissionPercent;
+        }
+
+        function renderResults() {
+            const selectedPackage = packageByValue(state.package);
+            const revenue = optionByValue(revenueOptions, state.revenueFloor);
+            const tib = optionByValue(tibOptions, state.tibFloor);
+            const credit = optionByValue(creditOptions, state.creditFloor);
+            const included = includedTierKeys();
+            const lowestPrice = calculateTierPrice(included[0]);
+
+            document.getElementById("resultTitle").textContent =
+                selectedPackage.value === "economy" ? "Economy leads" : selectedPackage.label;
+            document.getElementById("resultSubtitle").textContent =
+                `Minimums: ${revenue.label} monthly revenue, ${tib.fullLabel} in business, ${credit.fullLabel} credit.`;
+            document.getElementById("stickyPrice").textContent = money(lowestPrice);
+            document.getElementById("stickyPackage").textContent =
+                selectedPackage.value === "economy" ? "Economy leads" : selectedPackage.label;
+
+            document.getElementById("priceList").innerHTML = included.map((tierKey) => {
+                const tier = tiers[tierKey];
+                const price = calculateTierPrice(tierKey);
+
+                return `
+                    <div class="price-line">
+                        <div>
+                            <div class="tier-name"><span class="dot ${tier.dotClass}"></span>${tier.customerLabel}</div>
+                            <div class="tier-range">${formatTierCriteria(tierKey)}</div>
+                        </div>
+                        <div class="tier-price">${money(price)}<span>per lead</span></div>
+                    </div>
+                `;
+            }).join("");
+
+            document.getElementById("roiSubtitle").textContent =
+                "This example uses 50 leads, your selected commission, and current client benchmark funded rates.";
+            document.getElementById("roiList").innerHTML = included.map((tierKey) => {
+                const tier = tiers[tierKey];
+                const example = calculateExample(tierKey);
+
+                return `
+                    <div class="roi-card">
+                        <div class="roi-top">
+                            <strong>${tier.customerLabel}</strong>
+                            <span class="roi-pill">${Math.round(tier.fundedRate * 100)}% example funded rate</span>
+                        </div>
+                        <div class="roi-metrics">
+                            <div class="roi-subhead">50-lead example</div>
+                            <div class="roi-metric">
+                                <span>Lead cost:</span> <strong>${money(example.modeledLeadCost)}</strong>
+                            </div>
+                            <div class="roi-metric">
+                                <span>Example funded rate:</span> <strong>${Math.round(tier.fundedRate * 100)}%</strong>
+                            </div>
+                            <div class="roi-metric">
+                                <span>Estimated funded deals:</span> <strong>${formatFundedDeals(example.expectedFundedDeals)}</strong>
+                            </div>
+                            <div class="roi-metric">
+                                <span>Cost to fund one deal:</span> <strong>~${money(example.costPerFundedDeal)}</strong>
+                            </div>
+                            <div class="roi-divider"></div>
+                            <div class="roi-metric">
+                                <span>Typical funded amount:</span> <strong>${formatMoneyRange(example.amountRange.min, example.amountRange.max)}</strong>
+                            </div>
+                            <div class="roi-metric">
+                                <span>Revenue to you at ${number(state.commissionPercent)}%:</span> <strong>${formatMoneyRange(example.revenuePerDealMin, example.revenuePerDealMax)}</strong>
+                            </div>
+                            <div class="roi-metric feature">
+                                <span>Estimated spread after lead cost:</span> <strong>${formatMoneyRange(example.spreadPerDealMin, example.spreadPerDealMax)}</strong>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function render() {
+            renderPackageButtons();
+            renderMiniButtons("revenueButtons", "revenueFloor", revenueOptions, state.revenueFloor);
+            renderMiniButtons("tibButtons", "tibFloor", tibOptions, state.tibFloor);
+            renderMiniButtons("creditButtons", "creditFloor", creditOptions, state.creditFloor);
+            renderPlainButtons("commissionButtons", "commissionMode", commissionOptions, state.commissionMode);
+            renderCustomFields();
+            renderResults();
+        }
+
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector(".mobile-sidebar");
+            const overlay = document.querySelector(".mobile-overlay");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            sidebar.classList.toggle("active");
+            overlay.classList.toggle("active");
+            menuBtn.classList.toggle("active");
+            document.body.style.overflow = sidebar.classList.contains("active") ? "hidden" : "";
+        }
+
+        function closeMobileMenu() {
+            document.querySelector(".mobile-sidebar").classList.remove("active");
+            document.querySelector(".mobile-overlay").classList.remove("active");
+            document.querySelector(".menu-btn").classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        document.addEventListener("click", (event) => {
+            const button = event.target.closest("[data-group]");
+            if (!button) return;
+
+            const group = button.dataset.group;
+            const value = button.dataset.value;
+
+            if (group === "package") state.package = value;
+            if (group === "revenueFloor") state.revenueFloor = Number(value);
+            if (group === "tibFloor") state.tibFloor = Number(value);
+            if (group === "creditFloor") state.creditFloor = Number(value);
+            if (group === "commissionMode") {
+                state.commissionMode = value;
+                if (value !== "custom") state.commissionPercent = Number(value);
+            }
+
+            render();
+        });
+
+        document.addEventListener("input", (event) => {
+            if (event.target.id === "commissionInput") {
+                const value = Number(event.target.value);
+                if (Number.isFinite(value) && value >= 0) {
+                    state.commissionPercent = value;
+                    renderResults();
+                }
+            }
+        });
+
+        document.querySelectorAll(".mobile-sidebar a").forEach((link) => {
+            link.addEventListener("click", closeMobileMenu);
+        });
+
+        render();
+    </script>
+</body>
+</html>
