@@ -294,7 +294,7 @@
             color: var(--blue-accent);
         }
 
-         (max-width: 768px) {
+        @media (max-width: 900px) {
             .header-link {
                 display: none;
             }
@@ -336,18 +336,19 @@
         .mobile-sidebar {
             position: fixed;
             top: 0;
-            right: -100%;
+            right: 0;
+            transform: translateX(100%);
             width: 280px;
             height: 100vh;
             background: var(--navy-dark);
             z-index: 1002;
-            transition: right 0.3s ease;
+            transition: transform 0.3s ease;
             overflow-y: auto;
             border-left: 1px solid rgba(77, 168, 218, 0.1);
         }
 
         .mobile-sidebar.active {
-            right: 0;
+            transform: translateX(0);
         }
 
         .mobile-sidebar-content {
@@ -1540,6 +1541,87 @@
         }
 
         /* ===== FOOTER (DARK) ===== */
+        .mobile-book-bar {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 86px;
+            }
+
+            .mobile-book-bar {
+                display: block;
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 900;
+                background: rgba(10, 22, 40, 0.97);
+                border-top: 1px solid rgba(77, 168, 218, 0.28);
+                box-shadow: 0 -12px 28px rgba(13, 27, 42, 0.16);
+                opacity: 0;
+                padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+                pointer-events: none;
+                transform: translateY(110%);
+                transition: opacity 0.2s ease, transform 0.2s ease;
+            }
+
+            .mobile-book-bar.is-visible {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+
+            .mobile-book-inner {
+                align-items: center;
+                display: flex;
+                gap: 12px;
+                justify-content: space-between;
+                margin: 0 auto;
+                max-width: 680px;
+            }
+
+            .mobile-book-copy {
+                min-width: 0;
+            }
+
+            .mobile-book-copy span {
+                color: #9fb4c7;
+                display: block;
+                font-size: 12px;
+                font-weight: 800;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+            }
+
+            .mobile-book-copy strong {
+                color: var(--white);
+                display: block;
+                font-size: 15px;
+                font-weight: 800;
+                line-height: 1.2;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .mobile-book-button {
+                align-items: center;
+                background: var(--gradient-blue);
+                border-radius: 8px;
+                color: var(--navy-dark);
+                display: inline-flex;
+                flex: 0 0 auto;
+                font-size: 13px;
+                font-weight: 800;
+                justify-content: center;
+                padding: 11px 14px;
+                text-decoration: none;
+                white-space: nowrap;
+            }
+        }
+
         footer {
             background: var(--navy-dark);
             border-top: 1px solid var(--navy-lighter);
@@ -1629,6 +1711,12 @@
             
             .footer-social {
                 justify-content: center;
+            }
+
+            .footer-links {
+                gap: 16px;
+                justify-content: center;
+                max-width: 100%;
             }
         }
 
@@ -2483,6 +2571,16 @@
         </div>
     </section>
 
+    <div class="mobile-book-bar" data-mobile-book-bar aria-hidden="true">
+        <div class="mobile-book-inner">
+            <div class="mobile-book-copy">
+                <span>Ready for qualified leads?</span>
+                <strong>Get your free lead analysis</strong>
+            </div>
+            <a href="book-call.html" class="mobile-book-button">Book a Call</a>
+        </div>
+    </div>
+
     <!-- FOOTER (DARK) -->
     <footer>
         <div class="container">
@@ -2538,7 +2636,7 @@
         function toggleMobileMenu() {
             const sidebar = document.querySelector('.mobile-sidebar');
             const overlay = document.querySelector('.mobile-overlay');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const menuBtn = document.querySelector('.menu-btn');
             
             sidebar.classList.toggle('active');
             overlay.classList.toggle('active');
@@ -2555,7 +2653,7 @@
         function closeMobileMenu() {
             const sidebar = document.querySelector('.mobile-sidebar');
             const overlay = document.querySelector('.mobile-overlay');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const menuBtn = document.querySelector('.menu-btn');
             
             sidebar.classList.remove('active');
             overlay.classList.remove('active');
@@ -2573,6 +2671,24 @@
             const faqItem = element.parentElement;
             faqItem.classList.toggle('active');
         }
+
+        function initMobileBookBar() {
+            const bar = document.querySelector("[data-mobile-book-bar]");
+            const hero = document.querySelector(".hero");
+            if (!bar || !hero) return;
+
+            const update = () => {
+                const shouldShow = window.matchMedia("(max-width: 768px)").matches && hero.getBoundingClientRect().bottom <= 0;
+                bar.classList.toggle("is-visible", shouldShow);
+                bar.setAttribute("aria-hidden", shouldShow ? "false" : "true");
+            };
+
+            update();
+            window.addEventListener("scroll", update, { passive: true });
+            window.addEventListener("resize", update);
+        }
+
+        initMobileBookBar();
 
         // Scroll animations
         const observerOptions = {

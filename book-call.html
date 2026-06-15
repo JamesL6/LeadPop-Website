@@ -193,7 +193,7 @@
             color: var(--blue-accent);
         }
 
-         (max-width: 768px) {
+        @media (max-width: 900px) {
             .header-link {
                 display: none;
             }
@@ -235,18 +235,19 @@
         .mobile-sidebar {
             position: fixed;
             top: 0;
-            right: -100%;
+            right: 0;
+            transform: translateX(100%);
             width: 280px;
             height: 100vh;
             background: var(--navy-dark);
             z-index: 1002;
-            transition: right 0.3s ease;
+            transition: transform 0.3s ease;
             overflow-y: auto;
             border-left: 1px solid rgba(77, 168, 218, 0.1);
         }
 
         .mobile-sidebar.active {
-            right: 0;
+            transform: translateX(0);
         }
 
         .mobile-sidebar-content {
@@ -833,6 +834,12 @@
             .footer-social {
                 justify-content: center;
             }
+
+            .footer-links {
+                gap: 16px;
+                justify-content: center;
+                max-width: 100%;
+            }
         }
 
         /* ===== ANIMATIONS ===== */
@@ -1111,7 +1118,7 @@
         function toggleMobileMenu() {
             const sidebar = document.querySelector('.mobile-sidebar');
             const overlay = document.querySelector('.mobile-overlay');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const menuBtn = document.querySelector('.menu-btn');
             
             sidebar.classList.toggle('active');
             overlay.classList.toggle('active');
@@ -1128,7 +1135,7 @@
         function closeMobileMenu() {
             const sidebar = document.querySelector('.mobile-sidebar');
             const overlay = document.querySelector('.mobile-overlay');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const menuBtn = document.querySelector('.menu-btn');
             
             sidebar.classList.remove('active');
             overlay.classList.remove('active');

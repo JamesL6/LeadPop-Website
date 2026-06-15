@@ -196,6 +196,12 @@
             color: var(--blue-accent);
         }
 
+        @media (max-width: 900px) {
+            .header-link {
+                display: none;
+            }
+        }
+
         .menu-btn {
             display: flex;
             flex-direction: column;
@@ -804,19 +810,29 @@
             padding: 18px 34px;
         }
 
-        .mobile-price-bar {
+        .mobile-book-bar {
             position: fixed;
             left: 0;
             right: 0;
             bottom: 0;
             z-index: 900;
-            background: rgba(255, 255, 255, 0.97);
-            border-top: 1px solid var(--line);
+            background: rgba(10, 22, 40, 0.97);
+            border-top: 1px solid rgba(77, 168, 218, 0.28);
             box-shadow: 0 -12px 28px rgba(13, 27, 42, 0.12);
-            padding: 10px 14px;
+            opacity: 0;
+            padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+            pointer-events: none;
+            transform: translateY(110%);
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
-        .mobile-price-inner {
+        .mobile-book-bar.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .mobile-book-inner {
             display: flex;
             width: min(100%, 820px);
             margin: 0 auto;
@@ -825,26 +841,43 @@
             gap: 12px;
         }
 
-        .mobile-price-inner span {
+        .mobile-book-copy {
+            min-width: 0;
+        }
+
+        .mobile-book-copy span {
             display: block;
-            color: var(--gray-600);
+            color: #9fb4c7;
             font-size: 12px;
             font-weight: 800;
             letter-spacing: 0.06em;
             text-transform: uppercase;
         }
 
-        .mobile-price-inner strong {
-            color: var(--navy);
-            font-size: 26px;
+        .mobile-book-copy strong {
+            color: var(--white);
+            display: block;
+            font-size: 15px;
             font-weight: 800;
-            line-height: 1;
+            line-height: 1.2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
-        .mobile-package {
-            color: var(--gray-600);
+        .mobile-book-button {
+            align-items: center;
+            background: var(--gradient-blue);
+            border-radius: 8px;
+            color: var(--navy-dark);
+            display: inline-flex;
+            flex: 0 0 auto;
             font-size: 13px;
-            text-align: right;
+            font-weight: 800;
+            justify-content: center;
+            padding: 11px 14px;
+            text-decoration: none;
+            white-space: nowrap;
         }
 
         footer {
@@ -922,7 +955,7 @@
                 grid-template-columns: repeat(4, minmax(0, 1fr));
             }
 
-            .mobile-price-bar {
+            .mobile-book-bar {
                 display: none;
             }
         }
@@ -981,6 +1014,11 @@
 
             .footer-links {
                 justify-content: center;
+            }
+
+            .footer-links {
+                gap: 16px;
+                max-width: 100%;
             }
 
             .cta-strip {
@@ -1153,13 +1191,13 @@
         </div>
     </main>
 
-    <div class="mobile-price-bar" aria-live="polite">
-        <div class="mobile-price-inner">
-            <div>
-                <span>Lowest price</span>
-                <strong id="stickyPrice">$55</strong>
+    <div class="mobile-book-bar" data-mobile-book-bar aria-hidden="true" aria-live="polite">
+        <div class="mobile-book-inner">
+            <div class="mobile-book-copy">
+                <span>Starts at <span id="stickyPrice">$55</span></span>
+                <strong id="stickyPackage">Economy leads</strong>
             </div>
-            <div class="mobile-package" id="stickyPackage">Economy leads</div>
+            <a href="book-call.html" class="mobile-book-button">Book a Call</a>
         </div>
     </div>
 
@@ -1511,6 +1549,22 @@
             document.body.style.overflow = "";
         }
 
+        function initMobileBookBar() {
+            const bar = document.querySelector("[data-mobile-book-bar]");
+            const hero = document.querySelector(".hero");
+            if (!bar || !hero) return;
+
+            const update = () => {
+                const shouldShow = window.matchMedia("(max-width: 768px)").matches && hero.getBoundingClientRect().bottom <= 0;
+                bar.classList.toggle("is-visible", shouldShow);
+                bar.setAttribute("aria-hidden", shouldShow ? "false" : "true");
+            };
+
+            update();
+            window.addEventListener("scroll", update, { passive: true });
+            window.addEventListener("resize", update);
+        }
+
         document.addEventListener("click", (event) => {
             const button = event.target.closest("[data-group]");
             if (!button) return;
@@ -1545,6 +1599,7 @@
         });
 
         render();
+        initMobileBookBar();
     </script>
 </body>
 </html>
