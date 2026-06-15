@@ -156,6 +156,7 @@
 
         .header-right {
             justify-content: flex-end;
+            gap: 16px;
         }
 
         .logo {
@@ -179,6 +180,20 @@
         .header-cta {
             padding: 12px 28px;
             white-space: nowrap;
+        }
+
+        .header-link {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+        }
+
+        .header-link:hover,
+        .header-link.active {
+            color: var(--blue-accent);
         }
 
         .menu-btn {
@@ -746,24 +761,47 @@
         }
 
         .cta-strip {
-            margin-top: 18px;
-            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 24px;
+            padding: 44px 28px;
+            border: 1px solid rgba(77, 168, 218, 0.28);
             border-radius: var(--radius);
-            background: var(--navy);
+            background:
+                radial-gradient(circle at center top, rgba(77, 168, 218, 0.26), transparent 54%),
+                linear-gradient(180deg, #102742 0%, var(--navy) 100%);
+            box-shadow: 0 22px 52px rgba(13, 27, 42, 0.18);
             color: var(--white);
             text-align: center;
         }
 
-        .cta-strip h2 {
-            color: var(--white);
-            font-size: 24px;
+        .cta-kicker {
+            color: var(--blue-accent);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.09em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .cta-strip p {
-            max-width: 620px;
-            margin: 8px auto 16px;
-            color: var(--gray-500);
-            font-size: 15px;
+        .cta-strip h2 {
+            color: var(--white);
+            font-size: clamp(32px, 5vw, 46px);
+            font-weight: 800;
+            line-height: 1.08;
+        }
+
+        .cta-strip p:not(.cta-kicker) {
+            max-width: 680px;
+            margin: 14px auto 24px;
+            color: #c5d3df;
+            font-size: 18px;
+            line-height: 1.65;
+        }
+
+        .cta-strip .btn {
+            font-size: 18px;
+            padding: 18px 34px;
         }
 
         .mobile-price-bar {
@@ -894,7 +932,8 @@
                 padding: 0 18px;
             }
 
-            .header-cta {
+            .header-cta,
+            .header-link {
                 display: none;
             }
 
@@ -943,6 +982,14 @@
             .footer-links {
                 justify-content: center;
             }
+
+            .cta-strip {
+                padding: 34px 18px;
+            }
+
+            .cta-strip p:not(.cta-kicker) {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -968,6 +1015,7 @@
                     </a>
                 </div>
                 <div class="header-right">
+                    <a href="pricing.html" class="header-link active">Pricing</a>
                     <a href="book-call.html" class="btn btn-primary header-cta">Get Started</a>
                 </div>
             </div>
@@ -1095,6 +1143,7 @@
                     </section>
 
                     <section class="cta-strip">
+                        <p class="cta-kicker">Ready to talk?</p>
                         <h2>Free Lead Analysis</h2>
                         <p>Book a call and we'll confirm your criteria, expected volume, delivery setup, and any other questions you have.</p>
                         <a href="book-call.html" class="btn btn-primary">Get Your Free Lead Analysis</a>
