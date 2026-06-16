@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lead Pricing Calculator | LeadPop</title>
     <meta name="title" content="Lead Pricing Calculator | LeadPop">
-    <meta name="description" content="Estimate your cost per exclusive, real-time business funding lead by revenue tier and see a simple 50-lead funded-deal example.">
+    <meta name="description" content="Estimate your cost per exclusive, real-time business funding lead by revenue tier and see example funded-deal economics.">
     <link rel="canonical" href="https://www.leadpop.io/pricing">
 
     <meta property="og:type" content="website">
@@ -1246,7 +1246,6 @@
 
         const state = {
             package: "economy",
-            leadVolume: 50,
             commissionMode: "10",
             commissionPercent: 10
         };
@@ -1288,13 +1287,6 @@
             return max === null ? `${money(min)}+` : `${money(min)}-${money(max)}`;
         }
 
-        function formatFundedDeals(deals) {
-            if (Number.isInteger(deals)) return `~${deals}`;
-            const low = Math.floor(deals);
-            const high = Math.ceil(deals);
-            return `~${low}-${high}`;
-        }
-
         function calculateExample(tierKey) {
             const tier = tiers[tierKey];
             const price = calculateTierPrice(tierKey);
@@ -1309,8 +1301,6 @@
             return {
                 amountRange,
                 costPerFundedDeal,
-                expectedFundedDeals: state.leadVolume * tier.fundedRate,
-                modeledLeadCost: price * state.leadVolume,
                 revenuePerDealMin,
                 revenuePerDealMax,
                 spreadPerDealMin,
@@ -1371,19 +1361,13 @@
                             </div>
                             <div class="tier-price">${money(price)}<span>per lead</span></div>
                         </div>
-                        <div class="tier-card-note">50-lead example · ${Math.round(tier.fundedRate * 100)}% LeadPop benchmark funded rate</div>
+                        <div class="tier-card-note">Example funded-deal economics · Avg. LeadPop funded rate: ${Math.round(tier.fundedRate * 100)}%</div>
                         <div class="roi-metrics">
                             <div class="roi-metric">
-                                <span>Lead cost:</span> <strong>${money(example.modeledLeadCost)}</strong>
+                                <span>Avg. LeadPop funded rate:</span> <strong>${Math.round(tier.fundedRate * 100)}%</strong>
                             </div>
                             <div class="roi-metric">
-                                <span>LeadPop benchmark funded rate:</span> <strong>${Math.round(tier.fundedRate * 100)}%</strong>
-                            </div>
-                            <div class="roi-metric">
-                                <span>Estimated funded deals:</span> <strong>${formatFundedDeals(example.expectedFundedDeals)}</strong>
-                            </div>
-                            <div class="roi-metric">
-                                <span>Cost to fund one deal:</span> <strong>~${money(example.costPerFundedDeal)}</strong>
+                                <span>Estimated cost to acquire one funded deal:</span> <strong>~${money(example.costPerFundedDeal)}</strong>
                             </div>
                             <div class="roi-divider"></div>
                             <div class="roi-metric">
