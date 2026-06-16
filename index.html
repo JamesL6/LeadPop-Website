@@ -999,9 +999,9 @@
         /* ===== FILTERS SECTION (LIGHT) ===== */
         .filters-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
+            grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+            gap: 64px;
+            align-items: center;
         }
 
         .section-light .filters-visual,
@@ -1012,6 +1012,11 @@
             padding: 32px;
             position: relative;
             box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            width: 100%;
+        }
+
+        .filters-visual-mobile {
+            display: none;
         }
 
         .filters-visual::before {
@@ -1083,40 +1088,6 @@
             margin-bottom: 24px;
         }
 
-        .filters-summary-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
-            list-style: none;
-            margin-bottom: 24px;
-        }
-
-        .filters-summary-grid li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px;
-            background: var(--off-white);
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            color: var(--gray-800);
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .filters-summary-icon {
-            align-items: center;
-            background: var(--blue-pale);
-            border-radius: 7px;
-            color: var(--blue-accent);
-            display: inline-flex;
-            flex: 0 0 auto;
-            font-size: 13px;
-            height: 24px;
-            justify-content: center;
-            width: 24px;
-        }
-
         .otp-badge {
             display: inline-flex;
             align-items: center;
@@ -1140,6 +1111,7 @@
         @media (max-width: 900px) {
             .filters-wrapper {
                 grid-template-columns: 1fr;
+                gap: 28px;
             }
             
             .filters-wrapper > .filters-visual {
@@ -1157,7 +1129,6 @@
             border: 1px solid rgba(77, 168, 218, 0.24);
             border-radius: 16px;
             color: var(--gray-900);
-            margin-bottom: 24px;
             margin-top: 20px;
             padding: 22px;
         }
@@ -1191,12 +1162,51 @@
         }
 
         @media (max-width: 640px) {
-            .filters-summary-grid {
-                grid-template-columns: 1fr;
+            .filters-section {
+                padding-top: 72px;
+            }
+
+            .section-light .filters-visual,
+            .section-light-alt .filters-visual {
+                border-radius: 16px;
+                padding: 22px 18px 14px;
+            }
+
+            .filters-visual::before {
+                left: 20px;
+            }
+
+            .filter-item {
+                padding: 9px 0;
+            }
+
+            .filter-label {
+                font-size: 13px;
+                gap: 9px;
+            }
+
+            .filter-check {
+                width: 20px;
+                height: 20px;
+                font-size: 12px;
+            }
+
+            .filter-value {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+
+            .otp-badge {
+                display: none;
             }
 
             .filters-wrapper > .filters-visual {
                 display: none;
+            }
+
+            .filters-content .filters-visual-mobile {
+                display: block;
+                margin: 4px 0 24px;
             }
 
             .pricing-route-panel {
@@ -2131,7 +2141,7 @@
     </section>
 
     <!-- FILTERS SECTION (LIGHT) -->
-    <section class="section section-light">
+    <section class="section section-light filters-section">
         <div class="container">
             <div class="filters-wrapper">
                 <div class="filters-visual fade-in">
@@ -2183,19 +2193,57 @@
                     <h3>Leads matched to<br><span class="text-blue">what you fund</span></h3>
                     <p>We deliver exclusive, real-time, OTP-verified leads that match your criteria, and pricing depends on the revenue tier, qualification filters, and volume you want to buy.</p>
 
+                    <div class="filters-visual filters-visual-mobile">
+                        <div class="filter-item">
+                            <span class="filter-label">
+                                <span class="filter-check">✓</span>
+                                Minimum Credit Score
+                            </span>
+                            <span class="filter-value">650+</span>
+                        </div>
+                        <div class="filter-item">
+                            <span class="filter-label">
+                                <span class="filter-check">✓</span>
+                                Monthly Revenue
+                            </span>
+                            <span class="filter-value">$50K+/mo</span>
+                        </div>
+                        <div class="filter-item">
+                            <span class="filter-label">
+                                <span class="filter-check">✓</span>
+                                Years in Business
+                            </span>
+                            <span class="filter-value">2+ years</span>
+                        </div>
+                        <div class="filter-item">
+                            <span class="filter-label">
+                                <span class="filter-check">✓</span>
+                                Loan Amount
+                            </span>
+                            <span class="filter-value">$50K - $500K</span>
+                        </div>
+                        <div class="filter-item">
+                            <span class="filter-label">
+                                <span class="filter-check">✓</span>
+                                Geographic Target
+                            </span>
+                            <span class="filter-value">Nationwide</span>
+                        </div>
+                        <div class="filter-item">
+                            <span class="filter-label">
+                                <span class="filter-check">✓</span>
+                                Use of Funds
+                            </span>
+                            <span class="filter-value">Working Capital</span>
+                        </div>
+                    </div>
+
                     <div class="pricing-route-panel">
                         <div class="pricing-route-label">Pricing preview</div>
                         <h3 class="pricing-route-title">See lead prices.</h3>
                         <p class="pricing-route-text">Compare starting CPL and funded-deal examples.</p>
                         <a href="pricing.html" class="btn btn-primary">View Lead Pricing →</a>
                     </div>
-                    
-                    <ul class="filters-summary-grid">
-                        <li><span class="filters-summary-icon">✓</span> Monthly revenue tiers</li>
-                        <li><span class="filters-summary-icon">✓</span> Credit profile</li>
-                        <li><span class="filters-summary-icon">✓</span> Time in business</li>
-                        <li><span class="filters-summary-icon">✓</span> Geo, loan need, and volume</li>
-                    </ul>
                     
                     <div class="otp-badge">
                         <span class="otp-badge-icon">🔒</span>
