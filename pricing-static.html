@@ -397,7 +397,7 @@
         }
 
         .pricing-shell {
-            width: min(100%, 1180px);
+            width: min(100%, 1320px);
             margin: 0 auto;
         }
 
@@ -577,7 +577,7 @@
 
         .package-compare-grid {
             display: grid;
-            gap: 14px;
+            gap: 16px;
             margin-top: 10px;
         }
 
@@ -675,6 +675,10 @@
             font-weight: 800;
         }
 
+        .roi-metric.wide {
+            grid-column: 1 / -1;
+        }
+
         .roi-metric.feature {
             grid-column: 1 / -1;
             margin-top: 4px;
@@ -721,13 +725,33 @@
         }
 
         @media (min-width: 980px) {
+            .comparison-intro {
+                max-width: none;
+            }
+
+            .comparison-intro .plain-help {
+                white-space: nowrap;
+            }
+
             .package-compare-grid {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 26px;
                 align-items: stretch;
             }
 
             .price-line {
                 align-content: start;
+                padding: 18px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1380px;
+            }
+
+            .package-compare-grid {
+                gap: 32px;
             }
         }
 
@@ -1125,7 +1149,7 @@
                         </div>
                         <div class="package-compare-grid" id="priceList"></div>
                         <p class="roi-education">The goal is not to buy the cheapest lead. The goal is to buy leads where funded-deal revenue leaves enough spread after lead cost.</p>
-                        <p class="roi-note">Estimates are not guarantees. Your funded rate may be higher or lower depending on speed to lead, offer, follow-up, and underwriting.</p>
+                        <p class="roi-note">Estimates are not guarantees. Actual results may vary depending on speed to lead, offer, follow-up, and underwriting.</p>
                     </section>
 
                     <section class="section">
@@ -1138,7 +1162,7 @@
                         </div>
                         <div class="simple-explain">
                             <div class="explain-row"><span class="number">1</span><span>Higher-revenue leads usually qualify for larger funding amounts.</span></div>
-                            <div class="explain-row"><span class="number">2</span><span>Premium leads are available only when you also buy Economy and Standard.</span></div>
+                            <div class="explain-row"><span class="number">2</span><span>The $100K+/mo package is available only when you also buy the lower revenue packages.</span></div>
                             <div class="explain-row"><span class="number">3</span><span>Custom criteria are confirmed during your free lead analysis.</span></div>
                         </div>
                     </section>
@@ -1193,24 +1217,21 @@
     <script>
         const tiers = {
             economy: {
-                customerLabel: "Economy leads",
-                shortRange: "$15K-$49,999/mo",
+                customerLabel: "$15K-$49,999/mo revenue",
                 base: 55,
                 packageRank: 1,
                 dotClass: "",
                 fundedRate: 0.18
             },
             standard: {
-                customerLabel: "Standard leads",
-                shortRange: "$50K-$99,999/mo",
+                customerLabel: "$50K-$99,999/mo revenue",
                 base: 105,
                 packageRank: 2,
                 dotClass: "standard",
                 fundedRate: 0.15
             },
             premium: {
-                customerLabel: "Premium leads",
-                shortRange: "$100K+/mo",
+                customerLabel: "$100K+/mo revenue",
                 base: 155,
                 packageRank: 3,
                 dotClass: "premium",
@@ -1233,10 +1254,6 @@
 
         function calculateTierPrice(tierKey) {
             return tiers[tierKey].base;
-        }
-
-        function formatTierCriteria(tierKey) {
-            return `Leads reporting ${tiers[tierKey].shortRange} revenue`;
         }
 
         function fundedAmountRange(tierKey) {
@@ -1285,15 +1302,11 @@
                         <div class="price-line-header">
                             <div>
                                 <div class="tier-name"><span class="dot ${tier.dotClass}"></span>${tier.customerLabel}</div>
-                                <div class="tier-range">${formatTierCriteria(tierKey)}</div>
                             </div>
                             <div class="tier-price">${money(price)}<span>per lead</span></div>
                         </div>
                         <div class="roi-metrics">
-                            <div class="roi-metric">
-                                <span>Avg. LeadPop funded rate:</span> <strong>${Math.round(tier.fundedRate * 100)}%</strong>
-                            </div>
-                            <div class="roi-metric">
+                            <div class="roi-metric wide">
                                 <span>Cost to fund one deal:</span> <strong>~${money(example.costPerFundedDeal)}</strong>
                             </div>
                             <div class="roi-divider"></div>
