@@ -397,7 +397,7 @@
         }
 
         .pricing-shell {
-            width: min(100%, 1320px);
+            width: min(100%, 1440px);
             margin: 0 auto;
         }
 
@@ -730,12 +730,6 @@
                 white-space: nowrap;
             }
 
-            .package-compare-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 26px;
-                align-items: stretch;
-            }
-
             .price-line {
                 display: grid;
                 grid-template-rows: 92px 1fr;
@@ -743,7 +737,7 @@
             }
 
             .tier-name {
-                font-size: 22px;
+                font-size: clamp(17px, 1.42vw, 22px);
                 padding: 26px;
             }
 
@@ -768,11 +762,17 @@
 
         @media (min-width: 1280px) {
             .container {
-                max-width: 1380px;
+                max-width: 1500px;
             }
 
             .package-compare-grid {
-                gap: 32px;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 28px;
+                align-items: stretch;
+            }
+
+            .tier-name {
+                white-space: nowrap;
             }
         }
 
