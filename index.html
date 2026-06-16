@@ -1136,72 +1136,14 @@
             }
         }
 
-        /* ===== PRICING TEASER SECTION ===== */
-        .pricing-teaser-section {
-            padding: 84px 0;
-        }
-
-        .pricing-teaser-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
-            gap: 56px;
-            align-items: center;
-        }
-
-        .pricing-teaser-copy {
-            max-width: 720px;
-        }
-
-        .pricing-teaser-title {
-            color: var(--gray-900);
-            font-size: clamp(32px, 4vw, 46px);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 20px;
-        }
-
-        .pricing-teaser-text {
-            color: var(--gray-600);
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 28px;
-        }
-
-        .pricing-teaser-points {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 14px;
-            list-style: none;
-        }
-
-        .pricing-teaser-points li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--gray-800);
-            font-size: 15px;
-            font-weight: 700;
-        }
-
-        .pricing-teaser-check {
-            align-items: center;
-            background: var(--green-light);
-            border-radius: 8px;
-            color: var(--green);
-            display: inline-flex;
-            flex: 0 0 auto;
-            font-size: 14px;
-            height: 26px;
-            justify-content: center;
-            width: 26px;
-        }
-
+        /* ===== PRICING ROUTE PANEL ===== */
         .pricing-route-panel {
             background: var(--navy);
             border: 1px solid rgba(77, 168, 218, 0.22);
             border-radius: 20px;
             box-shadow: 0 18px 48px rgba(13, 27, 42, 0.18);
             color: var(--white);
+            margin-top: 28px;
             padding: 32px;
         }
 
@@ -1233,22 +1175,7 @@
             width: 100%;
         }
 
-        @media (max-width: 900px) {
-            .pricing-teaser-layout {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-        }
-
         @media (max-width: 640px) {
-            .pricing-teaser-section {
-                padding: 64px 0;
-            }
-
-            .pricing-teaser-points {
-                grid-template-columns: 1fr;
-            }
-
             .pricing-route-panel {
                 padding: 26px;
             }
@@ -2226,8 +2153,8 @@
                 </div>
                 
                 <div class="filters-content fade-in">
-                    <h3>Leads Built to Your<br><span class="text-blue">Lending Criteria</span></h3>
-                    <p>Stop wasting time on leads that don't fit your underwriting guidelines. You set the rules, and we deliver prospects that match.</p>
+                    <h3>Leads matched to<br><span class="text-blue">what you fund</span></h3>
+                    <p>We deliver exclusive, real-time, OTP-verified leads that match your criteria, and pricing depends on the revenue tier, qualification filters, and volume you want to buy.</p>
                     
                     <ul class="filters-list">
                         <li><span class="filters-list-icon">→</span> Credit score thresholds (550+, 600+, 650+, etc.)</li>
@@ -2244,40 +2171,20 @@
                         <span class="otp-badge-icon">🔒</span>
                         <span class="otp-badge-text">Every lead is OTP-verified — real contacts, no spam</span>
                     </div>
+
+                    <div class="pricing-route-panel">
+                        <div class="pricing-route-label">Next step</div>
+                        <h3 class="pricing-route-title">See which lead package fits your buying criteria.</h3>
+                        <p class="pricing-route-text">Compare lead packages, starting CPL, and example funded-deal economics before you book a call.</p>
+                        <a href="pricing.html" class="btn btn-primary">View Lead Pricing →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PRICING TEASER SECTION (LIGHT ALT) -->
-    <section class="section section-light-alt pricing-teaser-section">
-        <div class="container">
-            <div class="pricing-teaser-layout">
-                <div class="pricing-teaser-copy fade-in">
-                    <span class="section-label section-label-light">Simple Pricing</span>
-                    <h2 class="pricing-teaser-title">Leads matched to what you fund</h2>
-                    <p class="pricing-teaser-text">We deliver exclusive, real-time, OTP-verified leads that match your criteria, and pricing depends on the revenue tier, qualification filters, and volume you want to buy.</p>
-
-                    <ul class="pricing-teaser-points">
-                        <li><span class="pricing-teaser-check">✓</span> Exclusive leads</li>
-                        <li><span class="pricing-teaser-check">✓</span> OTP-verified contacts</li>
-                        <li><span class="pricing-teaser-check">✓</span> Real-time delivery</li>
-                        <li><span class="pricing-teaser-check">✓</span> Custom criteria available</li>
-                    </ul>
-                </div>
-
-                <div class="pricing-route-panel fade-in">
-                    <div class="pricing-route-label">Next step</div>
-                    <h3 class="pricing-route-title">See which lead package fits your buying criteria.</h3>
-                    <p class="pricing-route-text">Compare lead packages, starting CPL, and example funded-deal economics before you book a call.</p>
-                    <a href="pricing.html" class="btn btn-primary">View Lead Pricing →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMPARISON TABLE SECTION (LIGHT) -->
-    <section class="section section-light">
+    <!-- COMPARISON TABLE SECTION (LIGHT ALT) -->
+    <section class="section section-light-alt">
         <div class="container">
             <div class="section-header">
                 <span class="section-label section-label-light">Why LeadPop</span>
