@@ -1001,7 +1001,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: center;
+            align-items: start;
         }
 
         .section-light .filters-visual,
@@ -1083,23 +1083,38 @@
             margin-bottom: 24px;
         }
 
-        .filters-list {
+        .filters-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
             list-style: none;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
-        .filters-list li {
+        .filters-summary-grid li {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 0;
-            font-size: 15px;
-            color: var(--gray-700);
+            gap: 10px;
+            padding: 14px;
+            background: var(--off-white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            color: var(--gray-800);
+            font-size: 14px;
+            font-weight: 700;
         }
 
-        .filters-list-icon {
+        .filters-summary-icon {
+            align-items: center;
+            background: var(--blue-pale);
+            border-radius: 7px;
             color: var(--blue-accent);
-            font-size: 18px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            font-size: 13px;
+            height: 24px;
+            justify-content: center;
+            width: 24px;
         }
 
         .otp-badge {
@@ -1138,46 +1153,58 @@
 
         /* ===== PRICING ROUTE PANEL ===== */
         .pricing-route-panel {
-            background: var(--navy);
-            border: 1px solid rgba(77, 168, 218, 0.22);
-            border-radius: 20px;
-            box-shadow: 0 18px 48px rgba(13, 27, 42, 0.18);
-            color: var(--white);
-            margin-top: 28px;
-            padding: 32px;
+            background: linear-gradient(135deg, rgba(77, 168, 218, 0.12) 0%, rgba(77, 168, 218, 0.04) 100%);
+            border: 1px solid rgba(77, 168, 218, 0.24);
+            border-radius: 16px;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+            margin-top: 20px;
+            padding: 22px;
         }
 
         .pricing-route-label {
-            color: var(--blue-glow);
-            font-size: 13px;
+            color: var(--blue-accent);
+            font-size: 12px;
             font-weight: 800;
             letter-spacing: 0.08em;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
 
         .pricing-route-title {
-            color: var(--white);
-            font-size: 24px;
+            color: var(--gray-900);
+            font-size: 19px;
             font-weight: 800;
             line-height: 1.25;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .pricing-route-text {
-            color: var(--gray-500);
+            color: var(--gray-600);
             font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 24px;
+            line-height: 1.6;
+            margin-bottom: 18px;
         }
 
         .pricing-route-panel .btn {
-            width: 100%;
+            width: auto;
         }
 
         @media (max-width: 640px) {
+            .filters-summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filters-wrapper > .filters-visual {
+                display: none;
+            }
+
             .pricing-route-panel {
                 padding: 26px;
+            }
+
+            .pricing-route-panel .btn {
+                width: 100%;
             }
         }
 
@@ -2118,9 +2145,9 @@
                     <div class="filter-item">
                         <span class="filter-label">
                             <span class="filter-check">✓</span>
-                            Annual Revenue
+                            Monthly Revenue
                         </span>
-                        <span class="filter-value">$250K+</span>
+                        <span class="filter-value">$50K+/mo</span>
                     </div>
                     <div class="filter-item">
                         <span class="filter-label">
@@ -2155,28 +2182,24 @@
                 <div class="filters-content fade-in">
                     <h3>Leads matched to<br><span class="text-blue">what you fund</span></h3>
                     <p>We deliver exclusive, real-time, OTP-verified leads that match your criteria, and pricing depends on the revenue tier, qualification filters, and volume you want to buy.</p>
+
+                    <div class="pricing-route-panel">
+                        <div class="pricing-route-label">Pricing preview</div>
+                        <h3 class="pricing-route-title">See lead prices.</h3>
+                        <p class="pricing-route-text">Compare starting CPL and funded-deal examples.</p>
+                        <a href="pricing.html" class="btn btn-primary">View Lead Pricing →</a>
+                    </div>
                     
-                    <ul class="filters-list">
-                        <li><span class="filters-list-icon">→</span> Credit score thresholds (550+, 600+, 650+, etc.)</li>
-                        <li><span class="filters-list-icon">→</span> Annual revenue requirements ($100K to $10M+)</li>
-                        <li><span class="filters-list-icon">→</span> Time in business minimums</li>
-                        <li><span class="filters-list-icon">→</span> Loan amount ranges</li>
-                        <li><span class="filters-list-icon">→</span> Use of funds & loan purpose</li>
-                        <li><span class="filters-list-icon">→</span> Geographic targeting (state, region, nationwide)</li>
-                        <li><span class="filters-list-icon">→</span> Industry & business type preferences</li>
-                        <li><span class="filters-list-icon">→</span> Monthly bank deposits (for MCA products)</li>
+                    <ul class="filters-summary-grid">
+                        <li><span class="filters-summary-icon">✓</span> Monthly revenue tiers</li>
+                        <li><span class="filters-summary-icon">✓</span> Credit profile</li>
+                        <li><span class="filters-summary-icon">✓</span> Time in business</li>
+                        <li><span class="filters-summary-icon">✓</span> Geo, loan need, and volume</li>
                     </ul>
                     
                     <div class="otp-badge">
                         <span class="otp-badge-icon">🔒</span>
-                        <span class="otp-badge-text">Every lead is OTP-verified — real contacts, no spam</span>
-                    </div>
-
-                    <div class="pricing-route-panel">
-                        <div class="pricing-route-label">Next step</div>
-                        <h3 class="pricing-route-title">See which lead package fits your buying criteria.</h3>
-                        <p class="pricing-route-text">Compare lead packages, starting CPL, and example funded-deal economics before you book a call.</p>
-                        <a href="pricing.html" class="btn btn-primary">View Lead Pricing →</a>
+                        <span class="otp-badge-text">Exclusive, real-time, OTP-verified leads</span>
                     </div>
                 </div>
             </div>
