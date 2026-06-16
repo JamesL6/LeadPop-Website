@@ -586,26 +586,19 @@
         }
 
         .price-line {
-            display: grid;
-            gap: 16px;
-            padding: 18px;
+            display: block;
+            overflow: hidden;
             border: 2px solid #cfe0ee;
             border-radius: var(--radius);
             background: linear-gradient(180deg, #ffffff 0%, #f8fcff 100%);
             box-shadow: 0 16px 34px rgba(13, 27, 42, 0.09);
         }
 
-        .price-line-header {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            align-items: start;
-            gap: 12px;
-        }
-
         .tier-name {
             display: flex;
             align-items: center;
             gap: 10px;
+            padding: 20px 18px;
             color: var(--navy);
             font-size: 19px;
             font-weight: 800;
@@ -634,31 +627,43 @@
             font-size: 12px;
         }
 
-        .tier-price {
-            color: var(--navy);
-            font-size: 36px;
+        .price-detail-list {
+            border-top: 1px solid #e4edf5;
+        }
+
+        .price-detail-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 18px;
+            color: #40576d;
+            font-size: 15px;
+            line-height: 1.35;
+        }
+
+        .price-detail-row + .price-detail-row {
+            border-top: 1px solid #e4edf5;
+        }
+
+        .price-detail-label,
+        .roi-metric span {
+            color: var(--gray-600);
             font-weight: 800;
-            line-height: 1;
+        }
+
+        .price-detail-value,
+        .roi-metric strong {
+            color: var(--navy);
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 1.2;
             text-align: right;
             white-space: nowrap;
         }
 
-        .tier-price span {
-            display: block;
-            color: var(--gray-600);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 0.04em;
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
-
-        .roi-metrics {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            border-top: 1px solid #e4edf5;
-            padding-top: 15px;
+        .price-detail-row.price-row .price-detail-value {
+            font-size: 36px;
         }
 
         .roi-metric {
@@ -667,33 +672,23 @@
             line-height: 1.4;
         }
 
-        .roi-metric span {
-            color: var(--gray-600);
-            font-weight: 700;
-        }
-
-        .roi-metric strong {
-            color: var(--navy);
-            font-weight: 800;
-        }
-
-        .roi-metric.wide {
-            grid-column: 1 / -1;
-        }
-
         .roi-metric.feature {
-            grid-column: 1 / -1;
-            margin-top: 6px;
-            padding: 14px;
+            margin: 16px 18px 18px;
+            padding: 16px;
             border: 1px solid #cfe0ee;
             border-radius: var(--radius);
             background: var(--white);
         }
 
-        .roi-divider {
-            grid-column: 1 / -1;
-            border-top: 1px solid #e4edf5;
-            margin: 2px 0;
+        .roi-metric.feature span,
+        .roi-metric.feature strong {
+            display: block;
+            text-align: left;
+        }
+
+        .roi-metric.feature strong {
+            margin-top: 5px;
+            font-size: 22px;
         }
 
         .roi-education {
@@ -743,16 +738,25 @@
 
             .price-line {
                 align-content: start;
-                min-height: 350px;
-                padding: 26px;
+                min-height: 410px;
             }
 
             .tier-name {
                 font-size: 22px;
+                min-height: 92px;
+                padding: 26px;
             }
 
-            .tier-price {
+            .price-detail-row {
+                padding: 18px 26px;
+            }
+
+            .price-detail-row.price-row .price-detail-value {
                 font-size: 44px;
+            }
+
+            .roi-metric.feature {
+                margin: 18px 26px 26px;
             }
         }
 
@@ -1052,12 +1056,12 @@
                 padding: 14px;
             }
 
-            .price-line-header,
-            .roi-metrics {
+            .price-detail-row {
                 grid-template-columns: 1fr;
+                gap: 4px;
             }
 
-            .tier-price {
+            .price-detail-value {
                 text-align: left;
             }
 
@@ -1228,21 +1232,21 @@
     <script>
         const tiers = {
             economy: {
-                customerLabel: "$15K-$49,999/mo revenue",
+                customerLabel: "$15K-$49,999/mo revenue leads",
                 base: 55,
                 packageRank: 1,
                 dotClass: "",
                 fundedRate: 0.18
             },
             standard: {
-                customerLabel: "$50K-$99,999/mo revenue",
+                customerLabel: "$50K-$99,999/mo revenue leads",
                 base: 105,
                 packageRank: 2,
                 dotClass: "standard",
                 fundedRate: 0.15
             },
             premium: {
-                customerLabel: "$100K+/mo revenue",
+                customerLabel: "$100K+/mo revenue leads",
                 base: 155,
                 packageRank: 3,
                 dotClass: "premium",
@@ -1310,22 +1314,23 @@
 
                 return `
                     <div class="price-line">
-                        <div class="price-line-header">
-                            <div>
-                                <div class="tier-name"><span class="dot ${tier.dotClass}"></span>${tier.customerLabel}</div>
+                        <div class="tier-name"><span class="dot ${tier.dotClass}"></span>${tier.customerLabel}</div>
+                        <div class="price-detail-list">
+                            <div class="price-detail-row price-row">
+                                <span class="price-detail-label">Price per lead</span>
+                                <strong class="price-detail-value">${money(price)}</strong>
                             </div>
-                            <div class="tier-price">${money(price)}<span>per lead</span></div>
-                        </div>
-                        <div class="roi-metrics">
-                            <div class="roi-metric wide">
-                                <span>Cost to fund one deal:</span> <strong>~${money(example.costPerFundedDeal)}</strong>
+                            <div class="price-detail-row">
+                                <span class="price-detail-label">Cost to fund one deal</span>
+                                <strong class="price-detail-value">~${money(example.costPerFundedDeal)}</strong>
                             </div>
-                            <div class="roi-divider"></div>
-                            <div class="roi-metric">
-                                <span>Typical funded amount:</span> <strong>${formatMoneyRange(example.amountRange.min, example.amountRange.max)}</strong>
+                            <div class="price-detail-row">
+                                <span class="price-detail-label">Typical funded amount</span>
+                                <strong class="price-detail-value">${formatMoneyRange(example.amountRange.min, example.amountRange.max)}</strong>
                             </div>
-                            <div class="roi-metric">
-                                <span>Revenue to you at ${number(estimatedCommissionPercent)}%:</span> <strong>${formatMoneyRange(example.revenuePerDealMin, example.revenuePerDealMax)}</strong>
+                            <div class="price-detail-row">
+                                <span class="price-detail-label">Revenue to you at ${number(estimatedCommissionPercent)}%</span>
+                                <strong class="price-detail-value">${formatMoneyRange(example.revenuePerDealMin, example.revenuePerDealMax)}</strong>
                             </div>
                             <div class="roi-metric feature">
                                 <span>Estimated spread after lead cost:</span> <strong>${formatMoneyRange(example.spreadPerDealMin, example.spreadPerDealMax)}</strong>
