@@ -1,4 +1,16 @@
 {
     "cleanUrls": true,
-    "trailingSlash": false
+    "trailingSlash": false,
+    "redirects": [
+        {
+            "source": "/pricing-static",
+            "destination": "/pricing",
+            "permanent": true
+        },
+        {
+            "source": "/pricing-static.html",
+            "destination": "/pricing",
+            "permanent": true
+        }
+    ]
 }

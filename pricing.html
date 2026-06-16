@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lead Pricing Calculator | LeadPop</title>
-    <meta name="title" content="Lead Pricing Calculator | LeadPop">
-    <meta name="description" content="Estimate your cost per exclusive, real-time business funding lead by revenue tier and see example funded-deal economics.">
+    <title>Lead Pricing Packages | LeadPop</title>
+    <meta name="title" content="Lead Pricing Packages | LeadPop">
+    <meta name="description" content="Compare LeadPop lead packages side by side and see example funded-deal economics using an estimated 10% commission.">
     <link rel="canonical" href="https://www.leadpop.io/pricing">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.leadpop.io/pricing">
-    <meta property="og:title" content="LeadPop Pricing Calculator">
-    <meta property="og:description" content="See simple pricing for exclusive, real-time business funding leads by revenue tier and compare lead cost against funded-deal economics.">
+    <meta property="og:title" content="LeadPop Lead Pricing Packages">
+    <meta property="og:description" content="Compare LeadPop lead packages side by side and see example funded-deal economics using an estimated 10% commission.">
     <meta property="og:image" content="https://www.leadpop.io/leadpop-pricing-og.png">
     <meta property="og:image:secure_url" content="https://www.leadpop.io/leadpop-pricing-og.png">
     <meta property="og:image:type" content="image/png">
@@ -21,8 +21,8 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.leadpop.io/pricing">
-    <meta name="twitter:title" content="LeadPop Pricing Calculator">
-    <meta name="twitter:description" content="See simple pricing for exclusive, real-time business funding leads by revenue tier and compare lead cost against funded-deal economics.">
+    <meta name="twitter:title" content="LeadPop Lead Pricing Packages">
+    <meta name="twitter:description" content="Compare LeadPop lead packages side by side and see example funded-deal economics using an estimated 10% commission.">
     <meta name="twitter:image" content="https://www.leadpop.io/leadpop-pricing-og.png">
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -300,7 +300,7 @@
         .hero {
             position: relative;
             overflow: hidden;
-            padding: 160px 0 96px;
+            padding: 102px 0 34px;
             background: var(--navy);
             color: var(--white);
         }
@@ -327,7 +327,7 @@
 
         .hero-label {
             display: inline-block;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             padding: 8px 16px;
             border: 1px solid rgba(77, 168, 218, 0.3);
             border-radius: 100px;
@@ -340,9 +340,9 @@
         }
 
         .hero-title {
-            margin-bottom: 24px;
+            margin-bottom: 14px;
             color: var(--white);
-            font-size: clamp(36px, 5vw, 56px);
+            font-size: clamp(34px, 3.4vw, 44px);
             font-weight: 800;
             line-height: 1.1;
         }
@@ -358,15 +358,15 @@
             max-width: 650px;
             margin: 0 auto;
             color: var(--gray-500);
-            font-size: 20px;
-            line-height: 1.7;
+            font-size: 17px;
+            line-height: 1.45;
         }
 
         .trust-row {
             display: grid;
             gap: 10px;
             max-width: 760px;
-            margin: 28px auto 0;
+            margin: 16px auto 0;
         }
 
         .trust-item {
@@ -393,11 +393,11 @@
         }
 
         .calculator-section {
-            padding: 54px 0 80px;
+            padding: 12px 0 72px;
         }
 
         .pricing-shell {
-            width: min(100%, 820px);
+            width: min(100%, 1440px);
             margin: 0 auto;
         }
 
@@ -420,7 +420,7 @@
             align-items: flex-start;
             justify-content: space-between;
             gap: 12px;
-            margin-bottom: 14px;
+            margin-bottom: 10px;
         }
 
         .step,
@@ -575,34 +575,39 @@
             margin-top: 16px;
         }
 
-        .price-line {
+        .package-compare-grid {
             display: grid;
-            gap: 13px;
-            padding: 14px;
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            background: #fbfdff;
+            gap: 16px;
+            margin-top: 10px;
         }
 
-        .price-line-header {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            align-items: start;
-            gap: 12px;
+        .comparison-intro {
+            max-width: 760px;
+        }
+
+        .price-line {
+            display: block;
+            overflow: hidden;
+            border: 2px solid #cfe0ee;
+            border-radius: var(--radius);
+            background: linear-gradient(180deg, #ffffff 0%, #f8fcff 100%);
+            box-shadow: 0 16px 34px rgba(13, 27, 42, 0.09);
         }
 
         .tier-name {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            padding: 20px 18px;
             color: var(--navy);
-            font-size: 16px;
+            font-size: 19px;
             font-weight: 800;
+            line-height: 1.15;
         }
 
         .dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background: var(--blue-accent);
             flex: 0 0 auto;
@@ -622,74 +627,68 @@
             font-size: 12px;
         }
 
-        .tier-card-note {
-            width: fit-content;
-            max-width: 100%;
-            border-radius: 999px;
-            background: #dff3ff;
-            color: #1d84c9;
-            padding: 4px 8px;
-            font-size: 11px;
-            font-weight: 800;
-            line-height: 1.2;
+        .price-detail-list {
+            border-top: 1px solid #e4edf5;
         }
 
-        .tier-price {
-            color: var(--navy);
-            font-size: 28px;
+        .price-detail-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 18px;
+            color: #40576d;
+            font-size: 15px;
+            line-height: 1.35;
+        }
+
+        .price-detail-row + .price-detail-row {
+            border-top: 1px solid #e4edf5;
+        }
+
+        .price-detail-label,
+        .roi-metric span {
+            color: var(--gray-600);
             font-weight: 800;
-            line-height: 1;
+        }
+
+        .price-detail-value,
+        .roi-metric strong {
+            color: var(--navy);
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 1.2;
             text-align: right;
             white-space: nowrap;
         }
 
-        .tier-price span {
-            display: block;
-            color: var(--gray-600);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.04em;
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
-
-        .roi-metrics {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 6px;
-            border-top: 1px solid #e4edf5;
-            padding-top: 11px;
+        .price-detail-row.price-row .price-detail-value {
+            font-size: 36px;
         }
 
         .roi-metric {
             color: #40576d;
-            font-size: 13px;
-            line-height: 1.35;
-        }
-
-        .roi-metric span {
-            color: var(--gray-600);
-            font-weight: 700;
-        }
-
-        .roi-metric strong {
-            color: var(--navy);
-            font-weight: 800;
+            font-size: 15px;
+            line-height: 1.4;
         }
 
         .roi-metric.feature {
-            grid-column: 1 / -1;
-            margin-top: 4px;
-            padding: 9px;
-            border: 1px solid #e4edf5;
+            margin: 16px 18px 18px;
+            padding: 16px;
+            border: 1px solid #cfe0ee;
             border-radius: var(--radius);
             background: var(--white);
         }
 
-        .roi-divider {
-            grid-column: 1 / -1;
-            border-top: 1px solid #e4edf5;
-            margin: 4px 0;
+        .roi-metric.feature span,
+        .roi-metric.feature strong {
+            display: block;
+            text-align: left;
+        }
+
+        .roi-metric.feature strong {
+            margin-top: 5px;
+            font-size: 22px;
         }
 
         .roi-education {
@@ -707,6 +706,74 @@
             margin-top: 9px;
             color: var(--gray-600);
             font-size: 12px;
+        }
+
+        .pricing-assumption {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            margin-top: 10px;
+            border-radius: 999px;
+            background: #eef8ff;
+            color: #244d70;
+            padding: 7px 10px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        @media (min-width: 980px) {
+            .comparison-intro {
+                max-width: none;
+            }
+
+            .comparison-intro .plain-help {
+                white-space: nowrap;
+            }
+
+            .price-line {
+                display: grid;
+                grid-template-rows: 92px 1fr;
+                min-height: 540px;
+            }
+
+            .tier-name {
+                font-size: clamp(17px, 1.42vw, 22px);
+                padding: 26px;
+            }
+
+            .price-detail-list {
+                display: grid;
+                grid-template-rows: 92px 82px 96px 96px 1fr;
+            }
+
+            .price-detail-row {
+                padding: 18px 26px;
+            }
+
+            .price-detail-row.price-row .price-detail-value {
+                font-size: 44px;
+            }
+
+            .roi-metric.feature {
+                align-self: start;
+                margin: 18px 26px 26px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1500px;
+            }
+
+            .package-compare-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 28px;
+                align-items: stretch;
+            }
+
+            .tier-name {
+                white-space: nowrap;
+            }
         }
 
         .simple-explain {
@@ -962,32 +1029,45 @@
             }
 
             .hero {
-                padding: 130px 0 64px;
+                padding: 106px 0 42px;
+            }
+
+            .hero-label {
+                margin-bottom: 16px;
+                padding: 7px 13px;
+                font-size: 12px;
             }
 
             .hero-title {
-                font-size: 40px;
+                margin-bottom: 16px;
+                font-size: 34px;
             }
 
             .hero-subtitle {
-                font-size: 17px;
+                font-size: 15px;
+                line-height: 1.55;
+            }
+
+            .trust-row {
+                gap: 8px;
+                margin-top: 18px;
             }
 
             .calculator-section {
-                padding: 34px 0 56px;
+                padding: 24px 0 56px;
             }
 
             .section,
             .result-card {
-                padding: 16px;
+                padding: 14px;
             }
 
-            .price-line-header,
-            .roi-metrics {
+            .price-detail-row {
                 grid-template-columns: 1fr;
+                gap: 4px;
             }
 
-            .tier-price {
+            .price-detail-value {
                 text-align: left;
             }
 
@@ -1061,10 +1141,10 @@
             <div class="hero-content">
                 <span class="hero-label">LeadPop Pricing</span>
                 <h1 class="hero-title">
-                    See What Your Leads Cost<br><span class="hero-title-highlight">Before You Buy</span>
+                    Compare Lead Packages<br><span class="hero-title-highlight">Before You Buy</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Choose the revenue tiers you want and see the estimated cost per lead, cost to fund a deal, and revenue spread.
+                    See every LeadPop package side by side, including price per lead, estimated cost to acquire one funded deal, and estimated revenue left after lead cost.
                 </p>
                 <div class="trust-row">
                     <div class="trust-item"><span class="check">✓</span><span>Exclusive to you</span></div>
@@ -1081,60 +1161,30 @@
                 <div class="builder">
                     <section class="section">
                         <div class="section-top">
-                            <div>
-                                <p class="step">Step 1</p>
-                                <h2>Choose your lead package</h2>
-                                <p class="plain-help">Each package is based on the lead's reported monthly revenue.</p>
+                            <div class="comparison-intro">
+                                <p class="step">LeadPop Pricing</p>
+                                <h2>Compare packages</h2>
+                                <p class="plain-help">All packages use the lead's reported monthly revenue. All listed plans include 6+ months in business and no minimum credit score.</p>
+                                <p class="pricing-assumption">Examples assume 10% commission or points.</p>
                             </div>
                         </div>
-                        <div class="choice-list" id="packageButtons"></div>
-                        <p class="plain-help" style="margin-top:14px;">All listed plans include 6+ months in business and no minimum credit score.</p>
+                        <div class="package-compare-grid" id="priceList"></div>
+                        <p class="roi-education">The goal is not to buy the cheapest lead. The goal is to buy leads where enough revenue is left after lead cost.</p>
+                        <p class="roi-note">Estimates are not guarantees. Actual results may vary depending on speed to lead, offer, follow-up, and underwriting.</p>
                     </section>
 
                     <section class="section">
                         <div class="section-top">
                             <div>
-                                <p class="step">Step 2</p>
-                                <h2>What do you earn on a funded deal?</h2>
-                                <p class="plain-help">Choose your average commission or points.</p>
-                            </div>
-                        </div>
-
-                        <h3>Your average commission or points</h3>
-                        <div class="mini-grid" id="commissionButtons" style="margin-top:10px;"></div>
-                        <div class="custom-field hidden" id="commissionCustomField">
-                            <input class="custom-input" id="commissionInput" type="number" min="0" step="0.5" value="10" aria-label="Custom commission percentage">
-                        </div>
-                    </section>
-
-                    <section class="result-card" aria-live="polite">
-                        <div class="section-top">
-                            <div>
-                                <p class="step">Step 3</p>
-                                <h2>Your lead prices</h2>
-                                <p class="plain-help">These update when you change your package or commission.</p>
-                            </div>
-                        </div>
-                        <p class="result-label">Selected package</p>
-                        <h2 class="result-title" id="resultTitle">Economy leads</h2>
-                        <p class="result-subtitle" id="resultSubtitle"></p>
-                        <div class="price-list" id="priceList"></div>
-                        <p class="roi-education">The goal is not to buy the cheapest lead. The goal is to buy leads where funded-deal revenue leaves enough spread after lead cost.</p>
-                        <p class="roi-note">Estimates are not guarantees. Your funded rate may be higher or lower depending on speed to lead, offer, follow-up, and underwriting.</p>
-                    </section>
-
-                    <section class="section">
-                        <div class="section-top">
-                            <div>
-                                <p class="step">Step 4</p>
-                                <h2>What this means</h2>
+                                <p class="step">Custom Criteria</p>
+                                <h2>Need stricter filters?</h2>
+                                <p class="plain-help">We can price custom minimum revenue, credit score, time in business, states, volume, and delivery setup on the call. Custom filters can change CPL and available volume.</p>
                             </div>
                         </div>
                         <div class="simple-explain">
-                            <div class="explain-row"><span class="number">1</span><span>All plans include 6+ months in business and no minimum credit score.</span></div>
-                            <div class="explain-row"><span class="number">2</span><span>Higher-revenue leads usually qualify for larger funding amounts, which can increase your revenue per funded deal.</span></div>
-                            <div class="explain-row"><span class="number">3</span><span>Premium leads are available only when you also buy Economy and Standard.</span></div>
-                            <div class="explain-row"><span class="number">4</span><span>Need stricter criteria? On the call, we can price custom minimum revenue, credit score, time in business, states, volume, and delivery setup. Custom filters can change CPL and available volume.</span></div>
+                            <div class="explain-row"><span class="number">1</span><span>Higher-revenue leads usually qualify for larger funding amounts.</span></div>
+                            <div class="explain-row"><span class="number">2</span><span>The $100K+/mo package is available only when you also buy the lower revenue packages.</span></div>
+                            <div class="explain-row"><span class="number">3</span><span>Custom criteria are confirmed during your free lead analysis.</span></div>
                         </div>
                     </section>
 
@@ -1152,10 +1202,10 @@
     <div class="mobile-book-bar" data-mobile-book-bar aria-hidden="true" aria-live="polite">
         <div class="mobile-book-inner">
             <div class="mobile-book-copy">
-                <span>Starts at <span id="stickyPrice">$55</span></span>
-                <strong id="stickyPackage">Economy leads</strong>
+                <span>Starts at <span id="stickyPrice">$55</span>/lead</span>
+                <strong id="stickyPackage">Get a free lead analysis</strong>
             </div>
-            <a href="book-call.html" class="mobile-book-button">Book a Call</a>
+            <a href="book-call.html" class="mobile-book-button">Book Free Analysis</a>
         </div>
     </div>
 
@@ -1188,24 +1238,21 @@
     <script>
         const tiers = {
             economy: {
-                customerLabel: "Economy leads",
-                shortRange: "$15K-$49,999/mo",
+                customerLabel: "$15K-$49,999/mo revenue leads",
                 base: 55,
                 packageRank: 1,
                 dotClass: "",
                 fundedRate: 0.18
             },
             standard: {
-                customerLabel: "Standard leads",
-                shortRange: "$50K-$99,999/mo",
+                customerLabel: "$50K-$99,999/mo revenue leads",
                 base: 105,
                 packageRank: 2,
                 dotClass: "standard",
                 fundedRate: 0.15
             },
             premium: {
-                customerLabel: "Premium leads",
-                shortRange: "$100K+/mo",
+                customerLabel: "$100K+/mo revenue leads",
                 base: 155,
                 packageRank: 3,
                 dotClass: "premium",
@@ -1213,42 +1260,8 @@
             }
         };
 
-        const packageOptions = [
-            {
-                value: "economy",
-                rank: 1,
-                label: "Economy",
-                sub: "Leads reporting $15K-$49,999/month revenue",
-                bestFor: "Best for buyers who want lower-cost lead volume."
-            },
-            {
-                value: "standard",
-                rank: 2,
-                label: "Economy + Standard",
-                sub: "Adds leads reporting $50K-$99,999/month revenue",
-                bestFor: "Best for buyers who want a mix of volume and larger funding opportunities."
-            },
-            {
-                value: "premium",
-                rank: 3,
-                label: "Economy + Standard + Premium",
-                sub: "Adds leads reporting $100K+/month revenue",
-                bestFor: "Best for buyers who want access to higher-revenue leads and larger potential funding amounts."
-            }
-        ];
-
-        const commissionOptions = [
-            { value: "8", label: "8%", sub: "commission" },
-            { value: "10", label: "10%", sub: "commission" },
-            { value: "12", label: "12%", sub: "commission" },
-            { value: "custom", label: "Custom", sub: "type it in" }
-        ];
-
-        const state = {
-            package: "economy",
-            commissionMode: "10",
-            commissionPercent: 10
-        };
+        const tierOrder = ["economy", "standard", "premium"];
+        const estimatedCommissionPercent = 10;
 
         const money = new Intl.NumberFormat("en-US", {
             style: "currency",
@@ -1260,21 +1273,8 @@
             maximumFractionDigits: 1
         }).format;
 
-        function packageByValue(value) {
-            return packageOptions.find((option) => option.value === value) || packageOptions[0];
-        }
-
-        function includedTierKeys() {
-            const selectedPackage = packageByValue(state.package);
-            return Object.keys(tiers).filter((key) => tiers[key].packageRank <= selectedPackage.rank);
-        }
-
         function calculateTierPrice(tierKey) {
             return tiers[tierKey].base;
-        }
-
-        function formatTierCriteria(tierKey) {
-            return `Leads reporting ${tiers[tierKey].shortRange} revenue`;
         }
 
         function fundedAmountRange(tierKey) {
@@ -1290,7 +1290,7 @@
         function calculateExample(tierKey) {
             const tier = tiers[tierKey];
             const price = calculateTierPrice(tierKey);
-            const commissionRate = state.commissionPercent / 100;
+            const commissionRate = estimatedCommissionPercent / 100;
             const amountRange = fundedAmountRange(tierKey);
             const costPerFundedDeal = price / tier.fundedRate;
             const revenuePerDealMin = amountRange.min * commissionRate;
@@ -1308,88 +1308,43 @@
             };
         }
 
-        function renderPackageButtons() {
-            document.getElementById("packageButtons").innerHTML = packageOptions.map((option) => `
-                <button class="choice ${option.value === state.package ? "active" : ""}" type="button" data-group="package" data-value="${option.value}">
-                    <span>
-                        <strong>${option.label}</strong>
-                        <span>${option.sub}</span>
-                        <span class="best-for">${option.bestFor}</span>
-                    </span>
-                </button>
-            `).join("");
-        }
-
-        function renderPlainButtons(id, group, options, activeValue) {
-            document.getElementById(id).innerHTML = options.map((option) => `
-                <button class="mini-choice ${String(option.value) === String(activeValue) ? "active" : ""}" type="button" data-group="${group}" data-value="${option.value}">
-                    <strong>${option.label}</strong>
-                    <span>${option.sub}</span>
-                </button>
-            `).join("");
-        }
-
-        function renderCustomFields() {
-            document.getElementById("commissionCustomField").classList.toggle("hidden", state.commissionMode !== "custom");
-            document.getElementById("commissionInput").value = state.commissionPercent;
-        }
-
         function renderResults() {
-            const selectedPackage = packageByValue(state.package);
-            const included = includedTierKeys();
-            const lowestPrice = calculateTierPrice(included[0]);
-
-            document.getElementById("resultTitle").textContent =
-                selectedPackage.value === "economy" ? "Economy leads" : selectedPackage.label;
-            document.getElementById("resultSubtitle").textContent =
-                "All plans include 6+ months in business and no minimum credit score.";
+            const lowestPrice = calculateTierPrice("economy");
             document.getElementById("stickyPrice").textContent = money(lowestPrice);
-            document.getElementById("stickyPackage").textContent =
-                selectedPackage.value === "economy" ? "Economy leads" : selectedPackage.label;
+            document.getElementById("stickyPackage").textContent = "Book free lead analysis";
 
-            document.getElementById("priceList").innerHTML = included.map((tierKey) => {
+            document.getElementById("priceList").innerHTML = tierOrder.map((tierKey) => {
                 const tier = tiers[tierKey];
                 const price = calculateTierPrice(tierKey);
                 const example = calculateExample(tierKey);
 
                 return `
                     <div class="price-line">
-                        <div class="price-line-header">
-                            <div>
-                                <div class="tier-name"><span class="dot ${tier.dotClass}"></span>${tier.customerLabel}</div>
-                                <div class="tier-range">${formatTierCriteria(tierKey)}</div>
+                        <div class="tier-name"><span class="dot ${tier.dotClass}"></span>${tier.customerLabel}</div>
+                        <div class="price-detail-list">
+                            <div class="price-detail-row price-row">
+                                <span class="price-detail-label">Price per lead</span>
+                                <strong class="price-detail-value">${money(price)}</strong>
                             </div>
-                            <div class="tier-price">${money(price)}<span>per lead</span></div>
-                        </div>
-                        <div class="tier-card-note">Example funded-deal economics · Avg. LeadPop funded rate: ${Math.round(tier.fundedRate * 100)}%</div>
-                        <div class="roi-metrics">
-                            <div class="roi-metric">
-                                <span>Avg. LeadPop funded rate:</span> <strong>${Math.round(tier.fundedRate * 100)}%</strong>
+                            <div class="price-detail-row">
+                                <span class="price-detail-label">Cost to fund one deal</span>
+                                <strong class="price-detail-value">~${money(example.costPerFundedDeal)}</strong>
                             </div>
-                            <div class="roi-metric">
-                                <span>Estimated cost to acquire one funded deal:</span> <strong>~${money(example.costPerFundedDeal)}</strong>
+                            <div class="price-detail-row">
+                                <span class="price-detail-label">Typical funded amount</span>
+                                <strong class="price-detail-value">${formatMoneyRange(example.amountRange.min, example.amountRange.max)}</strong>
                             </div>
-                            <div class="roi-divider"></div>
-                            <div class="roi-metric">
-                                <span>Typical funded amount:</span> <strong>${formatMoneyRange(example.amountRange.min, example.amountRange.max)}</strong>
-                            </div>
-                            <div class="roi-metric">
-                                <span>Revenue to you at ${number(state.commissionPercent)}%:</span> <strong>${formatMoneyRange(example.revenuePerDealMin, example.revenuePerDealMax)}</strong>
+                            <div class="price-detail-row">
+                                <span class="price-detail-label">Revenue to you at ${number(estimatedCommissionPercent)}%</span>
+                                <strong class="price-detail-value">${formatMoneyRange(example.revenuePerDealMin, example.revenuePerDealMax)}</strong>
                             </div>
                             <div class="roi-metric feature">
-                                <span>Estimated spread after lead cost:</span> <strong>${formatMoneyRange(example.spreadPerDealMin, example.spreadPerDealMax)}</strong>
+                                <span>Estimated revenue left after lead cost:</span> <strong>${formatMoneyRange(example.spreadPerDealMin, example.spreadPerDealMax)}</strong>
                             </div>
                         </div>
                     </div>
                 `;
             }).join("");
-        }
-
-        function render() {
-            renderPackageButtons();
-            renderPlainButtons("commissionButtons", "commissionMode", commissionOptions, state.commissionMode);
-            renderCustomFields();
-            renderResults();
         }
 
         function toggleMobileMenu() {
@@ -1428,37 +1383,11 @@
             window.addEventListener("resize", update);
         }
 
-        document.addEventListener("click", (event) => {
-            const button = event.target.closest("[data-group]");
-            if (!button) return;
-
-            const group = button.dataset.group;
-            const value = button.dataset.value;
-
-            if (group === "package") state.package = value;
-            if (group === "commissionMode") {
-                state.commissionMode = value;
-                if (value !== "custom") state.commissionPercent = Number(value);
-            }
-
-            render();
-        });
-
-        document.addEventListener("input", (event) => {
-            if (event.target.id === "commissionInput") {
-                const value = Number(event.target.value);
-                if (Number.isFinite(value) && value >= 0) {
-                    state.commissionPercent = value;
-                    renderResults();
-                }
-            }
-        });
-
         document.querySelectorAll(".mobile-sidebar a").forEach((link) => {
             link.addEventListener("click", closeMobileMenu);
         });
 
-        render();
+        renderResults();
         initMobileBookBar();
     </script>
 </body>
