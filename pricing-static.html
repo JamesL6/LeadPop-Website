@@ -737,14 +737,19 @@
             }
 
             .price-line {
-                align-content: start;
-                min-height: 410px;
+                display: grid;
+                grid-template-rows: 92px 1fr;
+                min-height: 540px;
             }
 
             .tier-name {
                 font-size: 22px;
-                min-height: 92px;
                 padding: 26px;
+            }
+
+            .price-detail-list {
+                display: grid;
+                grid-template-rows: 92px 82px 96px 96px 1fr;
             }
 
             .price-detail-row {
@@ -756,6 +761,7 @@
             }
 
             .roi-metric.feature {
+                align-self: start;
                 margin: 18px 26px 26px;
             }
         }
